@@ -11,6 +11,10 @@ public class PhoneBO {
         this.number = number;
     }
 
+    public PhoneBO() {
+
+    }
+
     public Integer getStateCode() {
         return stateCode;
     }
