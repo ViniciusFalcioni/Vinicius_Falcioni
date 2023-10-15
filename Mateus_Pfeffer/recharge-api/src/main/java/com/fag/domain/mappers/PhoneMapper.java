@@ -2,7 +2,6 @@ package com.fag.domain.mappers;
 
 import com.fag.domain.dto.PhoneDTO;
 import com.fag.domain.entities.PhoneBO;
-import com.fag.domain.interfaces.IMapper;
 
 public class PhoneMapper {
 
