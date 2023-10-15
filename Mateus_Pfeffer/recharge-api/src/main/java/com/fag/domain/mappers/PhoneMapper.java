@@ -2,9 +2,11 @@ package com.fag.domain.mappers;
 
 import com.fag.domain.dto.PhoneDTO;
 import com.fag.domain.entities.PhoneBO;
+import com.fag.domain.interfaces.IMapper;
 
-public class PhoneMapper {
+public class PhoneMapper implements IMapper<PhoneDTO, PhoneBO> {
 
+    @Override
     public PhoneBO toBO(PhoneDTO dto) {
         PhoneBO newPhoneBO = new PhoneBO();
         newPhoneBO.setStateCode(dto.stateCode());
@@ -14,6 +16,7 @@ public class PhoneMapper {
         return newPhoneBO;
     }
 
+    @Override
     public PhoneDTO toDTO(PhoneBO entity) {
         return new PhoneDTO(entity.getStateCode(), entity.getCountryCode(), entity.getNumber());
     }
