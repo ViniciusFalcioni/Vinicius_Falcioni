@@ -1,5 +1,7 @@
 package domain.repositories;
 
-public class IRechargeDataBaseRepository {
-    
+import domain.entities.RechargeBO;
+
+public interface IRechargeDataBaseRepository {
+     RechargeBO persist(RechargeBO rechargeBO);
 }
