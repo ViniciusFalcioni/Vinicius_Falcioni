@@ -1,25 +1,28 @@
 package com.fag.controllers;
 
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.PathParam;
-import jakarta.ws.rs.Produces;
+import com.fag.domain.dto.OperatorDTO;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 @Path("/operator")
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public class OperatorController {
 
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
     public Response listOperators() {
         return Response.ok().build();
     }
 
     @GET
     @Path("/{id}")
-    @Produces(MediaType.APPLICATION_JSON)
     public Response getOperator(@PathParam("id") String operatorId) {
+        return Response.ok().build();
+    }
+
+    @POST
+    public Response createOperator(OperatorDTO dto) {
         return Response.ok().build();
     }
 
