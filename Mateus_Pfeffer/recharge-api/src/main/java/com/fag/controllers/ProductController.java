@@ -1,25 +1,28 @@
 package com.fag.controllers;
 
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.PathParam;
-import jakarta.ws.rs.Produces;
+import com.fag.domain.dto.ProductDTO;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 @Path("/product")
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public class ProductController {
 
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
     public Response listProducts() {
         return Response.ok().build();
     }
 
     @GET
     @Path("/{id}")
-    @Produces(MediaType.APPLICATION_JSON)
     public Response getProduct(@PathParam("id") String productId) {
+        return Response.ok().build();
+    }
+
+    @POST
+    public Response createProduct(ProductDTO dto) {
         return Response.ok().build();
     }
 
