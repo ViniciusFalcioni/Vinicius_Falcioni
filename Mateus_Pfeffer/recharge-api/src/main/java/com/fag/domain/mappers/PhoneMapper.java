@@ -6,12 +6,10 @@ import com.fag.domain.entities.PhoneBO;
 public class PhoneMapper {
 
     public static PhoneBO toBO(PhoneDTO dto) {
-        PhoneBO newPhoneBO = new PhoneBO();
-        newPhoneBO.setStateCode(dto.stateCode());
-        newPhoneBO.setCountryCode(dto.countryCode());
-        newPhoneBO.setNumber(dto.number());
-
-        return newPhoneBO;
+        return new PhoneBO(
+                dto.stateCode(),
+                dto.countryCode(),
+                dto.number());
     }
 
     public static PhoneDTO toDTO(PhoneBO entity) {
