@@ -6,6 +6,12 @@ public class PhoneBO {
     Integer countryCode;
     String number;
 
+    public PhoneBO(Integer countryCode, Integer stateCode, String number) {
+        this.countryCode = countryCode;
+        this.stateCode = stateCode;
+        this.number = number;
+    }
+
     public Integer getStateCode() {
         return stateCode;
     }
