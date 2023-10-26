@@ -10,16 +10,4 @@ class ListOperatorsTest {
     void execute() {
     }
 
-    @Test
-    void create() {
-    }
-
-    @Test
-    void listOperators() {
-    }
-
-    @Test
-    void listProducts() {
-    }
-
 }

@@ -10,20 +10,4 @@ class CreateRechargeTest {
     void execute() {
     }
 
-    @Test
-    void persist() {
-    }
-
-    @Test
-    void create() {
-    }
-
-    @Test
-    void listOperators() {
-    }
-
-    @Test
-    void listProducts() {
-    }
-
 }
