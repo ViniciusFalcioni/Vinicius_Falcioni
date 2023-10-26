@@ -6,7 +6,7 @@ import com.fag.domain.dto.RechargeDTO;
 
 import java.util.List;
 
-public interface IRechargeVendorRepository {
+public interface IRechargeVendor {
 
     RechargeDTO create(RechargeDTO recharge);
 
