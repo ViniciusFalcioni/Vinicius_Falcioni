@@ -8,6 +8,12 @@ public class PhoneDTO {
   public PhoneDTO() {
   }
 
+  public PhoneDTO(Integer stateCode, Integer countryCode, String number) {
+    this.stateCode = stateCode;
+    this.countryCode = countryCode;
+    this.number = number;
+  }
+
   public Integer getStateCode() {
     return this.stateCode;
   }

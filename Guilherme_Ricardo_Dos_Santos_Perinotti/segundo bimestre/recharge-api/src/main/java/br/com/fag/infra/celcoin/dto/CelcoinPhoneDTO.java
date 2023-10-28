@@ -3,12 +3,12 @@ package br.com.fag.infra.celcoin.dto;
 public class CelcoinPhoneDTO {
   private Integer stateCode;
   private Integer countryCode;
-  private Integer number;
+  private String number;
 
   public CelcoinPhoneDTO() {
   }
 
-  public CelcoinPhoneDTO(Integer stateCode, Integer countryCode, Integer number) {
+  public CelcoinPhoneDTO(Integer stateCode, Integer countryCode, String number) {
     this.stateCode = stateCode;
     this.countryCode = countryCode;
     this.number = number;
@@ -30,11 +30,11 @@ public class CelcoinPhoneDTO {
     this.countryCode = countryCode;
   }
 
-  public Integer getNumber() {
+  public String getNumber() {
     return this.number;
   }
 
-  public void setNumber(Integer number) {
+  public void setNumber(String number) {
     this.number = number;
   }
 }
