@@ -81,4 +81,7 @@ public class RechargeDTO {
     this.success = success;
   }
 
+  public void setId(Object id2) {
+  }
+
 }

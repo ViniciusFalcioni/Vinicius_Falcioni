@@ -5,10 +5,16 @@ import br.com.fag.domain.entities.PhoneBO;
 
 public class PhoneMapper {
   public static PhoneDTO toDTO(PhoneBO param) {
-    return null;
+    PhoneDTO phone = new PhoneDTO();
+
+    phone.setCountryCode(param.getCountryCode());
+    phone.setStateCode(param.getStateCode());
+    phone.setNumber(param.getNumber());
+
+    return phone;
   }
 
   public static PhoneBO toBO(PhoneDTO param) {
-    return null;
+    return new PhoneBO(param.getStateCode(), param.getCountryCode(), param.getNumber());
   }
 }
