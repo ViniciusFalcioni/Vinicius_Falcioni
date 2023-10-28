@@ -31,8 +31,9 @@ public class CreateRecharge {
         return new RechargeBO(UUID.fromString(rechargeDTO.getId()),
                 rechargeDTO.getValue(),
                 rechargeDTO.getDocument(),
+                rechargeDTO.getOperatorID(),
                 PhoneMapper.toBO(rechargeDTO.getPhone()),
                 rechargeDTO.getReceipt(),
-                rechargeDTO.getTransactionId(), rechargeDTO.isSuccess());
+                rechargeDTO.getTransactionId(), rechargeDTO.getSuccess());
     }
 }

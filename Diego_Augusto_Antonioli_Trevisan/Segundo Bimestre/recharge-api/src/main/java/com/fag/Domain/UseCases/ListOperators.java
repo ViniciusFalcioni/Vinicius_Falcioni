@@ -14,6 +14,6 @@ public class ListOperators {
 
     public List<OperatorDTO> execute(){
 
-        return vendor.listOperators(null, null)
+        return vendor.listOperators(null, null);
     }
 }

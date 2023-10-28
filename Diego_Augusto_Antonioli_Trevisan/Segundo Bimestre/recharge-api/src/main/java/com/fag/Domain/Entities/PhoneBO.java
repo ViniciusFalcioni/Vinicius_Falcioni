@@ -11,25 +11,15 @@ public class PhoneBO {
         this.number = number;
     }
 
-    /**
-     * @return int return the stateCode
-     */
     public int getStateCode() {
         return stateCode;
     }
 
-    /**
-     * @return int return the countryCode
-     */
     public int getCountryCode() {
         return countryCode;
     }
 
-    /**
-     * @return String return the number
-     */
     public String getNumber() {
         return number;
     }
-
 }

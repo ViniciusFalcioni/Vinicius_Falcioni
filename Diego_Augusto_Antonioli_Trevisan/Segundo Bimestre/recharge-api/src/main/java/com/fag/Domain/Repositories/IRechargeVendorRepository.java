@@ -3,7 +3,7 @@ package com.fag.Domain.Repositories;
 import java.util.List;
 
 import com.fag.Domain.DTO.OperatorDTO;
-import com.fag.Domain.DTO.PhoneDTO;
+import com.fag.Domain.DTO.ProductDTO;
 import com.fag.Domain.DTO.RechargeDTO;
 
 public interface IRechargeVendorRepository {
@@ -11,5 +11,5 @@ public interface IRechargeVendorRepository {
 
     List<OperatorDTO> listOperators(Integer stateCode, Integer category);
 
-    List<PhoneDTO> listProducts(Integer stateCode, Integer operatorId);
+    List<ProductDTO> listProducts(Integer stateCode, Integer operatorId);
 }
