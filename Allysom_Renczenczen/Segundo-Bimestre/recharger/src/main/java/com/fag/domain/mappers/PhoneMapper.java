@@ -10,13 +10,16 @@ public class PhoneMapper {
        phoneBO.setCountryCode(vendorDTO.getCountryCode());
        phoneBO.setNumber(vendorDTO.getNumber());
        phoneBO.setStateCode(vendorDTO.getStateCode());
+
        return phoneBO;
     }
     public static PhoneDTO toDTO(PhoneBO vendorBO){
         PhoneDTO phoneDTO = new PhoneDTO();
+
         phoneDTO.setCountryCode(vendorBO.getCountryCode());
         phoneDTO.setNumber(vendorBO.getNumber());
         phoneDTO.setStateCode(vendorBO.getStateCode());
+
         return phoneDTO;
     }
 }

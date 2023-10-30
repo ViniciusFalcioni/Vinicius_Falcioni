@@ -1,7 +1,11 @@
 package com.fag.domain.dto;
 
+import java.util.UUID;
+
 public class RechargeDTO {
-    String id;
+
+
+    UUID id;
     Double value;
     String document;
     Integer operatorId;
@@ -10,16 +14,16 @@ public class RechargeDTO {
     Long transactionId;
     boolean sucess;
 
-    public String getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
     public Double getValue() {
-        return value;
+        return this.value;
     }
 
     public void setValue(Double value) {
@@ -51,7 +55,7 @@ public class RechargeDTO {
     }
 
     public String getReceipt() {
-        return receipt;
+        return this.receipt;
     }
 
     public void setReceipt(String receipt) {
