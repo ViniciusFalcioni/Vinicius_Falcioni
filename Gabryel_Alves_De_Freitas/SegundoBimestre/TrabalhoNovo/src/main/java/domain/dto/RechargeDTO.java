@@ -1,14 +1,14 @@
 package domain.dto;
 
 public class RechargeDTO {
-    String id;
-    Double value;
-    String document;
-    Integer operatorId; 
-    PhoneDTO phone;
-    String receipt;
-    Long transactionId;
-    Boolean success;
+    private String id;
+    private Double value;
+    private String document;
+    private Integer operatorId; 
+    private PhoneDTO phone;
+    private String receipt;
+    private Long transactionId;
+    private Boolean success;
     
     public String getId() {
         return id;

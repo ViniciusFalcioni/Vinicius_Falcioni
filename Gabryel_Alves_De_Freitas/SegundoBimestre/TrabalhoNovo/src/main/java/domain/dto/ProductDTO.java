@@ -1,9 +1,9 @@
 package domain.dto;
 
 public class ProductDTO {
-    String name;
-    Double value; 
-    Integer due;
+    private String name;
+    private Double value; 
+    private Integer due;
     
     public String getName() {
         return name;

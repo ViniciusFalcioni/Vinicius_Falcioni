@@ -3,13 +3,13 @@ package domain.entities;
 import java.util.UUID;
 
 public class RechargeBO {
-    UUID id;
-    Double value;
-    String document;
-    Integer providerId;
-    PhoneBO phone;
-    String receipt;
-    Long transactionId;
+    private UUID id;
+    private Double value;
+    private String document;
+    private Integer providerId;
+    private PhoneBO phone;
+    private String receipt;
+    private Long transactionId;
     
     public RechargeBO(UUID id, Double value, String document, Integer providerId, PhoneBO phone, String receipt,
             Long transactionId, Boolean success) {

@@ -1,9 +1,9 @@
 package domain.dto;
 
 public class PhoneDTO {
-    Integer stateCode;
-    Integer countryCode;
-    String number;
+    private Integer stateCode;
+    private Integer countryCode;
+    private String number;
 
     public Integer getStateCode() {
         return stateCode;

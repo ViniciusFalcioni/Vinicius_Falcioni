@@ -1,9 +1,9 @@
 package domain.entities;
 
 public class PhoneBO {
-    Integer stateCode;
-    Integer countryCode;
-    String number;
+    private Integer stateCode;
+    private Integer countryCode;
+    private String number;
     
     public PhoneBO(Integer stateCode, Integer countryCode, String number) {
         this.stateCode = stateCode;

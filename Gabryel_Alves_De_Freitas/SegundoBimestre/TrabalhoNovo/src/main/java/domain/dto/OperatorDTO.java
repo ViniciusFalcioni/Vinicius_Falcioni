@@ -1,11 +1,11 @@
 package domain.dto;
 
 public class OperatorDTO {
-    Integer category;
-    String name;
-    Integer providerId;
-    Double maxValue;
-    Double minValue;
+    private Integer category;
+    private String name;
+    private Integer providerId;
+    private Double maxValue;
+    private Double minValue;
     
     public Integer getCategory() {
         return category;
