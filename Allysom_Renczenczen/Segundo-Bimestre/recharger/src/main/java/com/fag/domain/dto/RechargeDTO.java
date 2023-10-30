@@ -12,7 +12,7 @@ public class RechargeDTO {
     PhoneDTO phone;
     String receipt;
     Long transactionId;
-    boolean sucess;
+    boolean success;
 
     public UUID getId() {
         return id;
@@ -70,11 +70,11 @@ public class RechargeDTO {
         this.transactionId = transactionId;
     }
 
-    public boolean isSucess() {
-        return sucess;
+    public boolean isSuccess() {
+        return success;
     }
 
-    public void setSucess(boolean sucess) {
-        this.sucess = sucess;
+    public void setSuccess(boolean success) {
+        this.success = success;
     }
 }

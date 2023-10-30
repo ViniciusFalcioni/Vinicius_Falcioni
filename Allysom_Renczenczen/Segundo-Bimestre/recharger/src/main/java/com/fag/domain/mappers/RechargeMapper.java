@@ -21,7 +21,7 @@ public class RechargeMapper {
         rechargeBO.setPhone(phoneBO);
         rechargeBO.setReceipt(vendorDTO.getReceipt());
         rechargeBO.setTransactionId(vendorDTO.getTransactionId());
-        rechargeBO.setSucess(vendorDTO.isSucess());
+        rechargeBO.setSucess(vendorDTO.isSuccess());
 
         return rechargeBO;
     }
@@ -37,8 +37,7 @@ public class RechargeMapper {
         rechargeDTO.setValue(vendorBO.getValue());
         rechargeDTO.setTransactionId(vendorBO.getTransactionId());
         rechargeDTO.setReceipt(vendorBO.getReceipt());
-        rechargeDTO.setSucess(vendorBO.isSucess());
-        
+        rechargeDTO.setSuccess(rechargeDTO.isSuccess());
         return rechargeDTO;
     }
 
