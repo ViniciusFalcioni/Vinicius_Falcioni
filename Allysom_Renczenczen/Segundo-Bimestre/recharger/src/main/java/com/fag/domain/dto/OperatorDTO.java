@@ -2,6 +2,7 @@ package com.fag.domain.dto;
 
 public class OperatorDTO {
     Integer category;
+    Integer RechargeType;
     String name;
     Integer providerId;
     Double maxValue;
@@ -35,5 +36,13 @@ public class OperatorDTO {
     }
     public void setMinValue(Double minValue) {
         this.minValue = minValue;
+    }
+
+    public Integer getRechargeType() {
+        return RechargeType;
+    }
+
+    public void setRechargeType(Integer rechargeType) {
+        RechargeType = rechargeType;
     }
 }
