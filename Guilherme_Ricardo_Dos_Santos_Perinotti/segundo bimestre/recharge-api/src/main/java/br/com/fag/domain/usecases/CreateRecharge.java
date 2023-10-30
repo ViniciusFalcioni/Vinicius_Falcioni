@@ -11,8 +11,29 @@ public class CreateRecharge {
   public CreateRecharge() {
   }
 
+  public CreateRecharge(IRechargeVendorRepository vendor, IRechargeDatabaseRepository databaseRepository) {
+    this.vendor = vendor;
+    this.databaseRepository = databaseRepository;
+  }
+
   public RechargeDTO execute(RechargeDTO recharge) {
     return null;
+  }
+
+  public IRechargeVendorRepository getVendor() {
+    return this.vendor;
+  }
+
+  public void setVendor(IRechargeVendorRepository vendor) {
+    this.vendor = vendor;
+  }
+
+  public IRechargeDatabaseRepository getDatabaseRepository() {
+    return this.databaseRepository;
+  }
+
+  public void setDatabaseRepository(IRechargeDatabaseRepository databaseRepository) {
+    this.databaseRepository = databaseRepository;
   }
 
 }

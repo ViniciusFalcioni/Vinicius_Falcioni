@@ -11,7 +11,19 @@ public class ListOperators {
   public ListOperators() {
   }
 
-  public List<OperatorDTO> execute(){
+  public ListOperators(IRechargeVendorRepository vendor) {
+    this.vendor = vendor;
+  }
+
+  public List<OperatorDTO> execute(Integer stateCode, Integer category){
     return null;
+  }
+
+  public IRechargeVendorRepository getVendor() {
+    return this.vendor;
+  }
+
+  public void setVendor(IRechargeVendorRepository vendor) {
+    this.vendor = vendor;
   }
 }
