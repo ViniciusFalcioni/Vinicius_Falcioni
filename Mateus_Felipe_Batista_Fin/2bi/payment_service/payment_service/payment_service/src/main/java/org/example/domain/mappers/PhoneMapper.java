@@ -15,12 +15,6 @@ public class PhoneMapper {
         return phoneDTO;
     }
     static PhoneBO toBO(PhoneDTO phoneDTO){
-        PhoneBO phoneBO = new PhoneBO();
-
-        phoneBO.setCountryCode(phoneDTO.getCountryCode());
-        phoneBO.setNumber(phoneDTO.getNumber());
-        phoneBO.setStateCode(phoneDTO.getStateCode());
-
-        return phoneBO;
+        return new PhoneBO(phoneDTO.getCountryCode(),phoneDTO.getStateCode(),phoneDTO.getNumber());
     }
 }

@@ -1,8 +1,8 @@
 package org.example.domain.entities;
 
 public class PhoneBO {
-    private Integer stateCode;
     private Integer countryCode;
+    private Integer stateCode;
     private String number;
 
     public Integer getStateCode() {
@@ -18,5 +18,9 @@ public class PhoneBO {
         return number;
     }
 
-
+    public PhoneBO(Integer countryCode, Integer stateCode, String number) {
+        this.countryCode = countryCode;
+        this.stateCode = stateCode;
+        this.number = number;
+    }
 }
