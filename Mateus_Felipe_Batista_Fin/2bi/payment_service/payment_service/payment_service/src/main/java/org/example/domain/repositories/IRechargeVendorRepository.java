@@ -6,7 +6,7 @@ import org.example.domain.dto.RechargeDTO;
 
 import java.util.List;
 
-public interface IRechargeVendor {
+public interface IRechargeVendorRepository {
     RechargeDTO create(RechargeDTO recharge);
 
     List<OperatorDTO> listOperators(Integer stateCode, Integer category);
