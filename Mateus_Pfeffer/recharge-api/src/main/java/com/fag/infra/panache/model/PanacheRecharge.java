@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 @Entity
@@ -16,7 +17,7 @@ public class PanacheRecharge extends PanacheEntityBase {
     private UUID id;
 
     @Column(name = "AMOUNT")
-    private Double value;
+    private BigDecimal value;
 
     @Column(name = "DOCUMENT")
     private String document;
@@ -30,7 +31,7 @@ public class PanacheRecharge extends PanacheEntityBase {
     @Column(name = "RECEIPT", length = 4000)
     private String receipt;
 
-    @Column(name = "TRANSACTION_ID")
+    @Column(name = "TRANSACTIONID")
     private Long transactionId;
 
     @Column(name = "SUCCESS")
@@ -44,11 +45,11 @@ public class PanacheRecharge extends PanacheEntityBase {
         this.id = id;
     }
 
-    public Double getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
-    public void setValue(Double value) {
+    public void setValue(BigDecimal value) {
         this.value = value;
     }
 
@@ -99,4 +100,5 @@ public class PanacheRecharge extends PanacheEntityBase {
     public void setSuccess(boolean success) {
         this.success = success;
     }
+
 }

@@ -1,19 +1,20 @@
 package com.fag.domain.entities;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 public class RechargeBO {
 
     private UUID id;
-    private Double value;
+    private BigDecimal value;
     private String document;
     private Integer providerId;
     private PhoneBO phone;
     private String receipt;
     private Long transactionId;
-    boolean success;
+    private boolean success;
 
-    public RechargeBO(UUID id, Double value, String document, Integer providerId, PhoneBO phone, String receipt, Long transactionId, boolean success) {
+    public RechargeBO(UUID id, BigDecimal value, String document, Integer providerId, PhoneBO phone, String receipt, Long transactionId, boolean success) {
         this.id = id;
         this.value = value;
         this.document = document;
@@ -28,7 +29,7 @@ public class RechargeBO {
         return id;
     }
 
-    public Double getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
