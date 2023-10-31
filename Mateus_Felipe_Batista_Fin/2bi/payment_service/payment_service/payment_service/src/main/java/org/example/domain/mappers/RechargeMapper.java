@@ -22,18 +22,7 @@ public class RechargeMapper {
         return rechargeDTO;
     }
     static RechargeBO toBO(RechargeDTO rechargeDTO){
-        RechargeBO rechargeBO = new RechargeBO();
         PhoneBO phone = PhoneMapper.toBO(rechargeDTO.getPhone());
-
-        rechargeBO.setDocument(rechargeDTO.getDocument());
-        rechargeBO.setId(rechargeDTO.getId());
-        rechargeBO.setReceipt(rechargeDTO.getReceipt());
-        rechargeBO.setSuccess(rechargeDTO.isSuccess());
-        rechargeBO.setProviderId(rechargeDTO.getOperatorId());
-        rechargeBO.setTransactionId(rechargeDTO.getTransactionId());
-        rechargeBO.setValue(rechargeDTO.getValue());
-        rechargeBO.setPhone(phone);
-
-        return rechargeBO;
+        return new RechargeBO(rechargeDTO.getId(), rechargeDTO.getValue(), rechargeDTO.getDocument(), rechargeDTO.getOperatorId(), phone, rechargeDTO.getReceipt(), rechargeDTO.getTransactionId(), rechargeDTO.isSuccess());
     }
 }

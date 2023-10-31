@@ -49,4 +49,14 @@ public class RechargeBO {
         return success;
     }
 
+    public RechargeBO(String id, Double value, String document, Integer providerId, PhoneBO phone, String receipt, Long transactionId, boolean success) {
+        this.id = id;
+        this.value = value;
+        this.document = document;
+        this.providerId = providerId;
+        this.phone = phone;
+        this.receipt = receipt;
+        this.transactionId = transactionId;
+        this.success = success;
+    }
 }
