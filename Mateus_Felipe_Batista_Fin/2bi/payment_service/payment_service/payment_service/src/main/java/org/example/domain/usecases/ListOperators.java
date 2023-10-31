@@ -1,18 +1,18 @@
 package org.example.domain.usecases;
 
 import org.example.domain.dto.OperatorDTO;
-import org.example.domain.repositories.IRechargeVendor;
+import org.example.domain.repositories.IRechargeVendorRepository;
 
 import java.util.List;
 
 public class ListOperators {
-    private IRechargeVendor vendor;
+    private IRechargeVendorRepository vendor;
 
     public List<OperatorDTO> execute() {
         return null;
     }
 
-    public ListOperators(IRechargeVendor vendor) {
+    public ListOperators(IRechargeVendorRepository vendor) {
         this.vendor = vendor;
     }
 }
