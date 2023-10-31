@@ -1,4 +1,6 @@
 package com.fag.infra.celcoin.dto;
 
-public record CelcoinRechargeValueDTO(Double value) {
+import java.math.BigDecimal;
+
+public record CelcoinRechargeValueDTO(BigDecimal value) {
 }
