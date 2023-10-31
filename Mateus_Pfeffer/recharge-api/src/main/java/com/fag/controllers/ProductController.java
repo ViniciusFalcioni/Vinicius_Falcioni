@@ -26,4 +26,10 @@ public class ProductController {
         return Response.ok().build();
     }
 
+    @PUT
+    @Path("/{id}")
+    public Response updateProduct(@PathParam("id") String productId) {
+        return Response.ok().build();
+    }
+
 }

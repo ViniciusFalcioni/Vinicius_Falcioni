@@ -26,4 +26,10 @@ public class OperatorController {
         return Response.ok().build();
     }
 
+    @PUT
+    @Path("/{id}")
+    public Response updateOperator(@PathParam("id") String operatorId) {
+        return Response.ok().build();
+    }
+
 }
