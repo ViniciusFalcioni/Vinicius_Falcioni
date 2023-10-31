@@ -1,6 +1,8 @@
 package com.fag.controllers;
 
 import com.fag.domain.dto.RechargeDTO;
+import com.fag.service.RechargeService;
+import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
@@ -10,6 +12,9 @@ import jakarta.ws.rs.core.Response;
 @Consumes(MediaType.APPLICATION_JSON)
 public class RechargeController {
 
+    @Inject
+    RechargeService rechargeService;
+
     @GET
     public Response listRecharges() {
         return Response.ok().build();
@@ -17,13 +22,13 @@ public class RechargeController {
 
     @GET
     @Path("/{id}")
-    public Response getRecharge(@PathParam("id") String id) {
+    public Response getRecharge(@PathParam("id") String rechargeId) {
         return Response.ok().build();
     }
 
     @POST
     public Response createRecharge(RechargeDTO dto) {
-        return Response.ok(dto).build();
+        return rechargeService.handleRecharge(dto);
     }
 
     @PUT
