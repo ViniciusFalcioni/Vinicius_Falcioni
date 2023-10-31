@@ -1,6 +1,7 @@
 package com.fag.domain.usecases;
 
 import com.fag.domain.dto.RechargeDTO;
+import com.fag.domain.entities.RechargeBO;
 import com.fag.domain.mappers.RechargeMapper;
 import com.fag.domain.repositories.IRechargeDataBaseRepository;
 import com.fag.domain.repositories.IRechargeVendor;
@@ -16,7 +17,9 @@ public class CreateRecharge {
     }
 
     public RechargeDTO execute(RechargeDTO dto) {
-        return RechargeMapper.toDTO(dbRepository.persist(RechargeMapper.toBO(dto)));
+        RechargeBO entity = dbRepository.persist(RechargeMapper.toBO(dto));
+
+        return RechargeMapper.toDTO(entity);
     }
 
 }
