@@ -1,4 +1,4 @@
-package com.fag.infra.panache;
+package com.fag.infra.panache.repository;
 
 import com.fag.domain.entities.RechargeBO;
 import com.fag.domain.repositories.IRechargeDataBaseRepository;

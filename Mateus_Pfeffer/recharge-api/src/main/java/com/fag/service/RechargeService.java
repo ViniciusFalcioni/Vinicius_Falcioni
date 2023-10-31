@@ -7,7 +7,7 @@ import com.fag.domain.usecases.CreateRecharge;
 import com.fag.domain.usecases.ListOperators;
 import com.fag.domain.usecases.ListProducts;
 import com.fag.infra.celcoin.repository.RechargeCelcoin;
-import com.fag.infra.panache.PanacheDataBaseRepository;
+import com.fag.infra.panache.repository.PanacheDataBaseRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
