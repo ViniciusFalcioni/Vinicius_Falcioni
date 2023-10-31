@@ -1,13 +1,9 @@
 package com.fag.domain.usecases;
 
-import com.fag.domain.dto.OperatorDTO;
-import com.fag.domain.dto.ProductDTO;
 import com.fag.domain.dto.RechargeDTO;
-import com.fag.domain.entities.RechargeBO;
+import com.fag.domain.mappers.RechargeMapper;
 import com.fag.domain.repositories.IRechargeDataBaseRepository;
 import com.fag.domain.repositories.IRechargeVendor;
-
-import java.util.List;
 
 public class CreateRecharge {
 
@@ -20,7 +16,7 @@ public class CreateRecharge {
     }
 
     public RechargeDTO execute(RechargeDTO dto) {
-        return null;
+        return RechargeMapper.toDTO(dbRepository.persist(RechargeMapper.toBO(dto)));
     }
 
 }
