@@ -14,9 +14,4 @@ use App\Http\Controllers\CalculadoraController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Route::post('/', [CalculadoraController::class, 'index']);
 Route::match(['get', 'post'], '/', [CalculadoraController::class, 'index']);
