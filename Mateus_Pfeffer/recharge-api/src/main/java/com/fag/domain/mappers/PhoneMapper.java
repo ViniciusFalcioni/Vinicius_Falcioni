@@ -13,7 +13,7 @@ public class PhoneMapper {
     }
 
     public static PhoneDTO toDTO(PhoneBO entity) {
-        return new PhoneDTO(entity.getStateCode(), entity.getCountryCode(), entity.getNumber());
+        return new PhoneDTO(entity.stateCode(), entity.countryCode(), entity.number());
     }
 
 }

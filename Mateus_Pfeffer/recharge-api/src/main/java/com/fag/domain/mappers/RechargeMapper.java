@@ -22,9 +22,9 @@ public class RechargeMapper {
     }
 
     public static RechargeDTO toDTO(RechargeBO entity) {
-        PhoneDTO phone = PhoneMapper.toDTO(entity.getPhone());
+        PhoneDTO phone = PhoneMapper.toDTO(entity.phone());
 
-        return new RechargeDTO(entity.getId().toString(), entity.getValue(), entity.getDocument(), entity.getProviderId(), phone, entity.getReceipt(), entity.getTransactionId(), entity.isSuccess());
+        return new RechargeDTO(entity.id().toString(), entity.value(), entity.document(), entity.providerId(), phone, entity.receipt(), entity.transactionId(), entity.success());
     }
 
 }

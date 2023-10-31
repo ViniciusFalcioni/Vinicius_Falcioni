@@ -25,18 +25,18 @@ public class PanacheRechargeMapper {
 
     public static PanacheRecharge toEntity(RechargeBO bo) {
         PanacheRecharge entity = new PanacheRecharge();
-        String phone = bo.getPhone().getCountryCode().toString()
-                .concat(bo.getPhone().getStateCode().toString())
-                .concat(bo.getPhone().getNumber());
+        String phone = bo.phone().countryCode().toString()
+                .concat(bo.phone().stateCode().toString())
+                .concat(bo.phone().number());
 
-        entity.setId(bo.getId());
-        entity.setValue(bo.getValue());
-        entity.setDocument(bo.getDocument());;
-        entity.setOperatorId(bo.getProviderId());
+        entity.setId(bo.id());
+        entity.setValue(bo.value());
+        entity.setDocument(bo.document());;
+        entity.setOperatorId(bo.providerId());
         entity.setPhoneNumber(phone);
-        entity.setTransactionId(bo.getTransactionId());
-        entity.setReceipt(bo.getReceipt());
-        entity.setSuccess(bo.isSuccess());
+        entity.setTransactionId(bo.transactionId());
+        entity.setReceipt(bo.receipt());
+        entity.setSuccess(bo.success());
 
         return entity;
     }
