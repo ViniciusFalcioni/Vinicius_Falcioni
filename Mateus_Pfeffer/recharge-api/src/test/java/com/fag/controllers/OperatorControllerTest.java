@@ -16,4 +16,12 @@ class OperatorControllerTest {
     void getOperator() {
     }
 
+    @Test
+    void createOperator() {
+    }
+
+    @Test
+    void updateOperator() {
+    }
+
 }

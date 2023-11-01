@@ -16,4 +16,12 @@ class ProductControllerTest {
     void getProduct() {
     }
 
+    @Test
+    void createProduct() {
+    }
+
+    @Test
+    void updateProduct() {
+    }
+
 }
