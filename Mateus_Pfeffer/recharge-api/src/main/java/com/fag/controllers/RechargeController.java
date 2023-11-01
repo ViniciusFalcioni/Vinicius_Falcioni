@@ -1,7 +1,7 @@
 package com.fag.controllers;
 
 import com.fag.domain.dto.RechargeDTO;
-import com.fag.infra.celcoin.repository.RechargeCelcoin;
+import com.fag.service.RechargeService;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -13,7 +13,7 @@ import jakarta.ws.rs.core.Response;
 public class RechargeController {
 
     @Inject
-    RechargeCelcoin rechargeCelcoin;
+    RechargeService rechargeService;
 
     @GET
     public Response listRecharges() {
@@ -28,7 +28,7 @@ public class RechargeController {
 
     @POST
     public Response createRecharge(RechargeDTO dto) {
-        return Response.ok(rechargeCelcoin.create(dto)).build();
+        return Response.ok(rechargeService.handleRecharge(dto)).build();
     }
 
     @PUT

@@ -3,8 +3,8 @@ package com.fag.infra.celcoin.repository;
 import com.fag.infra.celcoin.dto.*;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.Form;
 import jakarta.ws.rs.core.MediaType;
-import jakarta.ws.rs.core.MultivaluedHashMap;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
 @ApplicationScoped
@@ -14,7 +14,7 @@ public interface IRestClientCelcoin {
     @POST
     @Path("/v5/token")
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    CelcoinTokenDTO generateToken(MultivaluedHashMap<String, String> form);
+    CelcoinTokenDTO generateToken(Form form);
 
     @GET
     @Path("/v5/transactions/topups/providers")
