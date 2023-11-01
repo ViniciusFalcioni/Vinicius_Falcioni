@@ -5,13 +5,15 @@ import org.example.domain.dto.RechargeDTO;
 import org.example.domain.entities.PhoneBO;
 import org.example.domain.entities.RechargeBO;
 
+import java.util.UUID;
+
 public class RechargeMapper {
     static RechargeDTO toDTO(RechargeBO rechargeBO){
         RechargeDTO rechargeDTO = new RechargeDTO();
         PhoneDTO phone = PhoneMapper.toDTO(rechargeBO.getPhone());
 
         rechargeDTO.setDocument(rechargeBO.getDocument());
-        rechargeDTO.setId(rechargeBO.getId());
+        rechargeDTO.setId(rechargeBO.getId().toString());
         rechargeDTO.setReceipt(rechargeBO.getReceipt());
         rechargeDTO.setSuccess(rechargeBO.isSuccess());
         rechargeDTO.setOperatorId(rechargeBO.getProviderId());
@@ -23,6 +25,6 @@ public class RechargeMapper {
     }
     static RechargeBO toBO(RechargeDTO rechargeDTO){
         PhoneBO phone = PhoneMapper.toBO(rechargeDTO.getPhone());
-        return new RechargeBO(rechargeDTO.getId(), rechargeDTO.getValue(), rechargeDTO.getDocument(), rechargeDTO.getOperatorId(), phone, rechargeDTO.getReceipt(), rechargeDTO.getTransactionId(), rechargeDTO.isSuccess());
+        return new RechargeBO (UUID.fromString(rechargeDTO.getId()) , rechargeDTO.getValue(), rechargeDTO.getDocument(), rechargeDTO.getOperatorId(), phone, rechargeDTO.getReceipt(), rechargeDTO.getTransactionId(), rechargeDTO.isSuccess());
     }
 }

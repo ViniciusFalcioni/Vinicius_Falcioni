@@ -1,8 +1,10 @@
 package org.example.domain.dto;
 
+import java.math.BigDecimal;
+
 public class RechargeDTO {
     private String id;
-    private Double value;
+    private BigDecimal value;
     private String document;
     private Integer operatorId;
     private PhoneDTO phone;
@@ -18,11 +20,11 @@ public class RechargeDTO {
         this.id = id;
     }
 
-    public Double getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
-    public void setValue(Double value) {
+    public void setValue(BigDecimal value) {
         this.value = value;
     }
 

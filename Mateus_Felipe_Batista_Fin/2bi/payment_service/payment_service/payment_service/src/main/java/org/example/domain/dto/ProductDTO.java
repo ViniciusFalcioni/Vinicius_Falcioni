@@ -1,9 +1,29 @@
 package org.example.domain.dto;
 
+import java.math.BigDecimal;
+
 public class ProductDTO {
     private String name;
-    private Double value;
-    private Integer due;
+    private BigDecimal value;
+    private Integer dueProduct;
+    private Integer code;
+    private Integer cost;
+
+    public Integer getCode() {
+        return code;
+    }
+
+    public void setCode(Integer code) {
+        this.code = code;
+    }
+
+    public Integer getCost() {
+        return cost;
+    }
+
+    public void setCost(Integer cost) {
+        this.cost = cost;
+    }
 
     public String getName() {
         return name;
@@ -13,19 +33,19 @@ public class ProductDTO {
         this.name = name;
     }
 
-    public Double getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
-    public void setValue(Double value) {
+    public void setValue(BigDecimal value) {
         this.value = value;
     }
 
-    public Integer getDue() {
-        return due;
+    public Integer getDueProduct() {
+        return dueProduct;
     }
 
-    public void setDue(Integer due) {
-        this.due = due;
+    public void setDueProduct(Integer dueProduct) {
+        this.dueProduct = dueProduct;
     }
 }

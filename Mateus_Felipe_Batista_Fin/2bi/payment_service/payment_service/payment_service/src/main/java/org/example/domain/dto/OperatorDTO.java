@@ -6,6 +6,15 @@ public class OperatorDTO {
     private Integer providerId;
     private Double maxValue;
     private Double minValue;
+    private Integer rechargeType;
+
+    public Integer getRechargeType() {
+        return rechargeType;
+    }
+
+    public void setRechargeType(Integer rechargeType) {
+        this.rechargeType = rechargeType;
+    }
 
     public Integer getCategory() {
         return category;

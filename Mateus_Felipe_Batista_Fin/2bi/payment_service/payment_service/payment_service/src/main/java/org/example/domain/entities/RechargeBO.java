@@ -1,8 +1,11 @@
 package org.example.domain.entities;
 
+import java.math.BigDecimal;
+import java.util.UUID;
+
 public class RechargeBO {
-    private String id;
-    private Double value;
+    private UUID id;
+    private BigDecimal value;
     private String document;
     private Integer providerId;
     private PhoneBO phone;
@@ -10,12 +13,12 @@ public class RechargeBO {
     private Long transactionId;
     private boolean success;
 
-    public String getId() {
+    public UUID getId() {
         return id;
     }
 
 
-    public Double getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
@@ -49,7 +52,7 @@ public class RechargeBO {
         return success;
     }
 
-    public RechargeBO(String id, Double value, String document, Integer providerId, PhoneBO phone, String receipt, Long transactionId, boolean success) {
+    public RechargeBO(UUID id, BigDecimal value, String document, Integer providerId, PhoneBO phone, String receipt, Long transactionId, boolean success) {
         this.id = id;
         this.value = value;
         this.document = document;

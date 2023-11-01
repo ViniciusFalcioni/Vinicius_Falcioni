@@ -2,7 +2,7 @@ package org.example.infra.celcoin.dto;
 
 public class CelcoinRechargeDTO {
     private String cpfCnpj;
-    private Integer providerld;
+    private Integer providerId;
     private CelcoinPhoneDTO phone;
     private CelcoinRechargeValueDTO topupData;
 
@@ -14,12 +14,12 @@ public class CelcoinRechargeDTO {
         this.cpfCnpj = cpfCnpj;
     }
 
-    public Integer getProviderld() {
-        return providerld;
+    public Integer getProviderId() {
+        return providerId;
     }
 
-    public void setProviderld(Integer providerld) {
-        this.providerld = providerld;
+    public void setProviderId(Integer providerId) {
+        this.providerId = providerId;
     }
 
     public CelcoinPhoneDTO getPhone() {
