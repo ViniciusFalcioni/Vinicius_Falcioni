@@ -12,5 +12,5 @@ public class CelcoinProductsDTO {
     public void setProducts(List<CelcoinProductDTO> products) {
         this.products = products;
     }
-    
+
 }

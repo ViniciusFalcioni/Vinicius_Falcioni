@@ -10,5 +10,5 @@ public class CelcoinRechargeValueDTO {
     public void setValue(Double value) {
         this.value = value;
     }
-    
+
 }

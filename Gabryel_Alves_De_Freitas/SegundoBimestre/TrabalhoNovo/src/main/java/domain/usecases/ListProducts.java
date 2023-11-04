@@ -12,7 +12,7 @@ public class ListProducts {
         this.vendor = vendor;
     }
 
-    public List<ProductDTO> execute(Integer operatorId) {
-        return vendor.listProducts(null, operatorId);
+    public List<ProductDTO> execute(Integer operatorId, Integer stateCode) {
+        return vendor.listProducts(stateCode, operatorId);
     }
 }

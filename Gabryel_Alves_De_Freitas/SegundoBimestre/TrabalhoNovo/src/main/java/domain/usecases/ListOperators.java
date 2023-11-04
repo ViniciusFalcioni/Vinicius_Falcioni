@@ -12,7 +12,7 @@ public class ListOperators {
         this.vendor = vendor;
     }
 
-    public List<OperatorDTO> execute() {
-        return vendor.listOperators(null, null);
+    public List<OperatorDTO> execute(Integer stateCode, Integer category) {
+        return vendor.listOperators(stateCode, category);
     }
 }
