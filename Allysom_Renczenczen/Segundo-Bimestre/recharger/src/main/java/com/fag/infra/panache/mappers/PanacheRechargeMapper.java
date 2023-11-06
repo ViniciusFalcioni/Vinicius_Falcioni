@@ -2,19 +2,19 @@ package com.fag.infra.panache.mappers;
 
 import com.fag.domain.entities.PhoneBO;
 import com.fag.domain.entities.RechargeBO;
+import com.fag.infra.panache.models.PanacheRecharge;
 
 public class PanacheRechargeMapper {
     public static RechargeBO toDomain(PanacheRecharge entity) {
-        Integer country = Integer.valueOf(entity.getPhoneNumber().subString(0,2));
+        Integer country = Integer.valueOf(entity.getPhoneNumber().substring(0,2));
         Integer stateCode = Integer.valueOf(entity.getPhoneNumber().substring(2,4));
-        String number = entity.getPhoneNumber().substrig(4, entity.getPhoneNumber().length());
+        String number = entity.getPhoneNumber().substring(4, entity.getPhoneNumber().length());
 
-        return new RechargeBO(
-                entity.getId(),
+        return new RechargeBO(entity.getId(),
                 entity.getValue(),
                 entity.getDocument(),
                 entity.getOperatorId(),
-                new PhoneBO(country, stateCode, number),
+                new PhoneBO(country,stateCode, number),
                 entity.getReceipt(),
                 entity.getTransactionId(),
                 entity.isSuccess());
@@ -32,7 +32,7 @@ public class PanacheRechargeMapper {
         entity.setPhoneNumber(phone);
         entity.setTransactionId(bo.getTransactionId());
         entity.setReceipt(bo.getReceipt());
-        entity.setSucces(bo.isSucess());
+        entity.setSuccess(bo.isSucess());
 
         return entity;
     }
