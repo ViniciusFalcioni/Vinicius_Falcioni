@@ -17,7 +17,7 @@ public class RechargeController {
 
     @Produces(MediaType.APPLICATION_JSON)
     public Response listOperators(@HeaderParam("stateCode") Integer stateCode,
-                                  @HeaderParam("catogry") Integer category) {
+                                  @HeaderParam("category") Integer category) {
         return service.listOperators(stateCode, category);
     }
 

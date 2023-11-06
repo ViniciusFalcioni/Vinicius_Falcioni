@@ -1,44 +1,36 @@
 package com.fag.domain.mappers;
 
-import com.fag.domain.dto.PhoneDTO;
+
 import com.fag.domain.dto.RechargeDTO;
-import com.fag.domain.entities.PhoneBO;
 import com.fag.domain.entities.RechargeBO;
-
-import java.util.UUID;
-
 public class RechargeMapper {
-    public static RechargeBO toBO(RechargeDTO vendorDTO){
-        RechargeBO rechargeBO = new RechargeBO();
 
-        rechargeBO.setId(vendorDTO.getId());
-        rechargeBO.setValue(vendorDTO.getValue());
-        rechargeBO.setDocument(vendorDTO.getDocument());
-        rechargeBO.setProviderId(vendorDTO.getOperatorId());
 
-        PhoneBO phoneBO = PhoneMapper.toBO(vendorDTO.getPhone());
-
-        rechargeBO.setPhone(phoneBO);
-        rechargeBO.setReceipt(vendorDTO.getReceipt());
-        rechargeBO.setTransactionId(vendorDTO.getTransactionId());
-        rechargeBO.setSucess(vendorDTO.isSuccess());
-
-        return rechargeBO;
+    public static RechargeBO toBO(RechargeDTO dto) {
+        return new RechargeBO(
+                dto.getId() != null ? (dto.getId()) : null,
+                dto.getValue(),
+                dto.getDocument(),
+                dto.getOperatorId(),
+                PhoneMapper.toBO(dto.getPhone()),
+                dto.getReceipt(),
+                dto.getTransactionId(),
+                dto.isSuccess());
     }
 
-    public static RechargeDTO toDTO(RechargeBO vendorBO){
-        RechargeDTO rechargeDTO = new RechargeDTO();
+    public static RechargeDTO toDTO(RechargeBO bo) {
+        RechargeDTO dto = new RechargeDTO();
 
-        PhoneDTO phoneDTO = PhoneMapper.toDTO(vendorBO.getPhone());
-        rechargeDTO.setDocument(vendorBO.getDocument());
-        rechargeDTO.setId(vendorBO.getId());
-        rechargeDTO.setOperatorId(vendorBO.getProviderId());
-        rechargeDTO.setPhone(phoneDTO);
-        rechargeDTO.setValue(vendorBO.getValue());
-        rechargeDTO.setTransactionId(vendorBO.getTransactionId());
-        rechargeDTO.setReceipt(vendorBO.getReceipt());
-        rechargeDTO.setSuccess(rechargeDTO.isSuccess());
-        return rechargeDTO;
+        dto.setId(bo.getId() != null ? bo.getId() : null);
+        dto.setValue(bo.getValue());
+        dto.setDocument(bo.getDocument());
+        dto.setOperatorId(bo.getProviderId());
+        dto.setPhone(PhoneMapper.toDTO(bo.getPhone()));
+        dto.setReceipt(bo.getReceipt());
+        dto.setTransactionId(bo.getTransactionId());
+        dto.setSuccess(bo.isSuccess());
+
+        return dto;
     }
 
 }

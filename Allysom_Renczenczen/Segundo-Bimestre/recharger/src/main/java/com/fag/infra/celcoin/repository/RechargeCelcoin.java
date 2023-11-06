@@ -26,9 +26,7 @@ public class RechargeCelcoin implements IRechargeVendor {
     public RechargeDTO create(RechargeDTO recharge){
         try {
             CelcoinRechargeDTO rechargeDTO = CelcoinRechargeMapper.toVendorDTO(recharge);
-
             CelcoinRechargeResponseDTO response = restClient.handleRecharge(getToken(), rechargeDTO);
-
             recharge.setReceipt(response.getReceipt().getReceiptData());
             recharge.setTransactionId(response.getTransactionId());
             recharge.setSuccess(response.getErrorCode().equals("000"));
@@ -43,7 +41,7 @@ public class RechargeCelcoin implements IRechargeVendor {
         try{
             CelcoinOperatorsDTO operators= restClient.listOperators(getToken(), stateCode, category);
             return  operators.getProviders().stream()
-                    .map(operator -> CelcoinOperatorMapper.toAppDTO(operator))
+                    .map(CelcoinOperatorMapper::toAppDTO)
                     .collect(Collectors.toList());
         }catch (Exception e){
             throw new RuntimeException("Erro de comunicação com o provedor de serviço de recarga!", e);
@@ -54,7 +52,7 @@ public class RechargeCelcoin implements IRechargeVendor {
         try{
             CelcoinProductsDTO products = restClient.listProducts(getToken(), stateCode, operatorId);
             return products.getProducts().stream()
-                    .map(product -> CelcoinProductMapper.toAppDTO(product))
+                    .map(CelcoinProductMapper::toAppDTO)
                     .collect(Collectors.toList());
         }catch (Exception e) {
             throw new RuntimeException("Erro de comunicação com o provedor de serviço de recarga!", e);
@@ -64,13 +62,8 @@ public class RechargeCelcoin implements IRechargeVendor {
     private String getToken() {
         Form form = new Form();
 
-        form.param("client_id", "hgadsjfasg4.teste.celcoinapi.v5");
-        form.param("grant_type", "client_crenditals");
-        form.param("client_secret", "23498214123u4123uiy412ui3y412iou34y12oiu34y1");
-
         CelcoinTokenDTO tokenDTO = restClient.generateToken(form);
-        String token = "Bearer " + tokenDTO.getAccessToken();
-        return token;
+        return "Bearer " + tokenDTO.getAccessToken();
     }
 
 }

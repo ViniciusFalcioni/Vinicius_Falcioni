@@ -32,7 +32,7 @@ public class PanacheRechargeMapper {
         entity.setPhoneNumber(phone);
         entity.setTransactionId(bo.getTransactionId());
         entity.setReceipt(bo.getReceipt());
-        entity.setSuccess(bo.isSucess());
+        entity.setSuccess(bo.isSuccess());
 
         return entity;
     }
