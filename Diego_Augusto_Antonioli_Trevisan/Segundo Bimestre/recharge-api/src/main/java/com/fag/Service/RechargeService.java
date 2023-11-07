@@ -25,8 +25,7 @@ public class RechargeService {
     PanacheDataBaseRepository panacheRepo;
 
     public Response listOperators(Integer stateCode, Integer category) {
-
-        ListOperators listOperators = listOperators(celcoin);
+        ListOperators listOperators = new ListOperators(celcoin);
 
         List<OperatorDTO> operators = listOperators.execute(stateCode, category);
 
@@ -42,7 +41,7 @@ public class RechargeService {
     }
 
     @Transactional
-    public Response handleRecharge(RechargeDTO dto){
+    public Response handleRecharge(RechargeDTO dto) {
         CreateRecharge createRecharge = new CreateRecharge(celcoin, panacheRepo);
 
         RechargeDTO createdRecharge = createRecharge.execute(dto);

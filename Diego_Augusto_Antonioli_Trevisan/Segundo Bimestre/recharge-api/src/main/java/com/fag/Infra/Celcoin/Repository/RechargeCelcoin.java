@@ -70,7 +70,8 @@ public class RechargeCelcoin implements IRechargeVendorRepository {
                     .map(product -> CelcoinProductMapper.toAppDTO(product))
                     .collect(Collectors.toList());
         } catch (Exception e) {
-            // TODO: handle exception
+            //Log
+            throw new RuntimeException("Erro comunicação provedor serviço recarga.", e);
         }
     }
 
