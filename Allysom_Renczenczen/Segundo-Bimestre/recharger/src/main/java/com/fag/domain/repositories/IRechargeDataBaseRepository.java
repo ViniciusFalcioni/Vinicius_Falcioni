@@ -12,4 +12,7 @@ public interface IRechargeDataBaseRepository {
     CreateRecharge creacteReacharge(IRechargeVendor vendor, IRechargeDataBaseRepository dataBaseRepository);
     ListOperators listOperators(IRechargeVendor vendor);
     ListProducts listProducts(IRechargeVendor vendor);
+
+
+
 }

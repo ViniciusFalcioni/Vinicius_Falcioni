@@ -5,7 +5,7 @@ import java.util.UUID;
 public class RechargeDTO {
 
 
-    UUID id;
+    String id;
     Double value;
     String document;
     Integer operatorId;
@@ -14,14 +14,12 @@ public class RechargeDTO {
     Long transactionId;
     boolean success;
 
-    public UUID getId() {
+    public String getId() {
         return id;
     }
-
-    public void setId(UUID id) {
+    public void setId(String id) {
         this.id = id;
     }
-
     public Double getValue() {
         return this.value;
     }

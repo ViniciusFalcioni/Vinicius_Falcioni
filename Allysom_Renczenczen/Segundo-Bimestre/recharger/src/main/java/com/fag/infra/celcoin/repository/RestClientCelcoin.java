@@ -13,7 +13,7 @@ public interface RestClientCelcoin {
     @POST
     @Path("/v5/token")
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    CelcoinTokenDTO generateToken(Form form);
+     CelcoinTokenDTO generateToken(Form form);
 
     @GET
     @Path("/v5/transactions/topups/providers")

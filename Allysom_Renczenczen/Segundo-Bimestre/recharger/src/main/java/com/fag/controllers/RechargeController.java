@@ -8,15 +8,16 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
+
 @Path("/v1/recharge")
 public class RechargeController {
     @Inject
     RechargeService service;
 
+    @GET
     @Path("/operators")
-
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listOperators(@HeaderParam("stateCode") Integer stateCode,
+        public Response listOperators(@HeaderParam("stateCode") Integer stateCode,
                                   @HeaderParam("category") Integer category) {
         return service.listOperators(stateCode, category);
     }

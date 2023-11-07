@@ -3,12 +3,14 @@ package com.fag.domain.mappers;
 
 import com.fag.domain.dto.RechargeDTO;
 import com.fag.domain.entities.RechargeBO;
-public class RechargeMapper {
 
+import java.util.UUID;
+
+public class RechargeMapper {
 
     public static RechargeBO toBO(RechargeDTO dto) {
         return new RechargeBO(
-                dto.getId() != null ? (dto.getId()) : null,
+                dto.getId() != null ? UUID.fromString(dto.getId()) : null,
                 dto.getValue(),
                 dto.getDocument(),
                 dto.getOperatorId(),
@@ -21,7 +23,7 @@ public class RechargeMapper {
     public static RechargeDTO toDTO(RechargeBO bo) {
         RechargeDTO dto = new RechargeDTO();
 
-        dto.setId(bo.getId() != null ? bo.getId() : null);
+        dto.setId(bo.getId() != null ? bo.getId().toString() : null);
         dto.setValue(bo.getValue());
         dto.setDocument(bo.getDocument());
         dto.setOperatorId(bo.getProviderId());
@@ -34,4 +36,3 @@ public class RechargeMapper {
     }
 
 }
-
