@@ -1,21 +1,21 @@
 package com.fag.Domain.Entities;
 
 public class PhoneBO {
-    private int stateCode;
-    private int countryCode;
+    private Integer stateCode;
+    private Integer countryCode;
     private String number;
 
-    public PhoneBO(int stateCode, int countryCode, String number) {
+    public PhoneBO(Integer stateCode, Integer countryCode, String number) {
         this.stateCode = stateCode;
         this.countryCode = countryCode;
         this.number = number;
     }
 
-    public int getStateCode() {
+    public Integer getStateCode() {
         return stateCode;
     }
 
-    public int getCountryCode() {
+    public Integer getCountryCode() {
         return countryCode;
     }
 

@@ -4,8 +4,6 @@ import com.fag.Domain.Entities.PhoneBO;
 import com.fag.Domain.Entities.RechargeBO;
 import com.fag.Infra.Panache.Model.PanacheRecharge;
 
-import io.quarkus.hibernate.orm.panache.Panache;
-
 public class PanacheRechargeMapper {
 
     public static RechargeBO toDomain(PanacheRecharge entity) {

@@ -1,7 +1,6 @@
 package com.fag.Infra.Celcoin.Repository;
 
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import org.eclipse.microprofile.rest.client.inject.RestClient;
@@ -16,6 +15,7 @@ import com.fag.Infra.Celcoin.DTO.CelcoinRechargeDTO;
 import com.fag.Infra.Celcoin.DTO.CelcoinRechargeResponseDTO;
 import com.fag.Infra.Celcoin.DTO.CelcoinTokenDTO;
 import com.fag.Infra.Celcoin.Mappers.CelcoinOperatorMapper;
+import com.fag.Infra.Celcoin.Mappers.CelcoinProductMapper;
 import com.fag.Infra.Celcoin.Mappers.CelcoinRechargeMapper;
 
 import jakarta.enterprise.context.ApplicationScoped;
