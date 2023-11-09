@@ -16,7 +16,6 @@ import com.fag.Infra.Celcoin.DTO.CelcoinRechargeDTO;
 import com.fag.Infra.Celcoin.DTO.CelcoinRechargeResponseDTO;
 import com.fag.Infra.Celcoin.DTO.CelcoinTokenDTO;
 import com.fag.Infra.Celcoin.Mappers.CelcoinOperatorMapper;
-import com.fag.Infra.Celcoin.Mappers.CelcoinProductMapper;
 import com.fag.Infra.Celcoin.Mappers.CelcoinRechargeMapper;
 
 import jakarta.enterprise.context.ApplicationScoped;

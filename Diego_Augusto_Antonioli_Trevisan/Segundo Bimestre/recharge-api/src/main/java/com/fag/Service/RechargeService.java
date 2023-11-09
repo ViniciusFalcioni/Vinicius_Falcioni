@@ -7,6 +7,7 @@ import com.fag.Domain.DTO.ProductDTO;
 import com.fag.Domain.DTO.RechargeDTO;
 import com.fag.Domain.UseCases.CreateRecharge;
 import com.fag.Domain.UseCases.ListOperators;
+import com.fag.Domain.UseCases.ListProducts;
 import com.fag.Infra.Celcoin.Repository.RechargeCelcoin;
 import com.fag.Infra.Panache.Repository.PanacheDataBaseRepository;
 
@@ -33,7 +34,7 @@ public class RechargeService {
     }
 
     public Response listProducts(Integer stateCode, Integer operatorId) {
-        ListOperatorServices listServices = new ListOperatorServices(celcoin);
+        ListProducts listServices = new ListProducts(celcoin);
 
         List<ProductDTO> operators = listServices.execute(stateCode, operatorId);
 

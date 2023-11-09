@@ -12,8 +12,8 @@ public class ListOperators {
         this.vendor = vendor;
     }
 
-    public List<OperatorDTO> execute(){
+    public List<OperatorDTO> execute(Integer stateCode, Integer category){
 
-        return vendor.listOperators(null, null);
+        return vendor.listOperators(stateCode, category);
     }
 }

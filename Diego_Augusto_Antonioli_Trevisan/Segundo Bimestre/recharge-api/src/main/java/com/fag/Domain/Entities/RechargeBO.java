@@ -12,6 +12,16 @@ public class RechargeBO {
     private Long transactionId;
     private Boolean success;
 
+    public void handleSuccess(String receipt, Long transactionId) {
+        this.receipt = receipt;
+        this.transactionId = transactionId;
+        this.success = true;
+    }
+
+    public void handleError() {
+        this.success = false;
+    }
+
     public RechargeBO(UUID id, Double value, String document, int operatorId, PhoneBO phone, String receipt,
             Long transactionId, Boolean success) {
         this.id = id;

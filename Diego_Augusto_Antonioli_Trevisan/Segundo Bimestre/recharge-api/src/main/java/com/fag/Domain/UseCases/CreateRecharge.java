@@ -1,10 +1,9 @@
 package com.fag.Domain.UseCases;
 
-import java.util.UUID;
 
 import com.fag.Domain.DTO.RechargeDTO;
 import com.fag.Domain.Entities.RechargeBO;
-import com.fag.Domain.Mappers.PhoneMapper;
+import com.fag.Domain.Mappers.RechargeMapper;
 import com.fag.Domain.Repositories.IRechargeDataBaseRepository;
 import com.fag.Domain.Repositories.IRechargeVendorRepository;
 
@@ -17,23 +16,19 @@ public class CreateRecharge {
         this.dbRepository = dbRepository;
     }
 
-    public RechargeDTO execute(RechargeDTO rechargeDTO) {
-        RechargeDTO resultDTO = vendor.create(rechargeDTO);
+    public RechargeDTO execute(RechargeDTO dto) {
+        RechargeBO bo = RechargeMapper.toBO(dto);
 
-        RechargeBO rechargeBO = mapToRechargeBO(resultDTO);
-        dbRepository.persist(rechargeBO);
+        RechargeDTO rechargeResponse = vendor.create(dto);
 
-        return resultDTO;
-    }
+        if (rechargeResponse.getSuccess()) {
+            bo.handleSuccess(rechargeResponse.getReceipt(), rechargeResponse.getTransactionId());
+        } else {
+            bo.handleError();
+        }
 
-    private RechargeBO mapToRechargeBO(RechargeDTO rechargeDTO) {
+        dbRepository.persist(bo);
 
-        return new RechargeBO(UUID.fromString(rechargeDTO.getId()),
-                rechargeDTO.getValue(),
-                rechargeDTO.getDocument(),
-                rechargeDTO.getOperatorID(),
-                PhoneMapper.toBO(rechargeDTO.getPhone()),
-                rechargeDTO.getReceipt(),
-                rechargeDTO.getTransactionId(), rechargeDTO.getSuccess());
+        return rechargeResponse;
     }
 }
