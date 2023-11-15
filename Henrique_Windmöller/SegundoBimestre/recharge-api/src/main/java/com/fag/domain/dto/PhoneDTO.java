@@ -1,9 +1,9 @@
 package main.java.com.fag.domain.dto;
 
 public class PhoneDTO {
-    Integer stateCode;
-    Integer CountryCode;
-    String number;
+    private Integer stateCode;
+    private Integer CountryCode;
+    private String number;
 
     public Integer getStateCode() {
         return stateCode;

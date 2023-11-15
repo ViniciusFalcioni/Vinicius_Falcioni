@@ -1,14 +1,14 @@
 package main.java.com.fag.domain.dto;
 
 public class RechargeDTO {
-   String id;
-   Double value;
-   String document;
-   Integer providerld;
-   PhoneDTO phone;
-   String receipt;
-   Long transactionld;
-   boolean success;
+   private String id; 
+   private Double value;
+   private String document;
+   private Integer providerld;
+   private PhoneDTO phone;
+   private String receipt;
+   private Long transactionld;
+   private boolean success;
 
 public String getId() {
     return id;

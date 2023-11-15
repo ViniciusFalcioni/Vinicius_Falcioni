@@ -1,9 +1,10 @@
 package main.java.com.fag.domain.entities;
 
 public class PhoneBO {
-    Integer stateCode;
-    Integer contryCode;
-    String number;
+    private Integer stateCode;
+    private Integer contryCode;
+    private String number;
+    
     public Integer getStateCode() {
         return stateCode;
     }

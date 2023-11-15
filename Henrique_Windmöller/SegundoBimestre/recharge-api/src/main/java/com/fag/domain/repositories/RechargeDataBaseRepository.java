@@ -8,8 +8,6 @@ import domain.entities.ProductBO;
 import java.util.List;
 
 public interface IRechargeDataBaseRepository {
-    PhoneBO persist(PhoneBO bo);
-    List<OperatorDTO> listOperators(Integer stateCode, Integer category);
-    List<ProductDTO> listProducts(Integer stateCode, Integer operatorId);
+    RechargeBO persist(RechargeBO bo);
 }
 

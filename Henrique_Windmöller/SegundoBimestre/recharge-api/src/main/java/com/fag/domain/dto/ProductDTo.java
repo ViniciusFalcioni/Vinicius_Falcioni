@@ -1,9 +1,9 @@
 package main.java.com.fag.domain.dto;
 
 public class ProductDTo {
-    String name;
-    Double value;
-    Integer due;
+    private String name;
+    private Double value;
+    private Integer due;
     
     public String getName() {
         return name;
