@@ -16,37 +16,23 @@ public class RechargeController {
     RechargeService rechargeService;
 
     @GET
-    public Response listRecharges() {
-        return Response.ok().build();
+    @Path("/operators")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response listOperators(@HeaderParam("stateCode") Integer stateCode, @HeaderParam("category") Integer category) {
+        return rechargeService.listOperators(stateCode, category);
     }
 
     @GET
-    @Path("/{id}")
-    public Response getRecharge(@PathParam("id") String rechargeId) {
-        return Response.ok().build();
+    @Path("/products")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response listProducts(@HeaderParam("stateCode") Integer stateCode, @HeaderParam("operatorId") Integer operatorId) {
+        return rechargeService.listProducts(stateCode, operatorId);
     }
 
     @POST
-    public Response createRecharge(RechargeDTO dto) {
-        return Response.ok(rechargeService.handleRecharge(dto)).build();
-    }
-
-    @PUT
-    @Path("/{id}")
-    public Response updateRecharge(@PathParam("id") String rechargeId, RechargeDTO dto) {
-        return Response.ok().build();
-    }
-
-    @POST
-    @Path("/{id}/approve")
-    public Response approveRecharge(@PathParam("id") String rechargeId) {
-        return Response.ok().build();
-    }
-
-    @POST
-    @Path("/{id}/refuse")
-    public Response refuseRecharge(@PathParam("id") String rechargeId) {
-        return Response.ok().build();
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response handleRecharge(RechargeDTO dto) {
+        return rechargeService.handleRecharge(dto);
     }
 
 }
