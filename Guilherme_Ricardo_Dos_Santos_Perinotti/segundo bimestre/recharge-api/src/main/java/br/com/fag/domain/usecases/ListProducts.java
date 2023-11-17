@@ -15,8 +15,8 @@ public class ListProducts {
     this.vendor = vendor;
   }
 
-  public List<ProductDTO> execute(Integer operatorId) {
-    return null;
+  public List<ProductDTO> execute(Integer operatorId, Integer stateCode) {
+    return vendor.listProducts(stateCode, operatorId);
   }
 
   public IRechargeVendorRepository getVendor() {

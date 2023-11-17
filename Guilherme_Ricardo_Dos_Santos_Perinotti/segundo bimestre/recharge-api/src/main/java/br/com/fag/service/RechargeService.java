@@ -35,7 +35,7 @@ public class RechargeService {
   public Response listProducts(Integer stateCode, Integer operatorId) {
     ListProducts listProducts = new ListProducts(celcoin);
 
-    List<ProductDTO> products = listProducts.execute(operatorId);
+    List<ProductDTO> products = listProducts.execute(operatorId, stateCode);
 
     return Response.ok(products).build();
   }

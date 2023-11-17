@@ -1,8 +1,15 @@
 package br.com.fag.infra.celcoin.dto;
 
+import jakarta.json.bind.annotation.JsonbProperty;
+
 public class CelcoinTokenDTO {
+  @JsonbProperty("access_token")
   private String accessToken;
+
+  @JsonbProperty("expires_in")
   private Integer expiresIn;
+
+  @JsonbProperty("token_type")
   private String tokenType;
 
   public CelcoinTokenDTO() {

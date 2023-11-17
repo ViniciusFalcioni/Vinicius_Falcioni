@@ -27,6 +27,16 @@ public class RechargeBO {
     this.isSuccess = isSuccess;
   }
 
+  public void handleSuccess(String receipt, Long transactionId) {
+    this.receipt = receipt;
+    this.transactionId = transactionId;
+    this.isSuccess = true;
+  }
+
+  public void handleError() {
+    this.isSuccess = false;
+  }
+
   public UUID getId() {
     return this.id;
   }
