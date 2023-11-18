@@ -4,15 +4,17 @@ import br.com.fag.domain.dto.ProductDTO;
 import br.com.fag.infra.celcoin.dto.CelcoinProductDTO;
 
 public class CelcoinProductMapper {
-  public static ProductDTO toAppDTO(CelcoinProductDTO vendorDTO){
-    ProductDTO appDTO = new ProductDTO();
 
-    appDTO.setCode(vendorDTO.getCode());
-    appDTO.setCost(vendorDTO.getCost());
-    appDTO.setName(vendorDTO.getProductName());
-    appDTO.setValue(vendorDTO.getMinValue());
-    appDTO.setDue(vendorDTO.getDueProduct());
+    public static ProductDTO toAppDTO(CelcoinProductDTO vendorDTO) {
+        ProductDTO appDTO = new ProductDTO();
 
-    return appDTO;
-  }
+        appDTO.setCode(vendorDTO.getCode());
+        appDTO.setCost(vendorDTO.getCost());
+        appDTO.setName(vendorDTO.getProductName());
+        appDTO.setValue(vendorDTO.getMinValue());
+        appDTO.setDueProduct(vendorDTO.getDueProduct());
+
+        return appDTO;
+    }
+
 }

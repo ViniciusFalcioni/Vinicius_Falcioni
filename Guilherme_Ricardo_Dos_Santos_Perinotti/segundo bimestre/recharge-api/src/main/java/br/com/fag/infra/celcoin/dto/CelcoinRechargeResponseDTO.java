@@ -1,110 +1,105 @@
 package br.com.fag.infra.celcoin.dto;
 
 public class CelcoinRechargeResponseDTO {
-  private Integer nsuNameProvider;
-  private Integer authentication;
-  private CelcoinRechargeReceiptDTO receipt;
-  private String settleDate;
-  private String createDate;
-  private Long transactionId;
-  private String urlreceipt;
-  private String errorCode;
-  private String message;
-  private Integer status;
 
-  public CelcoinRechargeResponseDTO() {
-  }
+    private Integer nsuNameProvider;
 
-  public CelcoinRechargeResponseDTO(Integer nsuNameProvider, Integer authentication, CelcoinRechargeReceiptDTO receipt, String settleDate, String createDate, Long transactionId, String urlreceipt, String errorCode, String message, Integer status) {
-    this.nsuNameProvider = nsuNameProvider;
-    this.authentication = authentication;
-    this.receipt = receipt;
-    this.settleDate = settleDate;
-    this.createDate = createDate;
-    this.transactionId = transactionId;
-    this.urlreceipt = urlreceipt;
-    this.errorCode = errorCode;
-    this.message = message;
-    this.status = status;
-  }
+    private Integer authentication;
 
-  public Integer getNsuNameProvider() {
-    return this.nsuNameProvider;
-  }
+    private CelcoinRechargeReceiptDTO receipt;
 
-  public void setNsuNameProvider(Integer nsuNameProvider) {
-    this.nsuNameProvider = nsuNameProvider;
-  }
+    private String settleDate;
 
-  public Integer getAuthentication() {
-    return this.authentication;
-  }
+    private String createDate;
 
-  public void setAuthentication(Integer authentication) {
-    this.authentication = authentication;
-  }
+    private Long transactionId;
 
-  public CelcoinRechargeReceiptDTO getReceipt() {
-    return this.receipt;
-  }
+    private String urlreceipt;
 
-  public void setReceipt(CelcoinRechargeReceiptDTO receipt) {
-    this.receipt = receipt;
-  }
+    private String errorCode;
 
-  public String getSettleDate() {
-    return this.settleDate;
-  }
+    private String message;
 
-  public void setSettleDate(String settleDate) {
-    this.settleDate = settleDate;
-  }
+    private Integer status;
 
-  public String getCreateDate() {
-    return this.createDate;
-  }
+    public Integer getNsuNameProvider() {
+        return nsuNameProvider;
+    }
 
-  public void setCreateDate(String createDate) {
-    this.createDate = createDate;
-  }
+    public void setNsuNameProvider(Integer nsuNameProvider) {
+        this.nsuNameProvider = nsuNameProvider;
+    }
 
-  public Long getTransactionId() {
-    return this.transactionId;
-  }
+    public Integer getAuthentication() {
+        return authentication;
+    }
 
-  public void setTransactionId(Long transactionId) {
-    this.transactionId = transactionId;
-  }
+    public void setAuthentication(Integer authentication) {
+        this.authentication = authentication;
+    }
 
-  public String getUrlreceipt() {
-    return this.urlreceipt;
-  }
+    public CelcoinRechargeReceiptDTO getReceipt() {
+        return receipt;
+    }
 
-  public void setUrlreceipt(String urlreceipt) {
-    this.urlreceipt = urlreceipt;
-  }
+    public void setReceipt(CelcoinRechargeReceiptDTO receipt) {
+        this.receipt = receipt;
+    }
 
-  public String getErrorCode() {
-    return this.errorCode;
-  }
+    public String getSettleDate() {
+        return settleDate;
+    }
 
-  public void setErrorCode(String errorCode) {
-    this.errorCode = errorCode;
-  }
+    public void setSettleDate(String settleDate) {
+        this.settleDate = settleDate;
+    }
 
-  public String getMessage() {
-    return this.message;
-  }
+    public String getCreateDate() {
+        return createDate;
+    }
 
-  public void setMessage(String message) {
-    this.message = message;
-  }
+    public void setCreateDate(String createDate) {
+        this.createDate = createDate;
+    }
 
-  public Integer getStatus() {
-    return this.status;
-  }
+    public Long getTransactionId() {
+        return transactionId;
+    }
 
-  public void setStatus(Integer status) {
-    this.status = status;
-  }
+    public void setTransactionId(Long transactionId) {
+        this.transactionId = transactionId;
+    }
+
+    public String getUrlreceipt() {
+        return urlreceipt;
+    }
+
+    public void setUrlreceipt(String urlreceipt) {
+        this.urlreceipt = urlreceipt;
+    }
+
+    public String getErrorCode() {
+        return errorCode;
+    }
+
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
 }

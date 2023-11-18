@@ -1,4 +1,4 @@
-package br.com.fag.infra.celcoin.repository;
+package br.com.fag.infra.celcoin.recharge;
 
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
@@ -7,6 +7,7 @@ import br.com.fag.infra.celcoin.dto.CelcoinProductsDTO;
 import br.com.fag.infra.celcoin.dto.CelcoinRechargeDTO;
 import br.com.fag.infra.celcoin.dto.CelcoinRechargeResponseDTO;
 import br.com.fag.infra.celcoin.dto.CelcoinTokenDTO;
+
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;

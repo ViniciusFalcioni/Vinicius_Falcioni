@@ -12,95 +12,92 @@ import jakarta.persistence.Table;
 @Table(name = "AKT_RECHARGE")
 public class PanacheRecharge extends PanacheEntityBase {
 
-  @Id
-  private UUID id;
+    @Id
+    private UUID id;
 
-  @Column(name = "AMOUNT")
-  private Double value;
+    @Column(name = "AMOUNT")
+    private Double value;
 
-  @Column(name = "DOCUMENT")
-  private String document;
+    @Column(name = "DOCUMENT")
+    private String document;
 
-  @Column(name = "OPERATOR_ID")
-  private Integer operatorId;
+    @Column(name = "OPERATOR_ID")
+    private Integer operatorId;
 
-  @Column(name = "PHONE_NUMBER")
-  private String phoneNumber;
+    @Column(name = "PHONE_NUMBER")
+    private String phoneNumber;
 
-  @Column(name = "RECEIPT", length = 4000)
-  private String receipt;
+    @Column(name = "RECEIPT", length = 4000)
+    private String receipt;
 
-  @Column(name = "TRANSACTIONID")
-  private Long transactionId;
+    @Column(name = "TRANSACTIONID")
+    private Long transactionId;
 
-  @Column(name = "SUCCESS")
-  private Boolean success;
+    @Column(name = "SUCCESS")
+    private boolean success;
 
-  public UUID getId() {
-    return this.id;
-  }
+    public UUID getId() {
+        return id;
+    }
 
-  public void setId(UUID id) {
-    this.id = id;
-  }
+    public void setId(UUID id) {
+        this.id = id;
+    }
 
-  public Double getValue() {
-    return this.value;
-  }
+    public Double getValue() {
+        return value;
+    }
 
-  public void setValue(Double value) {
-    this.value = value;
-  }
+    public void setValue(Double value) {
+        this.value = value;
+    }
 
-  public String getDocument() {
-    return this.document;
-  }
+    public String getDocument() {
+        return document;
+    }
 
-  public void setDocument(String document) {
-    this.document = document;
-  }
+    public void setDocument(String document) {
+        this.document = document;
+    }
 
-  public Integer getOperatorId() {
-    return this.operatorId;
-  }
+    public Integer getOperatorId() {
+        return operatorId;
+    }
 
-  public void setOperatorId(Integer operatorId) {
-    this.operatorId = operatorId;
-  }
+    public void setOperatorId(Integer operatorId) {
+        this.operatorId = operatorId;
+    }
 
-  public String getPhoneNumber() {
-    return this.phoneNumber;
-  }
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
 
-  public void setPhoneNumber(String phoneNumber) {
-    this.phoneNumber = phoneNumber;
-  }
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 
-  public Long getTransactionId() {
-    return this.transactionId;
-  }
+    public String getReceipt() {
+        return receipt;
+    }
 
-  public void setTransactionId(Long transactionId) {
-    this.transactionId = transactionId;
-  }
+    public void setReceipt(String receipt) {
+        this.receipt = receipt;
+    }
 
-  public Boolean isSuccess() {
-    return this.success;
-  }
+    public Long getTransactionId() {
+        return transactionId;
+    }
 
-  public Boolean getSuccess() {
-    return this.success;
-  }
+    public void setTransactionId(Long transactionId) {
+        this.transactionId = transactionId;
+    }
 
-  public void setSuccess(Boolean success) {
-    this.success = success;
-  }
+    public boolean isSuccess() {
+        return success;
+    }
 
-  public String getReceipt() {
-    return this.receipt;
-  }
+    public void setSuccess(boolean success) {
+        this.success = success;
+    }
 
-  public void setReceipt(String receipt) {
-    this.receipt = receipt;
-  }
 }

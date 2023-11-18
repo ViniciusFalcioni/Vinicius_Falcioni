@@ -2,6 +2,7 @@ package br.com.fag.presentation.controllers;
 
 import br.com.fag.domain.dto.RechargeDTO;
 import br.com.fag.service.RechargeService;
+
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.HeaderParam;
@@ -20,15 +21,17 @@ public class RechargeController {
     @GET
     @Path("/operators")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listOperators(@HeaderParam("stateCode") Integer stateCode, @HeaderParam("category") Integer category ) {
+    public Response listOperators(@HeaderParam("stateCode") Integer stateCode,
+            @HeaderParam("category") Integer category) {
         return service.listOperators(stateCode, category);
     }
 
     @GET
     @Path("/products")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listProducts(@HeaderParam("stateCode") Integer stateCode, @HeaderParam("category") Integer category ) {
-        return service.listProducts(stateCode, category);
+    public Response listProducs(@HeaderParam("stateCode") Integer stateCode,
+            @HeaderParam("operatorId") Integer operatorId) {
+        return service.listProducs(stateCode, operatorId);
     }
 
     @POST
@@ -36,4 +39,5 @@ public class RechargeController {
     public Response handleRecharge(RechargeDTO dto) {
         return service.handleRecharge(dto);
     }
+
 }

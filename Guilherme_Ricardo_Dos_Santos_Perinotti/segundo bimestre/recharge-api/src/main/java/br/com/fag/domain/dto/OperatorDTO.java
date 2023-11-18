@@ -2,25 +2,30 @@ package br.com.fag.domain.dto;
 
 public class OperatorDTO {
   private Integer category;
+  private Integer rechargeType;
   private String name;
   private Integer providerId;
   private Double maxValue;
   private Double minValue;
-  private Integer rechargeType;
-
-  public OperatorDTO() {
-  }
 
   public Integer getCategory() {
-    return this.category;
+    return category;
   }
 
   public void setCategory(Integer category) {
     this.category = category;
   }
 
+  public Integer getRechargeType() {
+    return rechargeType;
+  }
+
+  public void setRechargeType(Integer rechargeType) {
+    this.rechargeType = rechargeType;
+  }
+
   public String getName() {
-    return this.name;
+    return name;
   }
 
   public void setName(String name) {
@@ -28,7 +33,7 @@ public class OperatorDTO {
   }
 
   public Integer getProviderId() {
-    return this.providerId;
+    return providerId;
   }
 
   public void setProviderId(Integer providerId) {
@@ -36,7 +41,7 @@ public class OperatorDTO {
   }
 
   public Double getMaxValue() {
-    return this.maxValue;
+    return maxValue;
   }
 
   public void setMaxValue(Double maxValue) {
@@ -44,18 +49,11 @@ public class OperatorDTO {
   }
 
   public Double getMinValue() {
-    return this.minValue;
+    return minValue;
   }
 
   public void setMinValue(Double minValue) {
     this.minValue = minValue;
   }
 
-  public Integer getRechargeType() {
-    return this.rechargeType;
-  }
-
-  public void setRechargeType(Integer rechargeType) {
-    this.rechargeType = rechargeType;
-  }
 }

@@ -1,21 +1,13 @@
 package br.com.fag.domain.dto;
 
 public class PhoneDTO {
+
   private Integer stateCode;
   private Integer countryCode;
   private String number;
 
-  public PhoneDTO() {
-  }
-
-  public PhoneDTO(Integer stateCode, Integer countryCode, String number) {
-    this.stateCode = stateCode;
-    this.countryCode = countryCode;
-    this.number = number;
-  }
-
   public Integer getStateCode() {
-    return this.stateCode;
+    return stateCode;
   }
 
   public void setStateCode(Integer stateCode) {
@@ -23,7 +15,7 @@ public class PhoneDTO {
   }
 
   public Integer getCountryCode() {
-    return this.countryCode;
+    return countryCode;
   }
 
   public void setCountryCode(Integer countryCode) {
@@ -31,10 +23,11 @@ public class PhoneDTO {
   }
 
   public String getNumber() {
-    return this.number;
+    return number;
   }
 
   public void setNumber(String number) {
     this.number = number;
   }
+
 }

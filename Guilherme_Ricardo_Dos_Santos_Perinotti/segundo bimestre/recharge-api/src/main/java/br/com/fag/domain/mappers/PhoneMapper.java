@@ -4,17 +4,19 @@ import br.com.fag.domain.dto.PhoneDTO;
 import br.com.fag.domain.entities.PhoneBO;
 
 public class PhoneMapper {
-  public static PhoneDTO toDTO(PhoneBO param) {
+
+  public static PhoneBO toBO(PhoneDTO dto) {
+    return new PhoneBO(dto.getStateCode(), dto.getCountryCode(), dto.getNumber());
+  }
+
+  public static PhoneDTO toDTO(PhoneBO bo) {
     PhoneDTO phone = new PhoneDTO();
 
-    phone.setCountryCode(param.getCountryCode());
-    phone.setStateCode(param.getStateCode());
-    phone.setNumber(param.getNumber());
+    phone.setCountryCode(bo.getCountryCode());
+    phone.setStateCode(bo.getStateCode());
+    phone.setNumber(bo.getNumber());
 
     return phone;
   }
 
-  public static PhoneBO toBO(PhoneDTO param) {
-    return new PhoneBO(param.getStateCode(), param.getCountryCode(), param.getNumber());
-  }
 }

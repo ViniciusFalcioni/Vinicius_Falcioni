@@ -3,46 +3,38 @@ package br.com.fag.infra.celcoin.dto;
 import jakarta.json.bind.annotation.JsonbProperty;
 
 public class CelcoinTokenDTO {
-  @JsonbProperty("access_token")
-  private String accessToken;
+    
+    @JsonbProperty("access_token")
+    private String accessToken;
 
-  @JsonbProperty("expires_in")
-  private Integer expiresIn;
+    @JsonbProperty("expires_in")
+    private Integer expiresIn;
 
-  @JsonbProperty("token_type")
-  private String tokenType;
+    @JsonbProperty("token_type")
+    private String tokenType;
 
-  public CelcoinTokenDTO() {
-  }
+    public String getAccessToken() {
+        return accessToken;
+    }
 
-  public CelcoinTokenDTO(String accessToken, Integer expiresIn, String tokenType) {
-    this.accessToken = accessToken;
-    this.expiresIn = expiresIn;
-    this.tokenType = tokenType;
-  }
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
+    }
 
-  public String getAccessToken() {
-    return this.accessToken;
-  }
+    public Integer getExpiresIn() {
+        return expiresIn;
+    }
 
-  public void setAccessToken(String accessToken) {
-    this.accessToken = accessToken;
-  }
+    public void setExpiresIn(Integer expiresIn) {
+        this.expiresIn = expiresIn;
+    }
 
-  public Integer getExpiresIn() {
-    return this.expiresIn;
-  }
+    public String getTokenType() {
+        return tokenType;
+    }
 
-  public void setExpiresIn(Integer expiresIn) {
-    this.expiresIn = expiresIn;
-  }
-
-  public String getTokenType() {
-    return this.tokenType;
-  }
-
-  public void setTokenType(String tokenType) {
-    this.tokenType = tokenType;
-  }
+    public void setTokenType(String tokenType) {
+        this.tokenType = tokenType;
+    }
 
 }

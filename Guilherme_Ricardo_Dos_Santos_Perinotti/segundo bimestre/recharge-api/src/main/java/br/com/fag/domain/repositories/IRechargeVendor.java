@@ -6,10 +6,12 @@ import br.com.fag.domain.dto.OperatorDTO;
 import br.com.fag.domain.dto.ProductDTO;
 import br.com.fag.domain.dto.RechargeDTO;
 
-public interface IRechargeVendorRepository {
+public interface IRechargeVendor {
+
   RechargeDTO create(RechargeDTO recharge);
 
-	List<OperatorDTO> listOperators(Integer stateCode, Integer category);
+  List<OperatorDTO> listOperators(Integer stateCode, Integer category);
 
-	List<ProductDTO> listProducts(Integer stateCode, Integer operatorId);
+  List<ProductDTO> listProducts(Integer stateCode, Integer operatorId);
+
 }

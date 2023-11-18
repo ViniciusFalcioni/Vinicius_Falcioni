@@ -1,60 +1,55 @@
 package br.com.fag.infra.celcoin.dto;
 
 public class CelcoinProductDTO {
-  private Integer code;
-  private Integer cost;
-  private Integer dueProduct;
-  private String productName;
-  private Double minValue;
 
-  public CelcoinProductDTO() {
-  }
+    private Integer code;
 
-  public CelcoinProductDTO(Integer code, Integer cost, Integer dueProduct, String productName, Double minValue) {
-    this.code = code;
-    this.cost = cost;
-    this.dueProduct = dueProduct;
-    this.productName = productName;
-    this.minValue = minValue;
-  }
+    private Integer cost;
 
-  public Integer getCode() {
-    return this.code;
-  }
+    private Integer dueProduct;
 
-  public void setCode(Integer code) {
-    this.code = code;
-  }
+    private String productName;
 
-  public Integer getCost() {
-    return this.cost;
-  }
+    private Double minValue;
 
-  public void setCost(Integer cost) {
-    this.cost = cost;
-  }
+    public Integer getCode() {
+        return code;
+    }
 
-  public Integer getDueProduct() {
-    return this.dueProduct;
-  }
+    public void setCode(Integer code) {
+        this.code = code;
+    }
 
-  public void setDueProduct(Integer dueProduct) {
-    this.dueProduct = dueProduct;
-  }
+    public Integer getCost() {
+        return cost;
+    }
 
-  public String getProductName() {
-    return this.productName;
-  }
+    public void setCost(Integer cost) {
+        this.cost = cost;
+    }
 
-  public void setProductName(String productName) {
-    this.productName = productName;
-  }
+    public String getProductName() {
+        return productName;
+    }
 
-  public Double getMinValue() {
-    return this.minValue;
-  }
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
 
-  public void setMinValue(Double minValue) {
-    this.minValue = minValue;
-  }
+    public Double getMinValue() {
+        return minValue;
+    }
+
+    public void setMinValue(Double value) {
+        this.minValue = value;
+    }
+
+    public Integer getDueProduct() {
+        return dueProduct;
+    }
+
+    public void setDueProduct(Integer dueProduct) {
+        this.dueProduct = dueProduct;
+    }
+
 }

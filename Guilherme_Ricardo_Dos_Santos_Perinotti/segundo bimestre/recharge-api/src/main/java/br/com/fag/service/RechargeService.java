@@ -6,10 +6,11 @@ import br.com.fag.domain.dto.OperatorDTO;
 import br.com.fag.domain.dto.ProductDTO;
 import br.com.fag.domain.dto.RechargeDTO;
 import br.com.fag.domain.usecases.CreateRecharge;
+import br.com.fag.domain.usecases.ListOperatorServices;
 import br.com.fag.domain.usecases.ListOperators;
-import br.com.fag.domain.usecases.ListProducts;
-import br.com.fag.infra.celcoin.repository.RechargeCelcoin;
-import br.com.fag.infra.panache.repository.PanacheDatabaseRepository;
+import br.com.fag.infra.celcoin.recharge.RechargeCelcoin;
+import br.com.fag.infra.panache.PanacheDataBaseRepository;
+
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
@@ -17,34 +18,36 @@ import jakarta.ws.rs.core.Response;
 
 @ApplicationScoped
 public class RechargeService {
-  
-  @Inject
-  RechargeCelcoin celcoin;
 
-  @Inject
-  PanacheDatabaseRepository panacheRepo;
+    @Inject
+    RechargeCelcoin celcoin;
 
-  public Response listOperators(Integer stateCode, Integer category) {
-    ListOperators listOperators = new ListOperators(celcoin);
+    @Inject
+    PanacheDataBaseRepository panacheRepo;
 
-    List<OperatorDTO> operators = listOperators.execute(stateCode, category);
+    public Response listOperators(Integer stateCode, Integer category) {
+        ListOperators listOperators = new ListOperators(celcoin);
 
-    return Response.ok(operators).build();
-  }
+        List<OperatorDTO> operators = listOperators.execute(stateCode, category);
 
-  public Response listProducts(Integer stateCode, Integer operatorId) {
-    ListProducts listProducts = new ListProducts(celcoin);
+        return Response.ok(operators).build();
+    }
 
-    List<ProductDTO> products = listProducts.execute(operatorId, stateCode);
+    public Response listProducs(Integer stateCode, Integer operatorId) {
+        ListOperatorServices listServices = new ListOperatorServices(celcoin);
 
-    return Response.ok(products).build();
-  }
+        List<ProductDTO> operators = listServices.execute(stateCode, operatorId);
 
-  @Transactional
-  public Response handleRecharge(RechargeDTO dto) {
-    CreateRecharge createRecharge = new CreateRecharge(celcoin, panacheRepo);
-    RechargeDTO createdRecharge = createRecharge.execute(dto);
+        return Response.ok(operators).build();
+    }
 
-    return Response.ok(createdRecharge).build();
-  }
+    @Transactional
+    public Response handleRecharge(RechargeDTO dto) {
+        CreateRecharge createRecharge = new CreateRecharge(celcoin, panacheRepo);
+
+        RechargeDTO createdRecharge = createRecharge.execute(dto);
+
+        return Response.ok(createdRecharge).build();
+    }
+
 }

@@ -1,6 +1,7 @@
 package br.com.fag.domain.dto;
 
 public class RechargeDTO {
+
   private String id;
   private Double value;
   private String document;
@@ -8,21 +9,10 @@ public class RechargeDTO {
   private PhoneDTO phone;
   private String receipt;
   private Long transactionId;
-  private Boolean success;
-
-  public RechargeDTO() {
-  }
-
-  public String getId() {
-    return this.id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
+  private boolean success;
 
   public Double getValue() {
-    return this.value;
+    return value;
   }
 
   public void setValue(Double value) {
@@ -30,7 +20,7 @@ public class RechargeDTO {
   }
 
   public String getDocument() {
-    return this.document;
+    return document;
   }
 
   public void setDocument(String document) {
@@ -38,15 +28,15 @@ public class RechargeDTO {
   }
 
   public Integer getOperatorId() {
-    return this.operatorId;
+    return operatorId;
   }
 
-  public void setOperatorId(Integer operatorId) {
-    this.operatorId = operatorId;
+  public void setOperatorId(Integer providerId) {
+    this.operatorId = providerId;
   }
 
   public PhoneDTO getPhone() {
-    return this.phone;
+    return phone;
   }
 
   public void setPhone(PhoneDTO phone) {
@@ -54,7 +44,7 @@ public class RechargeDTO {
   }
 
   public String getReceipt() {
-    return this.receipt;
+    return receipt;
   }
 
   public void setReceipt(String receipt) {
@@ -62,26 +52,27 @@ public class RechargeDTO {
   }
 
   public Long getTransactionId() {
-    return this.transactionId;
+    return transactionId;
   }
 
   public void setTransactionId(Long transactionId) {
     this.transactionId = transactionId;
   }
 
-  public Boolean isSuccess() {
-    return this.success;
+  public boolean isSuccess() {
+    return success;
   }
 
-  public Boolean getSuccess() {
-    return this.success;
-  }
-
-  public void setSuccess(Boolean success) {
+  public void setSuccess(boolean success) {
     this.success = success;
   }
 
-  public void setId(Object id2) {
+  public String getId() {
+    return id;
+  }
+
+  public void setId(String id) {
+    this.id = id;
   }
 
 }

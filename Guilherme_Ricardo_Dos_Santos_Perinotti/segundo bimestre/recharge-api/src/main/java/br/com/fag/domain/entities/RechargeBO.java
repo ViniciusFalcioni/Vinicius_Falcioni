@@ -3,6 +3,7 @@ package br.com.fag.domain.entities;
 import java.util.UUID;
 
 public class RechargeBO {
+
   private UUID id;
   private Double value;
   private String document;
@@ -10,99 +11,78 @@ public class RechargeBO {
   private PhoneBO phone;
   private String receipt;
   private Long transactionId;
-  private Boolean isSuccess;
+  private boolean success;
 
-  public RechargeBO() {
-  }
-
-  public RechargeBO(UUID id, Double value, String document, Integer providerId, PhoneBO phone, String receipt,
-      Long transactionId, Boolean isSuccess) {
-    this.id = id;
+  public RechargeBO(UUID id, Double value, String document, Integer providerId, PhoneBO phone,
+      String receipt, Long transactionId, boolean success) {
+    this.id = id != null ? id : UUID.randomUUID();
     this.value = value;
     this.document = document;
     this.providerId = providerId;
     this.phone = phone;
     this.receipt = receipt;
     this.transactionId = transactionId;
-    this.isSuccess = isSuccess;
+    this.success = success;
+
+    validate();
   }
 
   public void handleSuccess(String receipt, Long transactionId) {
     this.receipt = receipt;
     this.transactionId = transactionId;
-    this.isSuccess = true;
+    this.success = true;
   }
 
   public void handleError() {
-    this.isSuccess = false;
+    this.success = false;
   }
 
-  public UUID getId() {
-    return this.id;
-  }
+  private void validate() {
 
-  public void setId(UUID id) {
-    this.id = id;
+    if (this.value == null) {
+      throw new RuntimeException("Campo obrigatório - Value");
+    }
+
+    if (this.document == null || this.document.isEmpty()) {
+      throw new RuntimeException("Campo obrigatório - Document");
+    }
+
+    if (this.phone == null) {
+      throw new RuntimeException("Campo obrigatório - Phone");
+    }
+
   }
 
   public Double getValue() {
-    return this.value;
-  }
-
-  public void setValue(Double value) {
-    this.value = value;
+    return value;
   }
 
   public String getDocument() {
-    return this.document;
-  }
-
-  public void setDocument(String document) {
-    this.document = document;
+    return document;
   }
 
   public Integer getProviderId() {
-    return this.providerId;
-  }
-
-  public void setProviderId(Integer providerId) {
-    this.providerId = providerId;
+    return providerId;
   }
 
   public PhoneBO getPhone() {
-    return this.phone;
+    return phone;
   }
 
-  public void setPhone(PhoneBO phone) {
-    this.phone = phone;
+  public UUID getId() {
+    return id;
   }
 
   public String getReceipt() {
-    return this.receipt;
-  }
-
-  public void setReceipt(String receipt) {
-    this.receipt = receipt;
+    return receipt;
   }
 
   public Long getTransactionId() {
-    return this.transactionId;
+    return transactionId;
   }
 
-  public void setTransactionId(Long transactionId) {
-    this.transactionId = transactionId;
-  }
-
-  public Boolean isSuccess() {
-    return this.isSuccess;
-  }
-
-  public Boolean getIsSuccess() {
-    return this.isSuccess;
-  }
-
-  public void setIsSuccess(Boolean isSuccess) {
-    this.isSuccess = isSuccess;
+  public boolean isSuccess() {
+    return success;
   }
 
 }

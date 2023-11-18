@@ -1,25 +1,15 @@
 package br.com.fag.domain.dto;
 
 public class ProductDTO {
+
   private Integer code;
   private Integer cost;
+  private Integer dueProduct;
   private String name;
   private Double value;
-  private Integer due;
-
-  public ProductDTO() {
-  }
-
-  public ProductDTO(Integer code, Integer cost, String name, Double value, Integer due) {
-    this.code = code;
-    this.cost = cost;
-    this.name = name;
-    this.value = value;
-    this.due = due;
-  }
 
   public Integer getCode() {
-    return this.code;
+    return code;
   }
 
   public void setCode(Integer code) {
@@ -27,7 +17,7 @@ public class ProductDTO {
   }
 
   public Integer getCost() {
-    return this.cost;
+    return cost;
   }
 
   public void setCost(Integer cost) {
@@ -35,26 +25,27 @@ public class ProductDTO {
   }
 
   public String getName() {
-    return this.name;
+    return name;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setName(String productName) {
+    this.name = productName;
   }
 
   public Double getValue() {
-    return this.value;
+    return value;
   }
 
   public void setValue(Double value) {
     this.value = value;
   }
 
-  public Integer getDue() {
-    return this.due;
+  public Integer getDueProduct() {
+    return dueProduct;
   }
 
-  public void setDue(Integer due) {
-    this.due = due;
+  public void setDueProduct(Integer dueProduct) {
+    this.dueProduct = dueProduct;
   }
+
 }

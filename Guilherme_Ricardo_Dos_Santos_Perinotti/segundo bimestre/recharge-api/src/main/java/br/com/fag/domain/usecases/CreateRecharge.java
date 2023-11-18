@@ -3,19 +3,18 @@ package br.com.fag.domain.usecases;
 import br.com.fag.domain.dto.RechargeDTO;
 import br.com.fag.domain.entities.RechargeBO;
 import br.com.fag.domain.mappers.RechargeMapper;
-import br.com.fag.domain.repositories.IRechargeDatabaseRepository;
-import br.com.fag.domain.repositories.IRechargeVendorRepository;
+import br.com.fag.domain.repositories.IRechargeDataBaseRepository;
+import br.com.fag.domain.repositories.IRechargeVendor;
 
 public class CreateRecharge {
-  private IRechargeVendorRepository vendor;
-  private IRechargeDatabaseRepository databaseRepository;
 
-  public CreateRecharge() {
-  }
+  private IRechargeVendor vendor;
 
-  public CreateRecharge(IRechargeVendorRepository vendor, IRechargeDatabaseRepository databaseRepository) {
+  private IRechargeDataBaseRepository dbRepository;
+
+  public CreateRecharge(IRechargeVendor vendor, IRechargeDataBaseRepository dbRepository) {
     this.vendor = vendor;
-    this.databaseRepository = databaseRepository;
+    this.dbRepository = dbRepository;
   }
 
   public RechargeDTO execute(RechargeDTO dto) {
@@ -29,25 +28,9 @@ public class CreateRecharge {
       bo.handleError();
     }
 
-    databaseRepository.persist(bo);
+    dbRepository.persist(bo);
 
     return rechargeResponse;
-  }
-
-  public IRechargeVendorRepository getVendor() {
-    return this.vendor;
-  }
-
-  public void setVendor(IRechargeVendorRepository vendor) {
-    this.vendor = vendor;
-  }
-
-  public IRechargeDatabaseRepository getDatabaseRepository() {
-    return this.databaseRepository;
-  }
-
-  public void setDatabaseRepository(IRechargeDatabaseRepository databaseRepository) {
-    this.databaseRepository = databaseRepository;
   }
 
 }

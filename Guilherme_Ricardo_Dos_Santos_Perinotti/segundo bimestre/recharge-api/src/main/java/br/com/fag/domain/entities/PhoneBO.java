@@ -1,12 +1,10 @@
 package br.com.fag.domain.entities;
 
 public class PhoneBO {
+
   private Integer stateCode;
   private Integer countryCode;
   private String number;
-
-  public PhoneBO() {
-  }
 
   public PhoneBO(Integer stateCode, Integer countryCode, String number) {
     this.stateCode = stateCode;
@@ -15,26 +13,15 @@ public class PhoneBO {
   }
 
   public Integer getStateCode() {
-    return this.stateCode;
-  }
-
-  public void setStateCode(Integer stateCode) {
-    this.stateCode = stateCode;
+    return stateCode;
   }
 
   public Integer getCountryCode() {
-    return this.countryCode;
-  }
-
-  public void setCountryCode(Integer countryCode) {
-    this.countryCode = countryCode;
+    return countryCode;
   }
 
   public String getNumber() {
-    return this.number;
+    return number;
   }
 
-  public void setNumber(String number) {
-    this.number = number;
-  }
 }
