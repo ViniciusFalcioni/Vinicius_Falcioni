@@ -2,54 +2,50 @@ package br.com.fag.infra.celcoin.dto;
 
 public class CelcoinProductDTO {
 
-    private Integer code;
+  private Integer code;
+  private Integer cost;
+  private Integer dueProduct;
+  private String productName;
+  private Double minValue;
 
-    private Integer cost;
+  public Integer getCode() {
+    return code;
+  }
 
-    private Integer dueProduct;
+  public void setCode(Integer code) {
+    this.code = code;
+  }
 
-    private String productName;
+  public Integer getCost() {
+    return cost;
+  }
 
-    private Double minValue;
+  public void setCost(Integer cost) {
+    this.cost = cost;
+  }
 
-    public Integer getCode() {
-        return code;
-    }
+  public String getProductName() {
+    return productName;
+  }
 
-    public void setCode(Integer code) {
-        this.code = code;
-    }
+  public void setProductName(String productName) {
+    this.productName = productName;
+  }
 
-    public Integer getCost() {
-        return cost;
-    }
+  public Double getMinValue() {
+    return minValue;
+  }
 
-    public void setCost(Integer cost) {
-        this.cost = cost;
-    }
+  public void setMinValue(Double value) {
+    this.minValue = value;
+  }
 
-    public String getProductName() {
-        return productName;
-    }
+  public Integer getDueProduct() {
+    return dueProduct;
+  }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public Double getMinValue() {
-        return minValue;
-    }
-
-    public void setMinValue(Double value) {
-        this.minValue = value;
-    }
-
-    public Integer getDueProduct() {
-        return dueProduct;
-    }
-
-    public void setDueProduct(Integer dueProduct) {
-        this.dueProduct = dueProduct;
-    }
+  public void setDueProduct(Integer dueProduct) {
+    this.dueProduct = dueProduct;
+  }
 
 }
