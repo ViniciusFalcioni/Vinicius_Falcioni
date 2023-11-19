@@ -17,7 +17,7 @@ import br.com.fag.infra.celcoin.dto.CelcoinTokenDTO;
 import br.com.fag.infra.celcoin.mappers.CelcoinOperatorMapper;
 import br.com.fag.infra.celcoin.mappers.CelcoinProductMapper;
 import br.com.fag.infra.celcoin.mappers.CelcoinRechargeMapper;
-
+import br.com.fag.infra.celcoin.services.RestClientCelcoin;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.core.Form;
