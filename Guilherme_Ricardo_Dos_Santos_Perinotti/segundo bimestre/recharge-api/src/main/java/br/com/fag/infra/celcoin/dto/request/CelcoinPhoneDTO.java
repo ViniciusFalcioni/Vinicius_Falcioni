@@ -1,4 +1,4 @@
-package br.com.fag.infra.celcoin.dto;
+package br.com.fag.infra.celcoin.dto.request;
 
 import lombok.Getter;
 import lombok.Setter;

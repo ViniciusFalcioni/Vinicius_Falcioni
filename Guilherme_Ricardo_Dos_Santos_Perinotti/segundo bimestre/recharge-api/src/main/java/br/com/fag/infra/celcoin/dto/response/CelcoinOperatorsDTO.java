@@ -1,4 +1,4 @@
-package br.com.fag.infra.celcoin.dto;
+package br.com.fag.infra.celcoin.dto.response;
 
 import java.util.List;
 

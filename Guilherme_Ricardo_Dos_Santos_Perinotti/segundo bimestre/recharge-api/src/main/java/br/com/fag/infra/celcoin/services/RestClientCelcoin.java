@@ -2,12 +2,12 @@ package br.com.fag.infra.celcoin.services;
 
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
-import br.com.fag.infra.celcoin.dto.CelcoinOperatorsDTO;
-import br.com.fag.infra.celcoin.dto.CelcoinProductsDTO;
-import br.com.fag.infra.celcoin.dto.CelcoinRechargeDTO;
-import br.com.fag.infra.celcoin.dto.CelcoinRechargeResponseDTO;
-import br.com.fag.infra.celcoin.dto.CelcoinTokenDTO;
 import br.com.fag.infra.celcoin.dto.request.CelcoinPixDTO;
+import br.com.fag.infra.celcoin.dto.request.CelcoinRechargeDTO;
+import br.com.fag.infra.celcoin.dto.response.CelcoinOperatorsDTO;
+import br.com.fag.infra.celcoin.dto.response.CelcoinProductsDTO;
+import br.com.fag.infra.celcoin.dto.response.CelcoinRechargeResponseDTO;
+import br.com.fag.infra.celcoin.dto.response.CelcoinTokenDTO;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
