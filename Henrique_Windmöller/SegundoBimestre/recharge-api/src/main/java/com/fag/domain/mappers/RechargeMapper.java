@@ -1,7 +1,9 @@
 package main.java.com.fag.domain.mappers;
 
-import domain.dto.RechargeDTO;
-import domain.entities.RechargeBO;
+import java.util.UUID;
+
+import main.java.com.fag.domain.dto.RechargeDTO;
+import main.java.com.fag.domain.entities.RechargeBO;
 
 public class RechargeMapper {
 

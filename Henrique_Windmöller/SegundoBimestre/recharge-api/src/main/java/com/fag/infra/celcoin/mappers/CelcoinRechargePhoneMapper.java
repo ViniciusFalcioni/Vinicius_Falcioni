@@ -4,12 +4,12 @@ import main.java.com.fag.domain.dto.PhoneDTO;
 import main.java.com.fag.infra.celcoin.dto.CelcoinPhoneDTO;
 
 public class CelcoinRechargePhoneMapper {
-    public static PhoneDto toAppDTO(CelcoinPhonDTO vendorDTO){
+    public static PhoneDTO toAppDTO(CelcoinPhoneDTO vendorDTO){
         PhoneDTO appDTO = new PhoneDTO();
 
         appDTO.setStateCode(vendorDTO.getStateCode());
         appDTO.setCountryCode(vendorDTO.getCountryCode());
-        appDTO.setNumber(vendortDTO.getNumber());
+        appDTO.setNumber(vendorDTO.getNumber());
 
         return appDTO;
     }

@@ -1,33 +1,21 @@
 package main.java.com.fag.infra.celcoin.mappers;
 
-public class CelcoinRechargeMapper {
-    private String cpfCnpj;
-    private Integer providerId;
-    private CeloinPhoneDTO phone;
-    private CelcoinRechargeValueDTO topupData;
+import main.java.com.fag.domain.dto.RechargeDTO;
+import main.java.com.fag.infra.celcoin.dto.CelcoinRechargeDTO;
+import main.java.com.fag.infra.celcoin.dto.CelcoinRechargeValueDTO;
 
-    public String getCpfCnpj() {
-        return cpfCnpj;
-    }
-    public void setCpfCnpj(String cpfCnpj) {
-        this.cpfCnpj = cpfCnpj;
-    }
-    public Integer getProviderId() {
-        return providerId;
-    }
-    public void setProviderId(Integer providerId) {
-        this.providerId = providerId;
-    }
-    public Celoin getPhoneDTO() {
-        return PhoneDTO;
-    }
-    public void setPhoneDTO(Celoin phoneDTO) {
-        PhoneDTO = phoneDTO;
-    }
-    public CelcoinRechargeValueDTO getTopupData() {
-        return topupData;
-    }
-    public void setTopupData(CelcoinRechargeValueDTO topupData) {
-        this.topupData = topupData;
+public class CelcoinRechargeMapper {
+    public static CelcoinRechargeDTO toVendorDTO(RechargeDTO appDTO){
+        CelcoinRechargeDTO vendorDTO = new CelcoinRechargeDTO();
+        CelcoinRechargeValueDTO topUpData = new CelcoinRechargeValueDTO();
+
+        topUpData.setValue(appDTO.getValue());
+
+        vendorDTO.setCpfCnpj(appDTO.getDocument());
+        vendorDTO.setPhone(CelcoinRechargePhoneMapper.toVendorDTO(appDTO.getPhone()));
+        vendorDTO.setProviderId(appDTO.getOperatorId());
+        vendorDTO.setTopupData(topUpData);
+
+        return vendorDTO;
     }
 }

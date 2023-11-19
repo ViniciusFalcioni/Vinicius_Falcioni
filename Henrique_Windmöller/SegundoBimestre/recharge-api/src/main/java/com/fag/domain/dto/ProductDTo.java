@@ -1,6 +1,6 @@
 package main.java.com.fag.domain.dto;
 
-public class ProductDTo {
+public class ProductDTO {
     private String name;
     private Double value;
     private Integer due;

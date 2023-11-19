@@ -6,21 +6,21 @@ public class RechargeBO {
    private UUID id;
    private Double value;
    private String document;
-   private INteger providerld;
+   private Integer providerId;
    private PhoneBO phone;
    private String receipt;
-   private Long transactionld;
+   private Long transactionId;
    private boolean success;
    
-public RechargeBO(UUID id, Double value, String document, INteger providerld, PhoneBO phone, String receipt,
+public RechargeBO(UUID id, Double value, String document, Integer providerld, PhoneBO phone, String receipt,
         Long transactionld, boolean success) {
     this.id = id;
     this.value = value;
     this.document = document;
-    this.providerld = providerld;
+    this.providerId = providerId;
     this.phone = phone;
     this.receipt = receipt;
-    this.transactionld = transactionld;
+    this.transactionId = transactionId;
     this.success = success;
 }
 public UUID getId() {
@@ -32,20 +32,28 @@ public Double getValue() {
 public String getDocument() {
     return document;
 }
-public INteger getProviderld() {
-    return providerld;
-}
 public PhoneBO getPhone() {
     return phone;
 }
 public String getReceipt() {
     return receipt;
 }
-public Long getTransactionld() {
-    return transactionld;
-}
 public boolean isSuccess() {
     return success;
 }
-    
+public Integer getProviderId() {
+    return providerId;
+}
+public Long getTransactionId() {
+    return transactionId;
+}
+
+public void handleSuccess(String receipt, Long transactionId){
+    this.receipt = receipt;
+    this.transactionId = transactionId;
+    this.success=true;
+}
+public void handleError(){
+    this.success=false;
+}
 }

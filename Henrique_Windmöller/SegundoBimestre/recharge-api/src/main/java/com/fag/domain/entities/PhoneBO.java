@@ -2,21 +2,21 @@ package main.java.com.fag.domain.entities;
 
 public class PhoneBO {
     private Integer stateCode;
-    private Integer contryCode;
+    private Integer countryCode;
     private String number;
     
     public Integer getStateCode() {
         return stateCode;
     }
-    public Integer getContryCode() {
-        return contryCode;
+    public Integer getCountryCode() {
+        return countryCode;
     }
     public String getNumber() {
         return number;
     }
-    public PhoneBO(Integer stateCode, Integer contryCode, String number) {
+    public PhoneBO(Integer stateCode, Integer countryCode, String number) {
         this.stateCode = stateCode;
-        this.contryCode = contryCode;
+        this.countryCode = countryCode;
         this.number = number;
     }
     

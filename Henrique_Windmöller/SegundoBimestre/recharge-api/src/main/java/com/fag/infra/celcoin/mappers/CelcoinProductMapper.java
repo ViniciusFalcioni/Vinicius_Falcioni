@@ -1,16 +1,15 @@
 package main.java.com.fag.infra.celcoin.mappers;
 
-import main.java.com.fag.domain.dto.ProductDTo;
+import main.java.com.fag.domain.dto.ProductDTO;
+import main.java.com.fag.infra.celcoin.dto.CelcoinProductDTO;
 
 public class CelcoinProductMapper {
-   public static ProductDTO toAppDTO(CelcoinProductDTO vendfoDTO) {
-        ProductDTo appDTO = new ProductDTO();
+   public static ProductDTO toAppDTO(CelcoinProductDTO vendorDTO) {
+        ProductDTO appDTO = new ProductDTO();
 
-        appDTO.setCode(vendorDTO.getCode());
-        appDTO.setCost(vendorDTO.getCost());
+        appDTO.setDue(vendorDTO.getDueProduct());
         appDTO.setName(vendorDTO.getProductName());
         appDTO.setValue(vendorDTO.getMinValue());
-        appDTO.setDueProduct(vendorDTO.getDueProduct());
 
         return appDTO;
     }

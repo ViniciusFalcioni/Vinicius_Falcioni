@@ -1,29 +1,23 @@
 package main.java.com.fag.domain.dto;
 
 public class OperatorDTO {
-    private integer category;
+    private Integer category;
     private String name;
-    private integer providerld;
+    private Integer operatorId;
     private Double maxValue;
     private Double minValue;
     
-    public integer getCategory() {
+    public Integer getCategory() {
         return category;
     }
-    public void setCategory(integer category) {
-        this.category = category;
+    public void setCategory(Integer integer) {
+        this.category = integer;
     }
     public String getName() {
         return name;
     }
     public void setName(String name) {
         this.name = name;
-    }
-    public integer getProviderld() {
-        return providerld;
-    }
-    public void setProviderld(integer providerld) {
-        this.providerld = providerld;
     }
     public Double getMaxValue() {
         return maxValue;
@@ -36,6 +30,12 @@ public class OperatorDTO {
     }
     public void setMinValue(Double minValue) {
         this.minValue = minValue;
+    }
+    public Integer getOperatorId() {
+        return operatorId;
+    }
+    public void setOperatorId(Integer operatorId) {
+        this.operatorId = operatorId;
     }
     
  

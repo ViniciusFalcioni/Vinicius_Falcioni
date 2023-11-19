@@ -1,9 +1,10 @@
 package main.java.com.fag.domain.usecases;
 
-import domain.dto.OperatorDTO;
-import domain.repositories.IRechargeVendor;
 
 import java.util.List;
+
+import main.java.com.fag.domain.dto.OperatorDTO;
+import main.java.com.fag.domain.repositories.IRechargeVendor;
 
 public class ListOperators {
     private IRechargeVendor vendor;
@@ -13,6 +14,6 @@ public class ListOperators {
     }
 
     public List<OperatorDTO> execute(Integer stateCode, Integer category) {
-    
+        return vendor.listOperators(stateCode, category);
     }
 }

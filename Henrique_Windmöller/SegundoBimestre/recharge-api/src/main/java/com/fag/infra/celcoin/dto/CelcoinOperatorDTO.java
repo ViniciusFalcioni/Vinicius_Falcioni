@@ -1,17 +1,17 @@
 package main.java.com.fag.infra.celcoin.dto;
 
 public class CelcoinOperatorDTO {
-    private Iinterger category;
+    private Integer category;
     private String name;
     private Integer rechargeType;
     private Integer providerId;
     private Double maxValue;
     private Double minValue;
     
-    public Iinterger getCategory() {
+    public Integer getCategory() {
         return category;
     }
-    public void setCategory(Iinterger category) {
+    public void setCategory(Integer category) {
         this.category = category;
     }
     public String getName() {
@@ -26,12 +26,6 @@ public class CelcoinOperatorDTO {
     public void setRechargeType(Integer rechargeType) {
         this.rechargeType = rechargeType;
     }
-    public Integer getProviderId() {
-        return providerId;
-    }
-    public void setProviderId(Integer providerId) {
-        this.providerId = providerId;
-    }
     public Double getMaxValue() {
         return maxValue;
     }
@@ -44,4 +38,11 @@ public class CelcoinOperatorDTO {
     public void setMinValue(Double minValue) {
         this.minValue = minValue;
     }
+    public Integer getProviderId() {
+        return providerId;
+    }
+    public void setProviderId(Integer providerId) {
+        this.providerId = providerId;
+    }
+    
 }

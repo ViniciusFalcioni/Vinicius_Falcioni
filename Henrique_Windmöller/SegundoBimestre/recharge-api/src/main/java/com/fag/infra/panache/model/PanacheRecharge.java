@@ -1,31 +1,40 @@
 package main.java.com.fag.infra.panache.model;
 
+import java.util.UUID;
+
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 @Entity
-@table(name = "AKT_RECHARGE")
-public class PanacheRecharge  extends PanacheEntityBase {
-    @Id 
+@Table(name = "AKT_RECHARGE")
+public class PanacheRecharge extends PanacheEntityBase {
+
+    @Id
     private UUID id;
 
     @Column(name = "AMOUNT")
     private Double value;
 
-    @Column(name = "DOCUMNET")
+    @Column(name = "DOCUMENT")
     private String document;
 
-    @Column( name = "OPERATOR_ID")
-    private INteger operatorId;
+    @Column(name = "OPERATOR_ID")
+    private Integer operatorId;
 
-    @Column( name = "PHONE_NUMBER")
+    @Column(name = "PHONE_NUMBER")
     private String phoneNumber;
 
-    @Column( name = "RECEIPT", length= 4000)
+    @Column(name = "RECEIPT", length = 4000)
     private String receipt;
 
-    @Column( name = "TRANSACTIONID")
-    private Long transactionid;
+    @Column(name = "TRANSACTIONID")
+    private Long transactionId;
 
-    @Column( name = "SUCCESS")
-    private Boolean success;
+    @Column(name = "SUCCESS")
+    private boolean success;
 
     public UUID getId() {
         return id;
@@ -51,11 +60,11 @@ public class PanacheRecharge  extends PanacheEntityBase {
         this.document = document;
     }
 
-    public INteger getOperatorId() {
+    public Integer getOperatorId() {
         return operatorId;
     }
 
-    public void setOperatorId(INteger operatorId) {
+    public void setOperatorId(Integer operatorId) {
         this.operatorId = operatorId;
     }
 
@@ -75,19 +84,20 @@ public class PanacheRecharge  extends PanacheEntityBase {
         this.receipt = receipt;
     }
 
-    public Long getTransactionid() {
-        return transactionid;
+    public Long getTransactionId() {
+        return transactionId;
     }
 
-    public void setTransactionid(Long transactionid) {
-        this.transactionid = transactionid;
+    public void setTransactionId(Long transactionId) {
+        this.transactionId = transactionId;
     }
 
-    public Boolean getSuccess() {
+    public boolean isSuccess() {
         return success;
     }
 
-    public void setSuccess(Boolean success) {
+    public void setSuccess(boolean success) {
         this.success = success;
     }
+
 }

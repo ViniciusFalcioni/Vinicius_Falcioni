@@ -1,5 +1,7 @@
 package main.java.com.fag.infra.celcoin.dto;
 
+import java.util.List;
+
 public class CelcoinProductsDTO {
     private List<CelcoinProductDTO> products;
 

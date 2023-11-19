@@ -1,7 +1,7 @@
 package main.java.com.fag.domain.mappers;
 
-import domain.dto.PhoneDTO;
-import domain.entities.PhoneBO;
+import main.java.com.fag.domain.dto.PhoneDTO;
+import main.java.com.fag.domain.entities.PhoneBO;
 
 public class PhoneMapper {
 

@@ -1,8 +1,10 @@
 package main.java.com.fag.domain.usecases;
 
-import domain.dto.RechargeDTO;
-import domain.repositories.IRechargeDataBaseRepository;
-import domain.repositories.IRechargeVendorRepository;
+import main.java.com.fag.domain.dto.RechargeDTO;
+import main.java.com.fag.domain.entities.RechargeBO;
+import main.java.com.fag.domain.mappers.RechargeMapper;
+import main.java.com.fag.domain.repositories.IRechargeDataBaseRepository;
+import main.java.com.fag.domain.repositories.IRechargeVendor;
 
 public class CreateRecharge {
     private IRechargeVendor vendor;
@@ -13,8 +15,17 @@ public class CreateRecharge {
         this.dbRepository = dbRepository;
     }
 
-    public RechargeDTO execute(RechargeDTO recharge) {
+    public RechargeDTO execute(RechargeDTO dto) {
+        RechargeBO bo = RechargeMapper.toBO(dto);
         
+        RechargeDTO rechargeResponse = vendor.create(dto);
+        if (rechargeResponse.isSuccess()) {
+        bo.handleSuccess(rechargeResponse.getReceipt(), rechargeResponse.getTransactionId());
+    } else {
+        bo.handleError();
+    }
+    dbRepository.persist(bo);
+
+    return rechargeResponse;
     }
 }
-

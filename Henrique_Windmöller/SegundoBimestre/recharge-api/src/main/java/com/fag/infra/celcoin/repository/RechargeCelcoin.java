@@ -3,76 +3,91 @@ package main.java.com.fag.infra.celcoin.repository;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.eclipse.microprofile.rest.client.inject.RestClient;
+
 import main.java.com.fag.domain.dto.OperatorDTO;
+import main.java.com.fag.domain.dto.ProductDTO;
 import main.java.com.fag.domain.dto.RechargeDTO;
-import main.java.com.fag.infra.celcoin.dto.CelcoinOperatorDTO;
+import main.java.com.fag.domain.repositories.IRechargeVendor;
+import main.java.com.fag.infra.celcoin.dto.CelcoinOperatorsDTO;
+import main.java.com.fag.infra.celcoin.dto.CelcoinProductsDTO;
 import main.java.com.fag.infra.celcoin.dto.CelcoinRechargeDTO;
+import main.java.com.fag.infra.celcoin.dto.CelcoinRechargeResponseDTO;
 import main.java.com.fag.infra.celcoin.dto.CelcoinTokenDTO;
 import main.java.com.fag.infra.celcoin.mappers.CelcoinOperatorMapper;
+import main.java.com.fag.infra.celcoin.mappers.CelcoinProductMapper;
 import main.java.com.fag.infra.celcoin.mappers.CelcoinRechargeMapper;
 
-@ApplicattionScoped
-public class RechargeCelcoin implements IrechargeVendor {
-    @inject
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.core.Form;
+
+@ApplicationScoped
+public class RechargeCelcoin implements IRechargeVendor {
+
+    @Inject
     @RestClient
     RestClientCelcoin restClient;
 
     @Override
-    public RechargeDTO create(RechargeDTO recharge){
-        try{
+    public RechargeDTO create(RechargeDTO recharge) {
+
+        try {
             CelcoinRechargeDTO rechargeDTO = CelcoinRechargeMapper.toVendorDTO(recharge);
 
-            CelcoinRechargeRespondeDTO response = restCLient.handleRecharge(getToken(), rechargeDTO);
+            CelcoinRechargeResponseDTO response = restClient.handleRecharge(getToken(), rechargeDTO);
 
-            recharge.setReceipt(respose.getReceipt().getReceiptData());
-            recharge.setTransactionld(response.getTransactionId());
-            recharge.setSuccess(response.getErrorCode().equals("000"));   
-            }catch (Exception e){
-                //log
-                throw new RuntimeException("Erro comunicação provedor serviço recarga.");
-            }
+            recharge.setReceipt(response.getReceipt().getReceiptData());
+            recharge.setTransactionId(response.getTransactionId());
+            recharge.setSuccess(response.getErrorCode().equals("000"));
+        } catch (Exception e) {
+            // Log
+            throw new RuntimeException("Erro comunicação provedor servico recarga.");
+        }
 
-            return recharge;
+        return recharge;
     }
 
     @Override
-    public List<OperatorDTO> listOperators(Integer stadeCode, Integer category){
-        try{
-            CelcoinOperatorDTO operators = restClient.listOperators(getToken(), stadeCode, category);
+    public List<OperatorDTO> listOperators(Integer stateCode, Integer category) {
+
+        try {
+            CelcoinOperatorsDTO operators = restClient.listOperators(getToken(), stateCode, category);
 
             return operators.getProviders().stream()
-            .map(operator -> CelcoinOperatorMapper.toAppDTO(operator))
-            .collect(Collectors.toList());
-    }       catch(Exception e) {
-            //log
-            throw new RuntimeException("Erro comunucação provedor serviço recarga", e);  
-            }
+                    .map(operator -> CelcoinOperatorMapper.toAppDTO(operator))
+                    .collect(Collectors.toList());
+        } catch (Exception e) {
+            // Log
+            throw new RuntimeException("Erro comunicação provedor servico recarga.", e);
+        }
     }
 
     @Override
-    public List<ProductDTO> listProducts(Integr operatorId, Integer stateCode){
-        try{
-            CelcoinProductsDTO products = restCLient.listProducts(getToken(), stateCode, operatorId);
+    public List<ProductDTO> listProducts(Integer operatorId, Integer stateCode) {
+        try {
+            CelcoinProductsDTO products = restClient.listProducts(getToken(), stateCode, operatorId);
 
-            return products.getProducts().stream()
-            .map(product -> CelocinProductsMapper.toAppDTO(product))
-            .collect(Collectors.toList());
-        }   catch(Exception e) {
-                //log
-                throw new RuntimeException("Erro comunicação provedor serviço recarga.");
-            }
+            return products.getProcucts().stream()
+                    .map(product -> CelcoinProductMapper.toAppDTO(product))
+                    .collect(Collectors.toList());
+        } catch (Exception e) {
+            // Log
+            throw new RuntimeException("Erro comunicação provedor servico recarga.");
+        }
     }
 
-    private String getToken(){
+    private String getToken() {
         Form form = new Form();
 
-        form.param("client_id", "41b44ab9a56440.teste.celocoinapi.vs");
+        form.param("client_id", "41b44ab9a56440.teste.celcoinapi.v5");
         form.param("grant_type", "client_credentials");
-        form.param("client_secret", "e9d15cde33024c149de7480e69b7a18c09d7cd8446839b3be82a56a044a3");
+        form.param("client_secret", "e9d15cde33024c1494de7480e69b7a18c09d7cd25a8446839b3be82a56a044a3");
 
-        CelcoinTokenDTO tokenDTO = restCLient.generateTOken(form);
-        String token = "Bearer" + tokenDTO.getAccessToken();
-
+        CelcoinTokenDTO tokenDTO = restClient.generateToken(form);
+        String token = "Bearer " + tokenDTO.getAccessToken();
+            
         return token;
     }
+
 }

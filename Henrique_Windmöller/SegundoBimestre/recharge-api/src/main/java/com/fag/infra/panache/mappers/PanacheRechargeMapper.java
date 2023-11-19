@@ -1,12 +1,14 @@
 package main.java.com.fag.infra.panache.mappers;
 
+import main.java.com.fag.domain.entities.PhoneBO;
 import main.java.com.fag.domain.entities.RechargeBO;
+import main.java.com.fag.infra.panache.model.PanacheRecharge;
 
 public class PanacheRechargeMapper {
     
 
     public static RechargeBO toDomain(PanacheRecharge entity){
-        Integer countryCode = Integer.valueOf(entity.getPhoneNUmber().substring(0,2));
+        Integer countryCode = Integer.valueOf(entity.getPhoneNumber().substring(0,2));
         Integer stateCode = Integer.valueOf(entity.getPhoneNumber().substring(2,4));
         String number = entity.getPhoneNumber().substring(4, entity.getPhoneNumber().length());
 
