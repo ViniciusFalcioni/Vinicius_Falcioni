@@ -1,5 +1,10 @@
 package br.com.fag.infra.celcoin.dto;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class CelcoinProductDTO {
 
   private Integer code;
@@ -7,45 +12,5 @@ public class CelcoinProductDTO {
   private Integer dueProduct;
   private String productName;
   private Double minValue;
-
-  public Integer getCode() {
-    return code;
-  }
-
-  public void setCode(Integer code) {
-    this.code = code;
-  }
-
-  public Integer getCost() {
-    return cost;
-  }
-
-  public void setCost(Integer cost) {
-    this.cost = cost;
-  }
-
-  public String getProductName() {
-    return productName;
-  }
-
-  public void setProductName(String productName) {
-    this.productName = productName;
-  }
-
-  public Double getMinValue() {
-    return minValue;
-  }
-
-  public void setMinValue(Double value) {
-    this.minValue = value;
-  }
-
-  public Integer getDueProduct() {
-    return dueProduct;
-  }
-
-  public void setDueProduct(Integer dueProduct) {
-    this.dueProduct = dueProduct;
-  }
 
 }
