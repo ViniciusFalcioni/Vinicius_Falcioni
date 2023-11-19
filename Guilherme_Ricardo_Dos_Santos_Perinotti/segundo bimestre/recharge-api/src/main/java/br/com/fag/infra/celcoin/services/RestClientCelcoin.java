@@ -7,7 +7,7 @@ import br.com.fag.infra.celcoin.dto.CelcoinProductsDTO;
 import br.com.fag.infra.celcoin.dto.CelcoinRechargeDTO;
 import br.com.fag.infra.celcoin.dto.CelcoinRechargeResponseDTO;
 import br.com.fag.infra.celcoin.dto.CelcoinTokenDTO;
-
+import br.com.fag.infra.celcoin.dto.request.CelcoinPixDTO;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
@@ -45,6 +45,6 @@ public interface RestClientCelcoin {
   @POST
   @Path("/pix/v1/brcode/static")
   @Consumes(MediaType.APPLICATION_JSON)
-  CelcoinRechargeResponseDTO handlePix(@HeaderParam("Authorization") String token, CelcoinRechargeDTO payload);
+  CelcoinPixDTO handlePix(@HeaderParam("Authorization") String token, CelcoinPixDTO pix);
 
 }

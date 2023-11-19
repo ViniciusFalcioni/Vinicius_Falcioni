@@ -8,7 +8,7 @@ import br.com.fag.domain.dto.RechargeDTO;
 import br.com.fag.domain.usecases.CreateRecharge;
 import br.com.fag.domain.usecases.ListProducts;
 import br.com.fag.domain.usecases.ListOperators;
-import br.com.fag.infra.celcoin.recharge.RechargeCelcoin;
+import br.com.fag.infra.celcoin.usecases.RechargeCelcoin;
 import br.com.fag.infra.panache.repository.PanacheDataBaseRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
