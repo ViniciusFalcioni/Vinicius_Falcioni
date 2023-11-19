@@ -8,9 +8,7 @@ import lombok.Setter;
 public class CelcoinPhoneDTO {
 
   private Integer stateCode;
-
   private Integer countryCode;
-
   private String number;
 
 }
