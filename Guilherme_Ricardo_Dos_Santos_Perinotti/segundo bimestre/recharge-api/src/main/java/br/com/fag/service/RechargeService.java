@@ -18,35 +18,35 @@ import jakarta.ws.rs.core.Response;
 @ApplicationScoped
 public class RechargeService {
 
-    @Inject
-    RechargeCelcoin celcoin;
+  @Inject
+  RechargeCelcoin celcoin;
 
-    @Inject
-    PanacheDataBaseRepository panacheRepo;
+  @Inject
+  PanacheDataBaseRepository panacheRepo;
 
-    public Response listOperators(Integer stateCode, Integer category) {
-        ListOperators listOperators = new ListOperators(celcoin);
+  public Response listOperators(Integer stateCode, Integer category) {
+    ListOperators listOperators = new ListOperators(celcoin);
 
-        List<OperatorDTO> operators = listOperators.execute(stateCode, category);
+    List<OperatorDTO> operators = listOperators.execute(stateCode, category);
 
-        return Response.ok(operators).build();
-    }
+    return Response.ok(operators).build();
+  }
 
-    public Response listProducts(Integer stateCode, Integer operatorId) {
-        ListProducts listServices = new ListProducts(celcoin);
+  public Response listProducts(Integer stateCode, Integer operatorId) {
+    ListProducts listServices = new ListProducts(celcoin);
 
-        List<ProductDTO> operators = listServices.execute(stateCode, operatorId);
+    List<ProductDTO> operators = listServices.execute(stateCode, operatorId);
 
-        return Response.ok(operators).build();
-    }
+    return Response.ok(operators).build();
+  }
 
-    @Transactional
-    public Response handleRecharge(RechargeDTO dto) {
-        CreateRecharge createRecharge = new CreateRecharge(celcoin, panacheRepo);
+  @Transactional
+  public Response handleRecharge(RechargeDTO dto) {
+    CreateRecharge createRecharge = new CreateRecharge(celcoin, panacheRepo);
 
-        RechargeDTO createdRecharge = createRecharge.execute(dto);
+    RechargeDTO createdRecharge = createRecharge.execute(dto);
 
-        return Response.ok(createdRecharge).build();
-    }
+    return Response.ok(createdRecharge).build();
+  }
 
 }

@@ -17,12 +17,6 @@ public class CreatePixQRCode {
 
     PixDTO response = vendor.create(dto);
 
-    if(response.getSuccess()) {
-      bo.handleSuccess(response.getTransactionId());
-    } else {
-      bo.handleError();
-    }
-
     repository.persist(bo);
 
     return response;

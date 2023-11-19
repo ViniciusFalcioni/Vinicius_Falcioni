@@ -5,6 +5,7 @@ import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 import br.com.fag.infra.celcoin.dto.request.CelcoinPixDTO;
 import br.com.fag.infra.celcoin.dto.request.CelcoinRechargeDTO;
 import br.com.fag.infra.celcoin.dto.response.CelcoinOperatorsDTO;
+import br.com.fag.infra.celcoin.dto.response.CelcoinPixResponseDTO;
 import br.com.fag.infra.celcoin.dto.response.CelcoinProductsDTO;
 import br.com.fag.infra.celcoin.dto.response.CelcoinRechargeResponseDTO;
 import br.com.fag.infra.celcoin.dto.response.CelcoinTokenDTO;
@@ -45,6 +46,6 @@ public interface RestClientCelcoin {
   @POST
   @Path("/pix/v1/brcode/static")
   @Consumes(MediaType.APPLICATION_JSON)
-  CelcoinPixDTO handlePix(@HeaderParam("Authorization") String token, CelcoinPixDTO pix);
+  CelcoinPixResponseDTO handlePix(@HeaderParam("Authorization") String token, CelcoinPixDTO pix);
 
 }
