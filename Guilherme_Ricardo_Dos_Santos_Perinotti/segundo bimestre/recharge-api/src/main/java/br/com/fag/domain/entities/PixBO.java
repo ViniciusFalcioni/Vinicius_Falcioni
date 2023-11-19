@@ -10,6 +10,7 @@ import lombok.Setter;
 public class PixBO {
   private String key;
   private Double amount;
+  private String qrCode;
   private MerchantBO merchant;
   private Long transactionId;
   private Boolean success;
