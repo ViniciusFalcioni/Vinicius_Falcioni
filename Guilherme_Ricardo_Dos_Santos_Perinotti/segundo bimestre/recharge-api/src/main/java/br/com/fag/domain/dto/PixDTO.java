@@ -9,4 +9,6 @@ public class PixDTO {
   private String key;
   private Double amount;
   private MerchantDTO merchant;
+  private Long transactionId;
+  private Boolean success;
 }
