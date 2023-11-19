@@ -6,11 +6,10 @@ import br.com.fag.domain.dto.OperatorDTO;
 import br.com.fag.domain.dto.ProductDTO;
 import br.com.fag.domain.dto.RechargeDTO;
 import br.com.fag.domain.usecases.CreateRecharge;
-import br.com.fag.domain.usecases.ListOperatorServices;
+import br.com.fag.domain.usecases.ListProducts;
 import br.com.fag.domain.usecases.ListOperators;
 import br.com.fag.infra.celcoin.recharge.RechargeCelcoin;
-import br.com.fag.infra.panache.PanacheDataBaseRepository;
-
+import br.com.fag.infra.panache.repository.PanacheDataBaseRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
@@ -33,8 +32,8 @@ public class RechargeService {
         return Response.ok(operators).build();
     }
 
-    public Response listProducs(Integer stateCode, Integer operatorId) {
-        ListOperatorServices listServices = new ListOperatorServices(celcoin);
+    public Response listProducts(Integer stateCode, Integer operatorId) {
+        ListProducts listServices = new ListProducts(celcoin);
 
         List<ProductDTO> operators = listServices.execute(stateCode, operatorId);
 

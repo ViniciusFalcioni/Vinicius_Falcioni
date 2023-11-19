@@ -5,11 +5,11 @@ import java.util.List;
 import br.com.fag.domain.dto.ProductDTO;
 import br.com.fag.domain.repositories.IRechargeVendor;
 
-public class ListOperatorServices {
+public class ListProducts {
 
   private IRechargeVendor vendor;
 
-  public ListOperatorServices(IRechargeVendor vendor) {
+  public ListProducts(IRechargeVendor vendor) {
     this.vendor = vendor;
   }
 
