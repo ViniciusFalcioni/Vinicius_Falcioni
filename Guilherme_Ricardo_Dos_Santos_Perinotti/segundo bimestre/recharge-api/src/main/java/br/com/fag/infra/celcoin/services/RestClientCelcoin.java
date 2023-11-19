@@ -1,4 +1,4 @@
-package br.com.fag.infra.celcoin.recharge;
+package br.com.fag.infra.celcoin.services;
 
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
@@ -41,5 +41,10 @@ public interface RestClientCelcoin {
   @Path("/v5/transactions/topups")
   @Consumes(MediaType.APPLICATION_JSON)
   CelcoinRechargeResponseDTO handleRecharge(@HeaderParam("Authorization") String token, CelcoinRechargeDTO payload);
+
+  @POST
+  @Path("/pix/v1/brcode/static")
+  @Consumes(MediaType.APPLICATION_JSON)
+  CelcoinRechargeResponseDTO handlePix(@HeaderParam("Authorization") String token, CelcoinRechargeDTO payload);
 
 }
