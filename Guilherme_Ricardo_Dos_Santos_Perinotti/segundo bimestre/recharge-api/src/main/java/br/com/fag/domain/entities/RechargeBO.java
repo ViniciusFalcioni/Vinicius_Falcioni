@@ -2,6 +2,11 @@ package br.com.fag.domain.entities;
 
 import java.util.UUID;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class RechargeBO {
 
   private UUID id;
@@ -51,38 +56,6 @@ public class RechargeBO {
       throw new RuntimeException("Campo obrigatório - Phone");
     }
 
-  }
-
-  public Double getValue() {
-    return value;
-  }
-
-  public String getDocument() {
-    return document;
-  }
-
-  public Integer getProviderId() {
-    return providerId;
-  }
-
-  public PhoneBO getPhone() {
-    return phone;
-  }
-
-  public UUID getId() {
-    return id;
-  }
-
-  public String getReceipt() {
-    return receipt;
-  }
-
-  public Long getTransactionId() {
-    return transactionId;
-  }
-
-  public boolean isSuccess() {
-    return success;
   }
 
 }
