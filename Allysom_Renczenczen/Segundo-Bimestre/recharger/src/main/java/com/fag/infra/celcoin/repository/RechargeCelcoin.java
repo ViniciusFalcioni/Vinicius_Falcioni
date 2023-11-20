@@ -31,7 +31,7 @@ public class RechargeCelcoin implements IRechargeVendor {
             recharge.setTransactionId(response.getTransactionId());
             recharge.setSuccess(response.getErrorCode().equals("000"));
         }catch (Exception e){
-            throw new RuntimeException("Method Create -> Erro de comunicação com o provedor de serviço de recarga!");
+            throw new RuntimeException("Method Create -> Erro de comunicação com o provedor de serviço de recarga method create!");
         }
         return recharge;
     }
@@ -44,7 +44,7 @@ public class RechargeCelcoin implements IRechargeVendor {
                     .map(operator -> CelcoinOperatorMapper.toAppDTO(operator))
                     .collect(Collectors.toList());
         }catch (Exception e){
-            throw new RuntimeException("Method listOperators ->Erro de comunicação com o provedor de serviço de recarga!", e);
+            throw new RuntimeException("Method listOperators ->Erro de comunicação com o provedor de serviço de recarga method listOperators!", e);
         }
     }
     @Override

@@ -29,4 +29,9 @@ public interface RestClientCelcoin {
     @Path("/v5/transactions/topups")
     @Consumes(MediaType.APPLICATION_JSON)
     CelcoinRechargeResponseDTO handleRecharge(@HeaderParam("Authorization") String token, CelcoinRechargeDTO payload);
+
+    @POST
+    @Path("/pix/v1/brcode/static")
+    @Consumes(MediaType.APPLICATION_JSON)
+    CelcoinPixResponse handlePix(@HeaderParam("Authorization") String token, CelcoinPixDTO pix);
 }

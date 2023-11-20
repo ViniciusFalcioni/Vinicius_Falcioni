@@ -27,7 +27,7 @@ public class RechargeService {
          return Response.ok(operators).build();
      }
 
-     public Response listProducs(Integer stateCode, Integer operatorId) {
+     public Response listProducts(Integer stateCode, Integer operatorId) {
          ListProducts listServices = new ListProducts(celcoin);
          List<ProductDTO> operators = listServices.execute(stateCode, operatorId);
          return Response.ok(operators).build();
