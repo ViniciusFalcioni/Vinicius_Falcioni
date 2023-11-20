@@ -25,7 +25,7 @@ public class RechargeService {
 
         List<ProductDTO> operators = listServices.execute(stateCode, operatorId);
 
-        return Response.ok(operators).build();
+        return Response.ok(operators).build(); 
     }
 
     @Transactional
