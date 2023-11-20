@@ -10,8 +10,7 @@ public class CelcoinOperatorMapper {
         appDTO.setMaxValue(vendorDTO.getMaxValue());
         appDTO.setMinValue(vendorDTO.getMinValue());
         appDTO.setName(vendorDTO.getName());
-        appDTO.setProviderId(vendorDTO.getProviderId());
-        appDTO.setRechargeType(vendorDTO.getRechargeType());
+        appDTO.setOperatorId(vendorDTO.getProviderId());
 
         return appDTO;
     }

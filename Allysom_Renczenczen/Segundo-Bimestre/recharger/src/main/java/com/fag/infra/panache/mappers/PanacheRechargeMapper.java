@@ -10,7 +10,8 @@ public class PanacheRechargeMapper {
         Integer stateCode = Integer.valueOf(entity.getPhoneNumber().substring(2,4));
         String number = entity.getPhoneNumber().substring(4, entity.getPhoneNumber().length());
 
-        return new RechargeBO(entity.getId(),
+        return new RechargeBO(
+                entity.getId(),
                 entity.getValue(),
                 entity.getDocument(),
                 entity.getOperatorId(),

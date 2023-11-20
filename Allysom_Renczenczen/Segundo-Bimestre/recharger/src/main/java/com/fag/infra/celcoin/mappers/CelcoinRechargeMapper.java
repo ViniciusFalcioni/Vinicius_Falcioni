@@ -10,10 +10,10 @@ public class CelcoinRechargeMapper {
         CelcoinRechargeDTO vendorDTO = new CelcoinRechargeDTO();
         CelcoinRechargeValueDTO toUpData = new CelcoinRechargeValueDTO();
 
-        toUpData.setValue((appDTO.getValue()));
+        toUpData.setValue(appDTO.getValue());
 
         vendorDTO.setCpfCnpj((appDTO.getDocument()));
-        vendorDTO.setPhone(CelcoinRechargePhoneMapper.toVendorDTO((appDTO.getPhone())));
+        vendorDTO.setPhone(CelcoinRechargePhoneMapper.toVendorDTO(appDTO.getPhone()));
         vendorDTO.setProviderId(appDTO.getOperatorId());
         vendorDTO.setTopupData(toUpData);
 
