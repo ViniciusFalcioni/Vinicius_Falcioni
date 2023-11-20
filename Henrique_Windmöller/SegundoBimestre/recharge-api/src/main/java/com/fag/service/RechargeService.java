@@ -33,7 +33,7 @@ public class RechargeService {
         return Response.ok(operators).build();
     }
 
-    public Response listProducs(Integer stateCode, Integer operatorId) {
+    public Response listProducts(Integer stateCode, Integer operatorId) {
         ListOperatorServices listServices = new ListOperatorServices(celcoin);
 
         List<ProductDTO> operators = listServices.execute(stateCode, operatorId);

@@ -29,9 +29,9 @@ public class RechargeController {
     @GET
     @Path("/products")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listProducs(@HeaderParam("stateCode") Integer stateCode,
+    public Response listProducts(@HeaderParam("stateCode") Integer stateCode,
             @HeaderParam("operatorId") Integer operatorId) {
-        return service.listProducs(stateCode, operatorId);
+        return service.listProducts(stateCode, operatorId);
     }
 
     @POST

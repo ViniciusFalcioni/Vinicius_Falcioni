@@ -68,7 +68,7 @@ public class RechargeCelcoin implements IRechargeVendor {
         try {
             CelcoinProductsDTO products = restClient.listProducts(getToken(), stateCode, operatorId);
 
-            return products.getProcucts().stream()
+            return products.getProducts().stream()
                     .map(product -> CelcoinProductMapper.toAppDTO(product))
                     .collect(Collectors.toList());
         } catch (Exception e) {
