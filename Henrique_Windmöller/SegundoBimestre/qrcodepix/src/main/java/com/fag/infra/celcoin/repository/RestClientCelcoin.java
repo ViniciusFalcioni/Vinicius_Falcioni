@@ -7,7 +7,6 @@ import com.fag.infra.celcoin.dto.CelcoinProductsDTO;
 import com.fag.infra.celcoin.dto.CelcoinRechargeDTO;
 import com.fag.infra.celcoin.dto.CelcoinRechargeResponseDTO;
 import com.fag.infra.celcoin.dto.CelcoinTokenDTO;
-
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
