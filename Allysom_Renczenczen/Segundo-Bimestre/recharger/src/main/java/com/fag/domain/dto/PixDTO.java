@@ -5,8 +5,6 @@ public class PixDTO {
     private String key;
     private Double amount;
     private String qrCode;
-
-
     private MerchantDTO merchant;
     private Long transactionId;
 

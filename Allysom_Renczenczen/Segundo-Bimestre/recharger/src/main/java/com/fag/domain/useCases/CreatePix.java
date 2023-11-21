@@ -7,22 +7,22 @@ import com.fag.domain.repositories.IPixDataBaseRepository;
 import com.fag.domain.repositories.IPixVendor;
 
 public class CreatePix {
-    private IPixDataBaseRepository pixRepo;
-    private IPixVendor pixVendor;
-    public CreatePix(IPixDataBaseRepository pixRepo, IPixDataBaseRepository panache){
-        this.pixRepo = pixRepo;
-    }
 
-    public PixDTO execute(PixDTO pixDTO){
-        PixBO bo = PixMapper.toBO(pixDTO);
-        PixDTO createdPix = pixVendor.create(pixDTO);
-        pixRepo.persist(bo);
 
-        return createdPix;
-    }
+    private IPixVendor vendor;
+   private IPixDataBaseRepository repository;
 
-    public CreatePix(IPixDataBaseRepository pixRepo, IPixVendor pixVendor) {
-        this.pixRepo = pixRepo;
-        this.pixVendor = pixVendor;
+   public PixDTO execute(PixDTO dto){
+       PixBO bo = PixMapper.toBO(dto);
+
+       PixDTO response = vendor.create(dto);
+
+       repository.persist(bo);
+
+       return response;
+   }
+    public CreatePix(IPixVendor vendor, IPixDataBaseRepository repository) {
+        this.vendor = vendor;
+        this.repository = repository;
     }
 }

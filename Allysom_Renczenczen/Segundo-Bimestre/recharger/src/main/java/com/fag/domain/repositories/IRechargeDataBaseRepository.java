@@ -9,10 +9,4 @@ import java.util.List;
 
 public interface IRechargeDataBaseRepository {
     RechargeBO persist(RechargeBO bo);
-    CreateRecharge creacteReacharge(IRechargeVendor vendor, IRechargeDataBaseRepository dataBaseRepository);
-    ListOperators listOperators(IRechargeVendor vendor);
-    ListProducts listProducts(IRechargeVendor vendor);
-
-
-
 }

@@ -17,7 +17,33 @@ public class RechargeBO {
         this.transactionId = transactionId;
         this.success = true;
     }
+    public RechargeBO(UUID id, Double value, String document, Integer providerId, PhoneBO phone, String receipt, Long transactionId, boolean success) {
+        this.id = id;
+        this.value = value;
+        this.document = document;
+        this.providerId = providerId;
+        this.phone = phone;
+        this.receipt = receipt;
+        this.transactionId = transactionId;
+        this.success = success;
 
+        validate();
+    }
+    private void validate() {
+
+        if (this.value == null) {
+            throw new RuntimeException("Campo obrigatório - Value");
+        }
+
+        if (this.document == null || this.document.isEmpty()) {
+            throw new RuntimeException("Campo obrigatório - Document");
+        }
+
+        if (this.phone == null) {
+            throw new RuntimeException("Campo obrigatório - Phone");
+        }
+
+    }
     public void handleError(){
         this.success = false;
     }
@@ -84,17 +110,6 @@ public class RechargeBO {
 
     public void setSucess(boolean sucess) {
         this.success = sucess;
-    }
-
-    public RechargeBO(UUID id, Double value, String document, Integer providerId, PhoneBO phone, String receipt, Long transactionId, boolean success) {
-        this.id = id;
-        this.value = value;
-        this.document = document;
-        this.providerId = providerId;
-        this.phone = phone;
-        this.receipt = receipt;
-        this.transactionId = transactionId;
-        this.success = success;
     }
 
     public RechargeBO() {

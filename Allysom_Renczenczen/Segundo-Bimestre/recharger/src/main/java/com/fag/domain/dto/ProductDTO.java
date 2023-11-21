@@ -1,7 +1,8 @@
 package com.fag.domain.dto;
 
 public class ProductDTO {
-
+    private Integer code;
+    private Integer cost;
     private Integer due;
     private String name;
     private Double value;
@@ -30,5 +31,21 @@ public class ProductDTO {
 
     public void setValue(Double value) {
         this.value = value;
+    }
+
+    public Integer getCode() {
+        return code;
+    }
+
+    public void setCode(Integer code) {
+        this.code = code;
+    }
+
+    public Integer getCost() {
+        return cost;
+    }
+
+    public void setCost(Integer cost) {
+        this.cost = cost;
     }
 }
