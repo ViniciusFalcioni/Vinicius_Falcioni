@@ -19,18 +19,4 @@ public class PanacheDataBaseRepository implements IRechargeDataBaseRepository {
         entity.persistAndFlush();
         return PanacheRechargeMapper.toDomain(entity);
     }
-
-    @Override
-    public CreateRecharge creacteReacharge(IRechargeVendor vendor, IRechargeDataBaseRepository dataBaseRepository) {
-        return new CreateRecharge(vendor, dataBaseRepository);
-    }
-
-    @Override
-    public ListOperators listOperators(IRechargeVendor vendor) {
-        return new ListOperators(vendor);
-    }
-    @Override
-    public ListProducts listProducts(IRechargeVendor vendor) {
-        return new ListProducts(vendor);
-    }
 }

@@ -5,8 +5,8 @@ import jakarta.json.bind.annotation.JsonbProperty;
 public class CelcoinPixDTO {
 
     private String key;
-    private Double amount;
     private CelcoinMerchantDTO merchantDTO;
+    private Double amount;
     @JsonbProperty(value = "transactionIdentification")
     private String transactionId;
 

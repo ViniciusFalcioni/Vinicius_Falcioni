@@ -1,7 +1,10 @@
 package com.fag.infra.celcoin.dto;
 
+import jakarta.json.bind.annotation.JsonbProperty;
+
 public class CelcoinOperatorDTO {
     private Integer category;
+    @JsonbProperty("TipoRecarganameProvider")
     private Integer rechargeType;
     private String name;
     private Integer providerId;

@@ -1,10 +1,11 @@
 package com.fag.infra.celcoin.dto;
 
 public class CelcoinMerchantDTO {
-    private String postalCode;
+    private String name;
     private String city;
     private boolean merchantCategoryCode;
-    private String name;
+    private String postalCode;
+
 
     public String getPostalCode() {
         return postalCode;

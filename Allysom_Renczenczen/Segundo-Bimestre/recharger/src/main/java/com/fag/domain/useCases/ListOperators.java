@@ -2,7 +2,6 @@ package com.fag.domain.useCases;
 
 import com.fag.domain.dto.OperatorDTO;
 import com.fag.domain.repositories.IRechargeVendor;
-import com.fag.infra.celcoin.repository.RechargeCelcoin;
 
 import java.util.List;
 
