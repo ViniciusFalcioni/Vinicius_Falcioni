@@ -39,8 +39,7 @@ public class PixCelcoin implements IPixVendor {
         form.param("client_secret", "e9d15cde33024c1494de7480e69b7a18c09d7cd25a8446839b3be82a56a044a3");
 
         CelcoinTokenDTO tokenDTO = restClientCelcoin.generateToken(form);
-        String token = "Bearer " + tokenDTO.getAccessToken();
 
-        return token;
+        return "Bearer " + tokenDTO.getAccessToken();
     }
 }

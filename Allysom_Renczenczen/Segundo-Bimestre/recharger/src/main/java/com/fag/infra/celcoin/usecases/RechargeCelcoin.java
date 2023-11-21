@@ -50,7 +50,7 @@ public class RechargeCelcoin implements IRechargeVendor {
             CelcoinOperatorsDTO operators = restClientCelcoin.listOperators(getToken(), stateCode, category);
 
             return operators.getProviders().stream()
-                    .map(operator -> CelcoinOperatorMapper.toAppDTO(operator))
+                    .map(CelcoinOperatorMapper::toAppDTO)
                     .collect(Collectors.toList());
         } catch (Exception e) {
             throw new RuntimeException("Erro comunicação com o provedor de servico de Recarga.", e);
@@ -63,7 +63,7 @@ public class RechargeCelcoin implements IRechargeVendor {
             CelcoinProductsDTO products = restClientCelcoin.listProducts(getToken(), stateCode, operatorId);
 
             return products.getProducts().stream()
-                    .map(product -> CelcoinProductMapper.toAppDTO(product))
+                    .map(CelcoinProductMapper::toAppDTO)
                     .collect(Collectors.toList());
         } catch (Exception e) {
             throw new RuntimeException("Erro comunicação com o provedor de servico de Recarga.");
@@ -78,9 +78,8 @@ public class RechargeCelcoin implements IRechargeVendor {
         form.param("client_secret", "e9d15cde33024c1494de7480e69b7a18c09d7cd25a8446839b3be82a56a044a3");
 
         CelcoinTokenDTO tokenDTO = restClientCelcoin.generateToken(form);
-        String token = "Bearer " + tokenDTO.getAccessToken();
 
-        return token;
+        return "Bearer " + tokenDTO.getAccessToken();
     }
 
 }
