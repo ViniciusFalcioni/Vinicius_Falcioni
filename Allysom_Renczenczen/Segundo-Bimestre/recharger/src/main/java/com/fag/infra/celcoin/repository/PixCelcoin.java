@@ -1,16 +1,16 @@
 package com.fag.infra.celcoin.repository;
 
 import com.fag.domain.dto.PixDTO;
-import com.fag.domain.entities.PixBO;
 import com.fag.domain.repositories.IPixVendor;
 import com.fag.infra.celcoin.dto.CelcoinPixDTO;
 import com.fag.infra.celcoin.dto.CelcoinPixResponse;
 import com.fag.infra.celcoin.dto.CelcoinTokenDTO;
 import com.fag.infra.celcoin.mappers.CelcoinPixMapper;
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.core.Form;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
-
+@ApplicationScoped
 public class PixCelcoin implements IPixVendor {
 
     @Inject
