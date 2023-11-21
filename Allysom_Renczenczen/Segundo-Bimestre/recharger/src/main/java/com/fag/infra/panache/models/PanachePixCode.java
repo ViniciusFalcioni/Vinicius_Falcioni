@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "AKT_PIX_CODE")
-public class PanachePix extends PanacheEntityBase {
+public class PanachePixCode extends PanacheEntityBase {
     @Id
     private UUID id;
 

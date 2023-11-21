@@ -3,13 +3,13 @@ package com.fag.domain.useCases;
 import com.fag.domain.dto.PixDTO;
 import com.fag.domain.entities.PixBO;
 import com.fag.domain.mappers.PixMapper;
-import com.fag.domain.repositories.IPixRepository;
+import com.fag.domain.repositories.IPixDataBaseRepository;
 import com.fag.domain.repositories.IPixVendor;
 
 public class CreatePix {
-    private IPixRepository pixRepo;
+    private IPixDataBaseRepository pixRepo;
     private IPixVendor pixVendor;
-    public CreatePix(IPixRepository pixRepo, IPixRepository panache){
+    public CreatePix(IPixDataBaseRepository pixRepo, IPixDataBaseRepository panache){
         this.pixRepo = pixRepo;
     }
 
@@ -21,4 +21,8 @@ public class CreatePix {
         return createdPix;
     }
 
+    public CreatePix(IPixDataBaseRepository pixRepo, IPixVendor pixVendor) {
+        this.pixRepo = pixRepo;
+        this.pixVendor = pixVendor;
+    }
 }
