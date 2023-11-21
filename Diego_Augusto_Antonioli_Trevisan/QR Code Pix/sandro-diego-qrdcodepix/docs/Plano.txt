@@ -1,0 +1,10 @@
+O objetivo será: 
+- Receber uma chave Pix
+- Receber uma quantia monetária
+- Realizar a geração do Token na API Celcoin
+- Utilizando para a geração de um QR Code para fazer um Pix, com as ferramentas fornecidas pela Celcoin
+- Após a geração do QR Code será necessário persistir os dados numa Base de Dados já disponivel
+
+
+Em caso de erros:
+- Deverá ser apresentada um mensagem explicando o ocorrido ao usuário
