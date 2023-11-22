@@ -9,7 +9,7 @@ public class CelcoinMerchantMapper {
 
         dto.setCity(vendor.getCity());
         dto.setPostalCode(vendor.getPostalCode());
-        dto.setMerchantCategoryCode(vendor.isMerchantCategoryCode());
+        dto.setCategoryCode(vendor.isMerchantCategoryCode());
         dto.setName(vendor.getName());
 
         return dto;
@@ -20,7 +20,7 @@ public class CelcoinMerchantMapper {
 
         dto.setCity(appDTO.getCity());
         dto.setPostalCode(appDTO.getPostalCode());
-        dto.setMerchantCategoryCode(appDTO.getMerchantCategoryCode());
+        dto.setMerchantCategoryCode(appDTO.getCategoryCode());
         dto.setName(appDTO.getName());
 
         return dto;

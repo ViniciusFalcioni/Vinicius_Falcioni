@@ -8,9 +8,8 @@ import com.fag.domain.repositories.IPixVendor;
 
 public class CreatePix {
 
-
     private IPixVendor vendor;
-   private IPixDataBaseRepository repository;
+    private IPixDataBaseRepository repository;
 
    public PixDTO execute(PixDTO dto){
        PixBO bo = PixMapper.toBO(dto);
@@ -26,3 +25,4 @@ public class CreatePix {
         this.repository = repository;
     }
 }
+

@@ -3,7 +3,7 @@ package com.fag.infra.celcoin.dto;
 public class CelcoinMerchantDTO {
     private String name;
     private String city;
-    private boolean merchantCategoryCode;
+    private Integer merchantCategoryCode;
     private String postalCode;
 
 
@@ -23,11 +23,11 @@ public class CelcoinMerchantDTO {
         this.city = city;
     }
 
-    public boolean isMerchantCategoryCode() {
+    public Integer isMerchantCategoryCode() {
         return merchantCategoryCode;
     }
 
-    public void setMerchantCategoryCode(boolean merchantCategoryCode) {
+    public void setMerchantCategoryCode(Integer merchantCategoryCode) {
         this.merchantCategoryCode = merchantCategoryCode;
     }
 

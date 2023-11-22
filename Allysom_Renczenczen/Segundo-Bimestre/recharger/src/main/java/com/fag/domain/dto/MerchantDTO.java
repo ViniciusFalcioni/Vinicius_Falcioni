@@ -2,9 +2,9 @@ package com.fag.domain.dto;
 
 public class MerchantDTO {
     private String postalCode;
-    private String city;
-    private Boolean merchantCategoryCode;
+    private Integer categoryCode;
     private String name;
+    private String city;
 
     public String getPostalCode() {
         return postalCode;
@@ -22,12 +22,12 @@ public class MerchantDTO {
         this.city = city;
     }
 
-    public Boolean getMerchantCategoryCode() {
-        return merchantCategoryCode;
+    public Integer getCategoryCode() {
+        return categoryCode;
     }
 
-    public void setMerchantCategoryCode(Boolean merchantCategoryCode) {
-        this.merchantCategoryCode = merchantCategoryCode;
+    public void setCategoryCode(Integer categoryCode) {
+        this.categoryCode = categoryCode;
     }
 
     public String getName() {

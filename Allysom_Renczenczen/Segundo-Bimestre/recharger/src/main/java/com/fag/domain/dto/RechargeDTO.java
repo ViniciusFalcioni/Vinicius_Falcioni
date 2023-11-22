@@ -1,7 +1,5 @@
 package com.fag.domain.dto;
 
-import java.util.UUID;
-
 public class RechargeDTO {
 
 

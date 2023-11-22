@@ -8,7 +8,7 @@ public class MerchantMapper {
         return new MerchantBO(
                 dto.getPostalCode(),
                 dto.getCity(),
-                dto.getMerchantCategoryCode(),
+                dto.getCategoryCode(),
                 dto.getName());
     }
 
@@ -16,7 +16,7 @@ public class MerchantMapper {
         MerchantDTO dto = new MerchantDTO();
 
         dto.setName(bo.getName());
-        dto.setMerchantCategoryCode(bo.getCategory());
+        dto.setCategoryCode(bo.getCategoryCode());
         dto.setPostalCode(bo.getPostalCode());
         dto.setCity(bo.getCity());
 

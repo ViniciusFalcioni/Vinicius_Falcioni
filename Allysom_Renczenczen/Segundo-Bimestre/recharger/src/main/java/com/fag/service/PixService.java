@@ -17,7 +17,7 @@ public class PixService {
     IPixDataBaseRepository panache;
 
     @Transactional
-    public Response genPix(PixDTO dto){
+    public Response handlePix(PixDTO dto){
         CreatePix createPix = new CreatePix(pixCelcoin, panache);
 
         PixDTO createdPix = createPix.execute(dto);

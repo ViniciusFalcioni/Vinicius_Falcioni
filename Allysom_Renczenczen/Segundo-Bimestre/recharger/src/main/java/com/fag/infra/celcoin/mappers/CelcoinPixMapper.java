@@ -1,7 +1,7 @@
 package com.fag.infra.celcoin.mappers;
 
 import com.fag.domain.dto.PixDTO;
-import com.fag.infra.celcoin.dto.CelcoinMerchantDTO;
+
 import com.fag.infra.celcoin.dto.CelcoinPixDTO;
 
 public class CelcoinPixMapper {

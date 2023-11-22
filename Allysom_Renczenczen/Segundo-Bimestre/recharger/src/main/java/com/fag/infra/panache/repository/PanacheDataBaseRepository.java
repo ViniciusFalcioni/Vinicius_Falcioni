@@ -2,10 +2,6 @@ package com.fag.infra.panache.repository;
 
 import com.fag.domain.entities.RechargeBO;
 import com.fag.domain.repositories.IRechargeDataBaseRepository;
-import com.fag.domain.repositories.IRechargeVendor;
-import com.fag.domain.useCases.CreateRecharge;
-import com.fag.domain.useCases.ListOperators;
-import com.fag.domain.useCases.ListProducts;
 import com.fag.infra.panache.mappers.PanacheRechargeMapper;
 import com.fag.infra.panache.models.PanacheRecharge;
 import jakarta.enterprise.context.ApplicationScoped;

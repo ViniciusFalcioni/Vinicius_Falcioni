@@ -3,13 +3,13 @@ package com.fag.domain.entities;
 public class MerchantBO {
     private String postalCode;
     private String city;
-    private Boolean category;
+    private Integer categoryCode;
     private String name;
 
-    public MerchantBO(String postalCode, String city, Boolean category, String name) {
+    public MerchantBO(String postalCode, String city, Integer categoryCode, String name) {
         this.postalCode = postalCode;
         this.city = city;
-        this.category = category;
+        this.categoryCode = categoryCode;
         this.name = name;
     }
 
@@ -29,12 +29,12 @@ public class MerchantBO {
         this.city = city;
     }
 
-    public Boolean getCategory() {
-        return category;
+    public Integer getCategoryCode() {
+        return categoryCode;
     }
 
-    public void setCategory(Boolean category) {
-        this.category = category;
+    public void setCategoryCode(Integer categoryCode) {
+        this.categoryCode = categoryCode;
     }
 
     public String getName() {
