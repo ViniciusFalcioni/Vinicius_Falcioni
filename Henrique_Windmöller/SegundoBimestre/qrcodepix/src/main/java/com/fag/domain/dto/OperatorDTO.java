@@ -1,13 +1,15 @@
 package com.fag.domain.dto;
 
 public class OperatorDTO {
-    
+
     private Integer category;
-    
+
+    private Integer rechargeType;
+
     private String name;
-    
+
     private Integer providerId;
-    
+
     private Double maxValue;
 
     private Double minValue;
@@ -18,6 +20,14 @@ public class OperatorDTO {
 
     public void setCategory(Integer category) {
         this.category = category;
+    }
+
+    public Integer getRechargeType() {
+        return rechargeType;
+    }
+
+    public void setRechargeType(Integer rechargeType) {
+        this.rechargeType = rechargeType;
     }
 
     public String getName() {

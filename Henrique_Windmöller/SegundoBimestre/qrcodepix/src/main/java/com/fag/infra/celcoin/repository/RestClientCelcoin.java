@@ -4,9 +4,11 @@ import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
 import com.fag.infra.celcoin.dto.CelcoinOperatorsDTO;
 import com.fag.infra.celcoin.dto.CelcoinProductsDTO;
+import com.fag.infra.celcoin.dto.CelcoinQrCodeDTO;
 import com.fag.infra.celcoin.dto.CelcoinRechargeDTO;
 import com.fag.infra.celcoin.dto.CelcoinRechargeResponseDTO;
 import com.fag.infra.celcoin.dto.CelcoinTokenDTO;
+
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
@@ -41,4 +43,8 @@ public interface RestClientCelcoin {
     @Consumes(MediaType.APPLICATION_JSON)
     CelcoinRechargeResponseDTO handleRecharge(@HeaderParam("Authorization") String token, CelcoinRechargeDTO payload);
 
+       @POST
+    @Path("/pix/v1/brcode/static")
+    @Consumes(MediaType.APPLICATION_JSON)
+    CelcoinRechargeResponseDTO genQRCode(@HeaderParam("Authorization") String token, CelcoinQrCodeDTO payload);
 }

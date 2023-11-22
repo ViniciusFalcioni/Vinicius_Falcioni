@@ -7,6 +7,7 @@ import org.eclipse.microprofile.rest.client.inject.RestClient;
 
 import com.fag.domain.dto.OperatorDTO;
 import com.fag.domain.dto.ProductDTO;
+import com.fag.domain.dto.PixDTO;
 import com.fag.domain.dto.RechargeDTO;
 import com.fag.domain.repositories.IRechargeVendor;
 import com.fag.infra.celcoin.dto.CelcoinOperatorsDTO;
@@ -89,5 +90,12 @@ public class RechargeCelcoin implements IRechargeVendor {
             
         return token;
     }
+
+
+    public PixDTO create(PixDTO dto) {
+      
+        return dto;
+    }
+
 
 }
