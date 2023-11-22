@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ProductDTO {
+public class CCoinProductDTO {
 
     private Integer code;
     private Integer cost;

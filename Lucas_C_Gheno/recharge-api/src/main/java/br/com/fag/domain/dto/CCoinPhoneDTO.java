@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class PhoneDTO {
+public class CCoinPhoneDTO {
 
     private Integer stateCode;
     private Integer countryCode;

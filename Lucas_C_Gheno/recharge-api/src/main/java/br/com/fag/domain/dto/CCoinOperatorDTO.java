@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class OperatorDTO {
+public class CCoinOperatorDTO {
 
     private Integer category;
     private Integer rechargeType;

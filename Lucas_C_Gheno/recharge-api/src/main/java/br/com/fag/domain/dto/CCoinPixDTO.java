@@ -5,11 +5,12 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class PixDTO {
+public class CCoinPixDTO {
     private String id;
     private String key;
     private Double amount;
     private String qrCode;
-    private MerchantDTO merchant;
+    private CCoinMerchantDTO merchant;
     private Long transactionId;
+
 }
