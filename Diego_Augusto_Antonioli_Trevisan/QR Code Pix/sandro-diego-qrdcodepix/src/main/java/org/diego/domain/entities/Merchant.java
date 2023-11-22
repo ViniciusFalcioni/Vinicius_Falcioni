@@ -1,13 +1,13 @@
 package org.diego.domain.entities;
 
 public class Merchant {
-    private String cep = "85.804-470";
+    private String cep = "85804470";
 
     private String city = "Cascavel";
 
     private String merchantCategory = "5651";
 
-    private String name = "Dwarf Solutions";
+    private String name = "Celcoin";
 
     public String getCep() {
         return cep;
