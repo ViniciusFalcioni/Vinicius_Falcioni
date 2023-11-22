@@ -17,9 +17,13 @@ public class CreateRecharge {
     }
 
     public RechargeDTO execute(RechargeDTO dto) {
-        RechargeBO entity = dbRepository.persist(RechargeMapper.toBO(dto));
+        RechargeBO bo = RechargeMapper.toBO(dto);
 
-        return RechargeMapper.toDTO(entity);
+        RechargeDTO rechargeResponse = vendor.create(dto);
+
+        dbRepository.persist(bo);
+
+        return rechargeResponse;
     }
 
 }
