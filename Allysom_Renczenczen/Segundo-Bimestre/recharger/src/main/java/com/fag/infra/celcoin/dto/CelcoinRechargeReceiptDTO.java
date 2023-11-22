@@ -1,22 +1,24 @@
 package com.fag.infra.celcoin.dto;
 
+
 public class CelcoinRechargeReceiptDTO {
-    private String receiptData;
-    private String receiptformated;
 
-    public String getReceiptData() {
-        return receiptData;
-    }
+  private String receiptData;
+  private String receiptformatted;
 
-    public void setReceiptData(String receiptData) {
-        this.receiptData = receiptData;
-    }
+  public String getReceiptData() {
+    return receiptData;
+  }
 
-    public String getReceiptformated() {
-        return receiptformated;
-    }
+  public void setReceiptData(String receiptData) {
+    this.receiptData = receiptData;
+  }
 
-    public void setReceiptformated(String receiptformated) {
-        this.receiptformated = receiptformated;
-    }
+  public String getReceiptformatted() {
+    return receiptformatted;
+  }
+
+  public void setReceiptformatted(String receiptformatted) {
+    this.receiptformatted = receiptformatted;
+  }
 }

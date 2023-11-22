@@ -1,23 +1,46 @@
-package com.fag.domain.dto;
+package com.fag.infra.panache.model;
 
+import java.util.UUID;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-public class RechargeDTO {
+@Entity
+@Table(name = "AKT_RECHARGE")
+public class PanacheRecharge extends PanacheEntityBase {
 
-  private String id;
+  @Id
+  private UUID id;
+
+  @Column(name = "AMOUNT")
   private Double value;
+
+  @Column(name = "DOCUMENT")
   private String document;
+
+  @Column(name = "OPERATOR_ID")
   private Integer operatorId;
-  private PhoneDTO phone;
+
+  @Column(name = "PHONE_NUMBER")
+  private String phoneNumber;
+
+  @Column(name = "RECEIPT", length = 4000)
   private String receipt;
+
+  @Column(name = "TRANSACTIONID")
   private Long transactionId;
+
+  @Column(name = "SUCCESS")
   private boolean success;
 
-  public String getId() {
+  public UUID getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(UUID id) {
     this.id = id;
   }
 
@@ -45,12 +68,12 @@ public class RechargeDTO {
     this.operatorId = operatorId;
   }
 
-  public PhoneDTO getPhone() {
-    return phone;
+  public String getPhoneNumber() {
+    return phoneNumber;
   }
 
-  public void setPhone(PhoneDTO phone) {
-    this.phone = phone;
+  public void setPhoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
   }
 
   public String getReceipt() {

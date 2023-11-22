@@ -2,117 +2,119 @@ package com.fag.domain.entities;
 
 import java.util.UUID;
 
+
 public class RechargeBO {
 
-    private UUID id;
-    private Double value;
-    private String document;
-    private Integer providerId;
-    private PhoneBO phone;
-    private String receipt;
-    private Long transactionId;
-    private boolean success;
+  private UUID id;
+  private Double value;
+  private String document;
+  private Integer providerId;
+  private PhoneBO phone;
+  private String receipt;
+  private Long transactionId;
+  private boolean success;
 
-    public void handleSuccess(String receipt, Long transactionId) {
-        this.receipt = receipt;
-        this.transactionId = transactionId;
-        this.success = true;
-    }
-    public RechargeBO(UUID id, Double value, String document, Integer providerId, PhoneBO phone, String receipt, Long transactionId, boolean success) {
-        this.id = id;
-        this.value = value;
-        this.document = document;
-        this.providerId = providerId;
-        this.phone = phone;
-        this.receipt = receipt;
-        this.transactionId = transactionId;
-        this.success = success;
+  public RechargeBO(UUID id, Double value, String document, Integer providerId, PhoneBO phone,
+      String receipt, Long transactionId, boolean success) {
+    this.id = id != null ? id : UUID.randomUUID();
+    this.value = value;
+    this.document = document;
+    this.providerId = providerId;
+    this.phone = phone;
+    this.receipt = receipt;
+    this.transactionId = transactionId;
+    this.success = success;
 
-        validate();
-    }
-    private void validate() {
+    validate();
+  }
 
-        if (this.value == null) {
-            throw new RuntimeException("Campo obrigatório - Value");
-        }
+  public void handleSuccess(String receipt, Long transactionId) {
+    this.receipt = receipt;
+    this.transactionId = transactionId;
+    this.success = true;
+  }
 
-        if (this.document == null || this.document.isEmpty()) {
-            throw new RuntimeException("Campo obrigatório - Document");
-        }
+  public void handleError() {
+    this.success = false;
+  }
 
-        if (this.phone == null) {
-            throw new RuntimeException("Campo obrigatório - Phone");
-        }
+  private void validate() {
 
-    }
-    public void handleError(){
-        this.success = false;
+    if (this.value == null) {
+      throw new RuntimeException("Campo obrigatório - Value");
     }
 
-    public UUID getId() {
-        return id;
+    if (this.document == null || this.document.isEmpty()) {
+      throw new RuntimeException("Campo obrigatório - Document");
     }
 
-    public void setId(UUID id) {
-        this.id = id;
+    if (this.phone == null) {
+      throw new RuntimeException("Campo obrigatório - Phone");
     }
 
-    public Double getValue() {
-        return value;
-    }
+  }
 
-    public void setValue(Double value) {
-        this.value = value;
-    }
+  public UUID getId() {
+    return id;
+  }
 
-    public String getDocument() {
-        return document;
-    }
+  public void setId(UUID id) {
+    this.id = id;
+  }
 
-    public void setDocument(String document) {
-        this.document = document;
-    }
+  public Double getValue() {
+    return value;
+  }
 
-    public Integer getProviderId() {
-        return providerId;
-    }
+  public void setValue(Double value) {
+    this.value = value;
+  }
 
-    public void setProviderId(Integer providerId) {
-        this.providerId = providerId;
-    }
+  public String getDocument() {
+    return document;
+  }
 
-    public PhoneBO getPhone() {
-        return phone;
-    }
+  public void setDocument(String document) {
+    this.document = document;
+  }
 
-    public void setPhone(PhoneBO phone) {
-        this.phone = phone;
-    }
+  public Integer getProviderId() {
+    return providerId;
+  }
 
-    public String getReceipt() {
-        return receipt;
-    }
+  public void setProviderId(Integer providerId) {
+    this.providerId = providerId;
+  }
 
-    public void setReceipt(String receipt) {
-        this.receipt = receipt;
-    }
+  public PhoneBO getPhone() {
+    return phone;
+  }
 
-    public Long getTransactionId() {
-        return transactionId;
-    }
+  public void setPhone(PhoneBO phone) {
+    this.phone = phone;
+  }
 
-    public void setTransactionId(Long transactionId) {
-        this.transactionId = transactionId;
-    }
+  public String getReceipt() {
+    return receipt;
+  }
 
-    public boolean isSuccess() {
-        return success;
-    }
+  public void setReceipt(String receipt) {
+    this.receipt = receipt;
+  }
 
-    public void setSucess(boolean sucess) {
-        this.success = sucess;
-    }
+  public Long getTransactionId() {
+    return transactionId;
+  }
 
-    public RechargeBO() {
-    }
+  public void setTransactionId(Long transactionId) {
+    this.transactionId = transactionId;
+  }
+
+  public boolean isSuccess() {
+    return success;
+  }
+
+  public void setSuccess(boolean success) {
+    this.success = success;
+  }
 }

@@ -4,23 +4,25 @@ import com.fag.domain.dto.PhoneDTO;
 import com.fag.infra.celcoin.dto.CelcoinPhoneDTO;
 
 public class CelcoinRechargePhoneMapper {
-    public static PhoneDTO toAppDTO(CelcoinPhoneDTO vendorDTO) {
-        PhoneDTO appDTO = new PhoneDTO();
 
-        appDTO.setStateCode(vendorDTO.getStateCode());
-        appDTO.setCountryCode(vendorDTO.getCountryCode());
-        appDTO.setNumber(vendorDTO.getNumber());
+  public static PhoneDTO toAppDTO(CelcoinPhoneDTO vendorDTO) {
+    PhoneDTO appDTO = new PhoneDTO();
 
-        return appDTO;
-    }
+    appDTO.setStateCode(vendorDTO.getStateCode());
+    appDTO.setCountryCode(vendorDTO.getCountryCode());
+    appDTO.setNumber(vendorDTO.getNumber());
 
-    public static CelcoinPhoneDTO toVendorDTO(PhoneDTO appDTO) {
-        CelcoinPhoneDTO vendorDTO = new CelcoinPhoneDTO();
+    return appDTO;
+  }
 
-        vendorDTO.setStateCode(appDTO.getStateCode());
-        vendorDTO.setCountryCode(appDTO.getCountryCode());
-        vendorDTO.setNumber(appDTO.getNumber());
-        return  vendorDTO;
-    }
+  public static CelcoinPhoneDTO toVendorDTO(PhoneDTO appDTO) {
+    CelcoinPhoneDTO vendorDTO = new CelcoinPhoneDTO();
+
+    vendorDTO.setStateCode(appDTO.getStateCode());
+    vendorDTO.setCountryCode(appDTO.getCountryCode());
+    vendorDTO.setNumber(appDTO.getNumber());
+
+    return vendorDTO;
+  }
+
 }
- 

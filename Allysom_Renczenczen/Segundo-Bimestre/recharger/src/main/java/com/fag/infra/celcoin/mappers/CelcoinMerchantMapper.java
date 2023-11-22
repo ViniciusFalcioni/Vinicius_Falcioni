@@ -4,27 +4,26 @@ import com.fag.domain.dto.MerchantDTO;
 import com.fag.infra.celcoin.dto.CelcoinMerchantDTO;
 
 public class CelcoinMerchantMapper {
-    public static MerchantDTO toAppDTO(CelcoinMerchantDTO vendor){
-        MerchantDTO dto = new MerchantDTO();
 
-        dto.setCity(vendor.getCity());
-        dto.setPostalCode(vendor.getPostalCode());
-        dto.setCategoryCode(vendor.isMerchantCategoryCode());
-        dto.setName(vendor.getName());
+  public static MerchantDTO toAppDTO(CelcoinMerchantDTO vendorDTO) {
+    MerchantDTO dto = new MerchantDTO();
 
-        return dto;
-    }
+    dto.setPostalCode(vendorDTO.getPostalCode());
+    dto.setCity(vendorDTO.getCity());
+    dto.setCategoryCode(vendorDTO.getMerchantCategoryCode());
+    dto.setName(vendorDTO.getName());
 
-    public static CelcoinMerchantDTO toVendoDTO(MerchantDTO appDTO){
-        CelcoinMerchantDTO dto = new CelcoinMerchantDTO();
+    return dto;
+  }
 
-        dto.setCity(appDTO.getCity());
-        dto.setPostalCode(appDTO.getPostalCode());
-        dto.setMerchantCategoryCode(appDTO.getCategoryCode());
-        dto.setName(appDTO.getName());
+  public static CelcoinMerchantDTO toVendorDTO(MerchantDTO appDTO) {
+    CelcoinMerchantDTO dto = new CelcoinMerchantDTO();
 
-        return dto;
-    }
+    dto.setPostalCode(appDTO.getPostalCode());
+    dto.setCity(appDTO.getCity());
+    dto.setMerchantCategoryCode(appDTO.getCategoryCode());
+    dto.setName(appDTO.getName());
 
-
+    return dto;
+  }
 }

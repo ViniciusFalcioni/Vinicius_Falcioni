@@ -1,37 +1,39 @@
 package com.fag.domain.entities;
 
+
 public class PhoneBO {
-    Integer stateCode;
-    Integer countryCode;
-    String number;
 
-    public PhoneBO(Integer stateCode, Integer countryCode, String number) {
-        this.stateCode = stateCode;
-        this.countryCode = countryCode;
-        this.number = number;
-    }
+  private Integer stateCode;
+  private Integer countryCode;
+  private String number;
 
-    public Integer getStateCode() {
-        return stateCode;
-    }
+  public PhoneBO(Integer stateCode, Integer countryCode, String number) {
+    this.stateCode = stateCode;
+    this.countryCode = countryCode;
+    this.number = number;
+  }
 
-    public void setStateCode(Integer stateCode) {
-        this.stateCode = stateCode;
-    }
+  public Integer getStateCode() {
+    return stateCode;
+  }
 
-    public Integer getCountryCode() {
-        return countryCode;
-    }
+  public void setStateCode(Integer stateCode) {
+    this.stateCode = stateCode;
+  }
 
-    public void setCountryCode(Integer countryCode) {
-        this.countryCode = countryCode;
-    }
+  public Integer getCountryCode() {
+    return countryCode;
+  }
 
-    public String getNumber() {
-        return number;
-    }
+  public void setCountryCode(Integer countryCode) {
+    this.countryCode = countryCode;
+  }
 
-    public void setNumber(String number) {
-        this.number = number;
-    }
+  public String getNumber() {
+    return number;
+  }
+
+  public void setNumber(String number) {
+    this.number = number;
+  }
 }

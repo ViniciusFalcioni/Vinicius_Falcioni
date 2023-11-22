@@ -3,59 +3,65 @@ package com.fag.infra.celcoin.dto;
 import jakarta.json.bind.annotation.JsonbProperty;
 
 public class CelcoinOperatorDTO {
-    private Integer category;
-    @JsonbProperty("TipoRecarganameProvider")
-    private Integer rechargeType;
-    private String name;
-    private Integer providerId;
-    private Double maxValue;
-    private Double minValue;
 
-    public Integer getCategory() {
-        return category;
-    }
+  private Integer category;
 
-    public void setCategory(Integer category) {
-        this.category = category;
-    }
+  @JsonbProperty("TipoRecarganameProvider")
+  private Integer rechargeType;
 
-    public Integer getRechargeType() {
-        return rechargeType;
-    }
+  private String name;
 
-    public void setRechargeType(Integer rechargeType) {
-        this.rechargeType = rechargeType;
-    }
+  private Integer providerId;
 
-    public String getName() {
-        return name;
-    }
+  private Double maxValue;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  private Double minValue;
 
-    public Integer getProviderId() {
-        return providerId;
-    }
+  public Integer getCategory() {
+    return category;
+  }
 
-    public void setProviderId(Integer providerId) {
-        this.providerId = providerId;
-    }
+  public void setCategory(Integer category) {
+    this.category = category;
+  }
 
-    public Double getMaxValue() {
-        return maxValue;
-    }
+  public Integer getRechargeType() {
+    return rechargeType;
+  }
 
-    public void setMaxValue(Double maxValue) {
-        this.maxValue = maxValue;
-    }
+  public void setRechargeType(Integer rechargeType) {
+    this.rechargeType = rechargeType;
+  }
 
-    public Double getMinValue() {
-        return minValue;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public void setMinValue(Double minValue) {
-        this.minValue = minValue;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public Integer getProviderId() {
+    return providerId;
+  }
+
+  public void setProviderId(Integer providerId) {
+    this.providerId = providerId;
+  }
+
+  public Double getMaxValue() {
+    return maxValue;
+  }
+
+  public void setMaxValue(Double maxValue) {
+    this.maxValue = maxValue;
+  }
+
+  public Double getMinValue() {
+    return minValue;
+  }
+
+  public void setMinValue(Double minValue) {
+    this.minValue = minValue;
+  }
 }

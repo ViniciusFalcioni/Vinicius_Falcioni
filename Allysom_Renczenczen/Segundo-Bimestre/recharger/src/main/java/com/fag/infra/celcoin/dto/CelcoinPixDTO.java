@@ -3,42 +3,42 @@ package com.fag.infra.celcoin.dto;
 import jakarta.json.bind.annotation.JsonbProperty;
 
 public class CelcoinPixDTO {
+  private String key;
+  private Double amount;
+  private CelcoinMerchantDTO merchant;
 
-    private String key;
-    private CelcoinMerchantDTO merchantDTO;
-    private Double amount;
-    @JsonbProperty(value = "transactionIdentification")
-    private String transactionId;
+  @JsonbProperty(value = "transactionIdentification")
+  private String transactionId;
 
-    public String getKey() {
-        return key;
-    }
+  public String getKey() {
+    return key;
+  }
 
-    public Double getAmount() {
-        return amount;
-    }
+  public void setKey(String key) {
+    this.key = key;
+  }
 
-    public CelcoinMerchantDTO getMerchantDTO() {
-        return merchantDTO;
-    }
+  public Double getAmount() {
+    return amount;
+  }
 
-    public String getTransactionId() {
-        return transactionId;
-    }
-    public void setKey(String key) {
-        this.key = key;
-    }
+  public void setAmount(Double amount) {
+    this.amount = amount;
+  }
 
-    public void setAmount(Double amount) {
-        this.amount = amount;
-    }
+  public CelcoinMerchantDTO getMerchant() {
+    return merchant;
+  }
 
-    public void setMerchantDTO(CelcoinMerchantDTO merchantDTO) {
-        this.merchantDTO = merchantDTO;
-    }
+  public void setMerchant(CelcoinMerchantDTO merchant) {
+    this.merchant = merchant;
+  }
 
-    public void setTransactionId(String transactionId) {
-        this.transactionId = transactionId;
-    }
+  public String getTransactionId() {
+    return transactionId;
+  }
 
+  public void setTransactionId(String transactionId) {
+    this.transactionId = transactionId;
+  }
 }

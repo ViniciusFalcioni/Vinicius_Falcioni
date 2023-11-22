@@ -1,40 +1,41 @@
 package com.fag.domain.dto;
 
+
 public class MerchantDTO {
-    private String postalCode;
-    private Integer categoryCode;
-    private String name;
-    private String city;
+  private Integer categoryCode;
+  private String postalCode;
+  private String city;
+  private String name;
 
-    public String getPostalCode() {
-        return postalCode;
-    }
+  public Integer getCategoryCode() {
+    return categoryCode;
+  }
 
-    public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
-    }
+  public void setCategoryCode(Integer categoryCode) {
+    this.categoryCode = categoryCode;
+  }
 
-    public String getCity() {
-        return city;
-    }
+  public String getPostalCode() {
+    return postalCode;
+  }
 
-    public void setCity(String city) {
-        this.city = city;
-    }
+  public void setPostalCode(String postalCode) {
+    this.postalCode = postalCode;
+  }
 
-    public Integer getCategoryCode() {
-        return categoryCode;
-    }
+  public String getCity() {
+    return city;
+  }
 
-    public void setCategoryCode(Integer categoryCode) {
-        this.categoryCode = categoryCode;
-    }
+  public void setCity(String city) {
+    this.city = city;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 }

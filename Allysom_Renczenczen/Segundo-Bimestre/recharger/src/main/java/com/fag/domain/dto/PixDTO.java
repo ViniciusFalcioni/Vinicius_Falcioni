@@ -1,58 +1,58 @@
 package com.fag.domain.dto;
-
 public class PixDTO {
-    private String id;
-    private String key;
-    private Double amount;
-    private String qrCode;
-    private MerchantDTO merchant;
-    private Long transactionId;
+  private String id;
+  private String key;
+  private Double amount;
+  private MerchantDTO merchant;
+  private Long transactionId;
 
-    public String getId() {
-        return id;
-    }
+  private String qrCode;
 
-    public void setId(String id) {
-        this.id = id;
-    }
+  public String getId() {
+    return id;
+  }
 
-    public String getKey() {
-        return key;
-    }
+  public void setId(String id) {
+    this.id = id;
+  }
 
-    public void setKey(String key) {
-        this.key = key;
-    }
+  public String getKey() {
+    return key;
+  }
 
-    public Double getAmount() {
-        return amount;
-    }
+  public void setKey(String key) {
+    this.key = key;
+  }
 
-    public void setAmount(Double amount) {
-        this.amount = amount;
-    }
+  public Double getAmount() {
+    return amount;
+  }
 
-    public String getQrCode() {
-        return qrCode;
-    }
+  public void setAmount(Double amount) {
+    this.amount = amount;
+  }
 
-    public void setQrCode(String qrCode) {
-        this.qrCode = qrCode;
-    }
+  public String getQrCode() {
+    return qrCode;
+  }
 
-    public Long getTransactionId() {
-        return transactionId;
-    }
+  public void setQrCode(String qrCode) {
+    this.qrCode = qrCode;
+  }
 
-    public MerchantDTO getMerchant() {
-        return merchant;
-    }
+  public MerchantDTO getMerchant() {
+    return merchant;
+  }
 
-    public void setMerchant(MerchantDTO merchant) {
-        this.merchant = merchant;
-    }
+  public void setMerchant(MerchantDTO merchant) {
+    this.merchant = merchant;
+  }
 
-    public void setTransactionId(Long transactionId) {
-        this.transactionId = transactionId;
-    }
+  public Long getTransactionId() {
+    return transactionId;
+  }
+
+  public void setTransactionId(Long transactionId) {
+    this.transactionId = transactionId;
+  }
 }

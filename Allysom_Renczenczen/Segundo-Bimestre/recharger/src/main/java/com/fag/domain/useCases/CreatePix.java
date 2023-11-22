@@ -1,28 +1,27 @@
-package com.fag.domain.useCases;
+package com.fag.domain.usecases;
 
 import com.fag.domain.dto.PixDTO;
 import com.fag.domain.entities.PixBO;
 import com.fag.domain.mappers.PixMapper;
-import com.fag.domain.repositories.IPixDataBaseRepository;
+import com.fag.domain.repositories.IPixDatabaseRepository;
 import com.fag.domain.repositories.IPixVendor;
 
 public class CreatePix {
+  private IPixVendor pixVendor;
+  private IPixDatabaseRepository databaseRepository;
 
-    private IPixVendor vendor;
-    private IPixDataBaseRepository repository;
+  public PixDTO execute(PixDTO dto) {
+    PixBO bo = PixMapper.toBO(dto);
 
-   public PixDTO execute(PixDTO dto){
-       PixBO bo = PixMapper.toBO(dto);
+    PixDTO response = pixVendor.create(dto);
 
-       PixDTO response = vendor.create(dto);
+    databaseRepository.persist(bo);
 
-       repository.persist(bo);
+    return response;
+  }
 
-       return response;
-   }
-    public CreatePix(IPixVendor vendor, IPixDataBaseRepository repository) {
-        this.vendor = vendor;
-        this.repository = repository;
-    }
+  public CreatePix(IPixVendor pixVendor, IPixDatabaseRepository databaseRepository) {
+    this.pixVendor = pixVendor;
+    this.databaseRepository = databaseRepository;
+  }
 }
-

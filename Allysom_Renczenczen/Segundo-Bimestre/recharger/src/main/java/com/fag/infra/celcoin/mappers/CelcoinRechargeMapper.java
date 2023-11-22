@@ -1,22 +1,23 @@
 package com.fag.infra.celcoin.mappers;
 
 import com.fag.domain.dto.RechargeDTO;
-
 import com.fag.infra.celcoin.dto.CelcoinRechargeDTO;
 import com.fag.infra.celcoin.dto.CelcoinRechargeValueDTO;
 
 public class CelcoinRechargeMapper {
+
     public static CelcoinRechargeDTO toVendorDTO(RechargeDTO appDTO) {
         CelcoinRechargeDTO vendorDTO = new CelcoinRechargeDTO();
-        CelcoinRechargeValueDTO toUpData = new CelcoinRechargeValueDTO();
+        CelcoinRechargeValueDTO topUpData = new CelcoinRechargeValueDTO();
 
-        toUpData.setValue(appDTO.getValue());
+        topUpData.setValue(appDTO.getValue());
 
-        vendorDTO.setCpfCnpj((appDTO.getDocument()));
+        vendorDTO.setCpfCnpj(appDTO.getDocument());
         vendorDTO.setPhone(CelcoinRechargePhoneMapper.toVendorDTO(appDTO.getPhone()));
         vendorDTO.setProviderId(appDTO.getOperatorId());
-        vendorDTO.setTopupData(toUpData);
+        vendorDTO.setTopupData(topUpData);
 
         return vendorDTO;
     }
+
 }

@@ -13,12 +13,12 @@ import jakarta.ws.rs.core.Response;
 public class PixController {
 
   @Inject
-  PixService service;
+  PixService pixService;
 
   @POST
   @Produces(MediaType.APPLICATION_JSON)
   public Response handlePix(PixDTO dto) {
-    return service.handlePix(dto);
+    return pixService.handlePix(dto);
   }
 
 }
