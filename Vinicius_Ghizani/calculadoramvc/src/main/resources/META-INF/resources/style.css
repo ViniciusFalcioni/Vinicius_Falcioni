@@ -1,0 +1,71 @@
+body {
+  background: rgb(0, 186, 159);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 186, 159, 1) 0%,
+    rgba(0, 148, 163, 1) 50%,
+    rgba(0, 109, 137, 1) 100%
+  );
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+}
+h1 {
+  text-align: center;
+  font-size: 50px;
+  margin: 0;
+}
+h2 {
+  padding-left: 5px;
+}
+input {
+  border: 0;
+  width: 480px;
+  height: 50px;
+  border-radius: 5px;
+  margin: 0px 5px;
+  font-size: 20px;
+  padding: 0px 5px;
+}
+select {
+  border: 0;
+  width: 490px;
+  height: 50px;
+  border-radius: 5px;
+  margin: 0px 5px;
+  font-size: 20px;
+  padding: 0px 5px;
+}
+label {
+  margin: 20px 0px 10px 10px;
+  display: block;
+}
+
+.principal {
+  background-color: #1b252e;
+  width: 500px;
+  margin: auto;
+  border-radius: 5px;
+  border: 1px solid white;
+  padding: 10px;
+}
+.footer {
+  text-align: center;
+}
+.calcular {
+  background-color: #37aa85;
+  color: #fff;
+  font-weight: bold;
+  font-size: 24px;
+  border-radius: 20px;
+  border: 1px solid white;
+  margin-top: 20px;
+  width: 490px;
+  height: 50px;
+  margin-left: 5px;
+  margin-bottom: 10px;
+}
+.calcular:hover {
+  background-color: #26755c;
+  cursor: pointer;
+}

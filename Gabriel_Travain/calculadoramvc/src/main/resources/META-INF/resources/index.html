@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Quarkus</title>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="a" placeholder="Digite o primeiro número">
+        <input type="text" id="b" placeholder="Digite o segundo número">
+        <select id="operation">
+            <option value="add">+</option>
+            <option value="subtract">-</option>
+            <option value="multiply">*</option>
+            <option value="divide">/</option>
+        </select>
+        <button onclick="performCalculation()">Calcular</button>
+        <div>Resultado: <span id="result"></span></div>
+    </div>
+</body>
+
+</html>

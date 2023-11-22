@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="body-background">
+    <main class="container">
+        <!-- <img src="eng-logo.gif" class="logo-course" /> -->
+        <form class="content" action="/" method="POST" name="todoForm">
+            <h2>Calculadora do <b>{name}</b></h2>
+
+            <label>
+                <span class="label-title">Primeiro Valor</span>
+                <br>
+                <input type="number" name="primeiroValor" id="primeiroValor" required/>
+            </label>
+
+            <label>
+                <span class="label-title">Segundo Valor</span>
+                <br>
+                <input type="number" name="segundoValor" id="segundoValor" required/>
+            </label>
+
+            <label>
+                <span class="label-title">Operação</span>
+                <select name="selectCalculadora" id="selectCalculadora">
+                    Operação
+                    {#for op in arithmeticOperations}
+                        <option value="{op.getKey()}">{op.getValue()}</option>
+                    {/for}
+                </select>
+            </label>
+
+            <button class="btn-calculate" type="submit">Calcular</button>
+        </form>
+    </main>
+
+</body>
+
+</html>

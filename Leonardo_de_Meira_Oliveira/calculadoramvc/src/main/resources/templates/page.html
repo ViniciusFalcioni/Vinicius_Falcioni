@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: gainsboro;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #222121;
+            border-radius: 10px;
+            padding: 20px;
+            position: relative;
+        }
+
+        input[type="number"],
+        select,
+        button {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #00fffb;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+        }
+
+        #resultado-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #resultado {
+            font-weight: bold;
+            font-size: 20px;
+            color: #00fffb;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <input type="number" name="valor1" placeholder="Valor 1" required aria-required="true" step="any">
+            <select name="operacao">
+                <option>+</option>
+                <option>-</option>
+                <option>x</option>
+                <option>/</option>
+            </select>
+            <input type="number" name="valor2" placeholder="Valor 2" required aria-required="true" step="any">
+            <button type="submit">Calcular</button>
+        </form>
+        <div id="resultado-container">
+            <label id="resultado">
+                {name}
+            </label>
+        </div>
+    </div>
+</body>
+
+</html>
