@@ -1,5 +1,6 @@
 package com.fag.presentation.controllers;
 
+import com.fag.domain.dto.PixDTO;
 import com.fag.service.PixService;
 
 import jakarta.inject.Inject;

@@ -4,17 +4,13 @@ import java.util.List;
 
 import com.fag.domain.dto.OperatorDTO;
 import com.fag.domain.dto.ProductDTO;
-import com.fag.domain.dto.PixDTO;
 import com.fag.domain.dto.RechargeDTO;
 
 public interface IRechargeVendor {
-    
-    RechargeDTO create(RechargeDTO recharge);
 
-    List<OperatorDTO> listOperators(Integer stateCode, Integer category);
+  List<OperatorDTO> listOperators(Integer stateCode, Integer category);
 
-    List<ProductDTO> listProducts(Integer stateCode, Integer operatorId);
+  List<ProductDTO> listProducts(Integer stateCode, Integer operatorId);
 
-	PixDTO create(PixDTO dto);
-    
+  RechargeDTO create(RechargeDTO recharge);
 }

@@ -4,9 +4,7 @@ import java.util.List;
 
 import com.fag.domain.dto.OperatorDTO;
 import com.fag.domain.dto.ProductDTO;
-import com.fag.domain.dto.PixDTO;
 import com.fag.domain.dto.RechargeDTO;
-import com.fag.domain.usecases.CreateQrCode;
 import com.fag.domain.usecases.CreateRecharge;
 import com.fag.domain.usecases.ListOperatorServices;
 import com.fag.domain.usecases.ListOperators;
@@ -36,7 +34,7 @@ public class RechargeService {
   }
 
   public Response listProducts(Integer stateCode, Integer operatorId) {
-    ListProducts listServices = new ListProducts(celcoin);
+    ListOperatorServices listServices = new ListOperatorServices(celcoin);
 
     List<ProductDTO> operators = listServices.execute(stateCode, operatorId);
 

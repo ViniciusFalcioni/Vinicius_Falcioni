@@ -7,6 +7,7 @@ public class CelcoinOperatorDTO {
     private Integer category;
 
     @JsonbProperty("TipoRecarganameProvider")
+    
     private Integer rechargeType;
 
     private String name;
