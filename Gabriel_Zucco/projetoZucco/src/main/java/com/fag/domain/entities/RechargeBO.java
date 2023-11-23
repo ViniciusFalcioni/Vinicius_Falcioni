@@ -11,7 +11,6 @@ public class RechargeBO {
     private String receipt;
     private Long transactionId;
     private boolean success;
-    private boolean sucess;
 
     public RechargeBO(UUID id, Double value, String document, Integer providerId, PhoneBO phone, String receipt, Long transactionId, boolean success) {
         this.id = id;
@@ -56,17 +55,46 @@ public class RechargeBO {
         return success;
     }
 
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public void setValue(Double value) {
+        this.value = value;
+    }
+
+    public void setDocument(String document) {
+        this.document = document;
+    }
+
+    public void setProviderId(Integer providerId) {
+        this.providerId = providerId;
+    }
+
+    public void setPhone(PhoneBO phone) {
+        this.phone = phone;
+    }
+
+    public void setReceipt(String receipt) {
+        this.receipt = receipt;
+    }
+
+    public void setTransactionId(Long transactionId) {
+        this.transactionId = transactionId;
+    }
+
+    public void setSuccess(boolean success) {
+        this.success = success;
+    }
+
     public void handleSucess(String receipt, Long transactionId) {
         this.receipt = receipt;
         this.transactionId = transactionId;
-        this.sucess = true;
+        this.success = true;
     }
 
     public void handleError(){
-        this.sucess = false;
+        this.success = false;
     }
 
-    public UUID getID() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }

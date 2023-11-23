@@ -19,7 +19,7 @@ public class PanacheRechargeMapper {
                 new PhoneBO(countryCode, stateCode, number),
                 entity.getReceipt(),
                 entity.getTransactionId(),
-                entity.isSucess());
+                entity.isSuccess());
     }
 
     public static PanacheRecharge toEntity(RechargeBO bo){
@@ -28,14 +28,14 @@ public class PanacheRechargeMapper {
                 .concat(bo.getPhone().getStateCode().toString())
                 .concat(bo.getPhone().getNumber());
 
-        entity.setID(bo.getID());
+        entity.setID(bo.getId());
         entity.setValue(bo.getValue());
         entity.setDocument(bo.getDocument());
         entity.setOperatorId(bo.getProviderId());
         entity.setPhoneNumber(phone);
         entity.setTransactionId(bo.getTransactionId());
         entity.setReceipt(bo.getReceipt());
-        entity.setSucess(bo.isSuccess());
+        entity.setSuccess(bo.isSuccess());
         
         return entity;
     }

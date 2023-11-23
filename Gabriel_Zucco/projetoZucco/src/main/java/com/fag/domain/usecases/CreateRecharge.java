@@ -4,27 +4,30 @@ import main.java.com.fag.domain.dto.RechargeDTO;
 import main.java.com.fag.domain.entities.RechargeBO;
 import main.java.com.fag.domain.mappers.RechargeMapper;
 import main.java.com.fag.domain.repositories.IRechargeDataBaseRepository;
-import main.java.com.fag.domain.repositories.IRechargeVendorRepository;
-import main.java.com.fag.infra.celcoin.repository.RechargeCelcoin;
+import main.java.com.fag.infra.celcoin.repository.IRechargeVendor;
 
 public class CreateRecharge {
-    private final IRechargeVendorRepository vendor;
+    private final IRechargeVendor vendor;
     private final IRechargeDataBaseRepository dbRepository;
 
-    public CreateRecharge(RechargeCelcoin celcoin, IRechargeDataBaseRepository dbRepository) {
-        this.vendor = (IRechargeVendorRepository) celcoin;
+    public CreateRecharge(IRechargeVendor vendor, IRechargeDataBaseRepository dbRepository) {
+        this.vendor = vendor;
         this.dbRepository = dbRepository;
     }
 
-    public RechargeDTO execute(RechargeDTO rechargeDTO) {
-        // Realize a lógica de criação da recarga usando o vendor
-        RechargeDTO createdRecharge = vendor.create(rechargeDTO);
+    public RechargeDTO execute(RechargeDTO dto) {
+        RechargeBO bo = RechargeMapper.toBO(dto);
 
-        // Salve a recarga no banco de dados
-        RechargeBO rechargeBO = RechargeMapper.toBO(createdRecharge);
-        RechargeBO persistedRechargeBO = dbRepository.persist(rechargeBO);
+        RechargeDTO rechargeResponse = vendor.create(dto);
 
-        // Retorne a recarga criada
-        return RechargeMapper.toDTO(persistedRechargeBO);
+        if(rechargeResponse.isSuccess()){
+            bo.handleSucess(rechargeResponse.getReceipt(), rechargeResponse.getTransactionId());
+        } else {
+            bo.handleError();
+        }
+
+        dbRepository.persist(bo);
+
+        return rechargeResponse;
     }
 }

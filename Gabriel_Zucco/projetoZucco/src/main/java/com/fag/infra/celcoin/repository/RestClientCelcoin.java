@@ -28,12 +28,12 @@ public interface RestClientCelcoin {
     @GET
     @Path("/v5/transactions/topups/providers")
     CelcoinOperatorsDTO listOperators(@HeaderParam("Authorization") String token,
-                                      @QueryParam("stateCode") Integer stateCode, @QueryParam("category") Integer category);
+            @QueryParam("stateCode") Integer stateCode, @QueryParam("category") Integer category);
 
     @GET
     @Path("/v5/transactions/topups/provider-values")
     CelcoinProductsDTO listProducts(@HeaderParam("Authorization") String token,
-                                    @QueryParam("stateCode") Integer stateCode, @QueryParam("providerID") Integer operatorID);
+    @QueryParam("stateCode") Integer stateCode, @QueryParam("providerID") Integer operatorID);
 
     @POST
     @Path("/v5/transactions/topups")

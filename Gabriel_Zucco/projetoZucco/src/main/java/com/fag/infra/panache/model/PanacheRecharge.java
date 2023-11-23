@@ -32,8 +32,8 @@ public class PanacheRecharge extends PanacheEntityBase {
     @Column(name = "TRANSACTIONID")
     private Long transactionId;
     
-    @Column(name = "SUCESS")
-    private boolean sucess;
+    @Column(name = "SUCCESS")
+    private boolean success;
     
     public UUID getId(){
         return id;
@@ -71,7 +71,7 @@ public class PanacheRecharge extends PanacheEntityBase {
         return phoneNumber;
     }
     
-    public void setPhoneNumber(String PhoneNumber){
+    public void setPhoneNumber(String phoneNumber){
         this.phoneNumber = phoneNumber;
     }
     
@@ -91,11 +91,11 @@ public class PanacheRecharge extends PanacheEntityBase {
         this.transactionId = transactionId;
     }
     
-    public boolean isSucess(){
-        return sucess;
+    public boolean isSuccess(){
+        return success;
     }
     
-    public void setSucess(boolean sucess){
-        this.sucess = sucess;
+    public void setSuccess(boolean sucess){
+        this.success = sucess;
     }
 }

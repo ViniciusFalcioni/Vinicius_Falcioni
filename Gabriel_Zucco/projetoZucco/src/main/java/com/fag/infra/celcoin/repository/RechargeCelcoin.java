@@ -26,13 +26,13 @@ public class RechargeCelcoin implements IRechargeVendor {
     @RestClient
     RestClientCelcoin restClient;
 
-    
+    @Override
     public RechargeDTO create(RechargeDTO recharge){
 
         try{
             CelcoinRechargeDTO rechargeDTO = CelcoinRechargeMapper.toVendorDTO(recharge);
 
-            CelcoinRechargeResponseDTO response = restClient.handleRecharge(GetToken(), rechargeDTO);
+            CelcoinRechargeResponseDTO response = restClient.handleRecharge(getToken(), rechargeDTO);
 
             recharge.setReceipt(response.getReceipt().getReceiptData());
             recharge.setTransactionId(response.getTransactionID());
@@ -44,11 +44,11 @@ public class RechargeCelcoin implements IRechargeVendor {
         return recharge;
     }
 
-    
+    @Override
     public List<OperatorDTO> listOperators(Integer stateCode, Integer category){
 
         try{
-            CelcoinOperatorsDTO operators = restClient.listOperators(GetToken(), stateCode, category);
+            CelcoinOperatorsDTO operators = restClient.listOperators(getToken(), stateCode, category);
 
             return operators.getProviders().stream()
                     .map(operator -> CelcoinOperatorMapper.toAppDTO(operator))
@@ -58,10 +58,10 @@ public class RechargeCelcoin implements IRechargeVendor {
         }
     }
 
-
+    @Override
     public List<ProductDTO> listProducts(Integer operatorID, Integer stateCode){
         try{
-            CelcoinProductsDTO products = restClient.listProducts(GetToken(), stateCode, operatorID);
+            CelcoinProductsDTO products = restClient.listProducts(getToken(), stateCode, operatorID);
 
             return products.getProducts().stream()
                     .map(product -> CelcoinProductMapper.toAppDTO(product))
@@ -71,7 +71,7 @@ public class RechargeCelcoin implements IRechargeVendor {
         }
     }
 
-    private String GetToken(){
+    private String getToken(){
         Form form = new Form();
 
         form.param("client_id", "41b44ab9a56440.teste.celcoinapi.v5");
@@ -79,7 +79,7 @@ public class RechargeCelcoin implements IRechargeVendor {
         form.param("client_secret", "e9d15cde33024c1494de7480e69b7a18c09d7cd25a8446839b3be82a56a944a3");
 
         CelcoinTokenDTO tokenDTO = restClient.generateToken(form);
-        String token = "Bearer" + tokenDTO.getAcessToken();
+        String token = "Bearer " + tokenDTO.getAcessToken();
 
         return token;
     }
