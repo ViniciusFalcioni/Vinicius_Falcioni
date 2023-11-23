@@ -31,9 +31,9 @@ public class RechargeCelcoin implements IRechargeVendor {
 
             CelcoinRechargeResponseDTO response = restClient.handleRecharge(getToken(), rechargeDTO);
 
-            recharge = recharge.withReceipt(response.getReceipt().getReceiptData())
-                    .withTransactionId(response.getTransactionId())
-                    .withSuccess(response.getErrorCode().equals("000"));
+            recharge.setReceipt(response.getReceipt().getReceiptData());
+            recharge.setTransactionId(response.getTransactionId());
+            recharge.setSuccess(response.getErrorCode().equals("000"));
         } catch (Exception e) {
             throw new RuntimeException("Erro comunicação provedor servico recarga.");
         }

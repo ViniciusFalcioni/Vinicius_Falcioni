@@ -10,29 +10,30 @@ public class RechargeMapper {
 
     public static RechargeBO toBO(RechargeDTO dto) {
         return new RechargeBO(
-                dto.id() != null ? UUID.fromString(dto.id()) : UUID.randomUUID(),
-                dto.value(),
-                dto.document(),
-                dto.operatorId(),
-                PhoneMapper.toBO(dto.phone()),
-                dto.receipt(),
-                dto.transactionId(),
-                dto.success());
+                dto.getId() != null ? UUID.fromString(dto.getId()) : UUID.randomUUID(),
+                dto.getValue(),
+                dto.getDocument(),
+                dto.getOperatorId(),
+                PhoneMapper.toBO(dto.getPhone()),
+                dto.getReceipt(),
+                dto.getTransactionId(),
+                dto.isSuccess());
 
     }
 
-    public static RechargeDTO toDTO(RechargeBO entity) {
-        PhoneDTO phone = PhoneMapper.toDTO(entity.phone());
+    public static RechargeDTO toDTO(RechargeBO bo) {
+        RechargeDTO dto = new RechargeDTO();
 
-        return new RechargeDTO(
-                entity.id().toString(),
-                entity.value(),
-                entity.document(),
-                entity.providerId(),
-                phone,
-                entity.receipt(),
-                entity.transactionId(),
-                entity.success());
+        dto.setId(bo.id() != null ? bo.id().toString() : null);
+        dto.setValue(bo.value());
+        dto.setDocument(bo.document());
+        dto.setOperatorId(bo.providerId());
+        dto.setPhone(PhoneMapper.toDTO(bo.phone()));
+        dto.setReceipt(bo.receipt());
+        dto.setTransactionId(bo.transactionId());
+        dto.setSuccess(bo.success());
+
+        return dto;
     }
 
 }

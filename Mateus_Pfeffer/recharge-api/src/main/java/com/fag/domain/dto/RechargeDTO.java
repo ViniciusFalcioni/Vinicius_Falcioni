@@ -2,18 +2,78 @@ package com.fag.domain.dto;
 
 import java.math.BigDecimal;
 
-public record RechargeDTO(String id, BigDecimal value, String document, Integer operatorId, PhoneDTO phone, String receipt, Long transactionId, boolean success) {
+public class RechargeDTO {
+    private String id;
+    private BigDecimal value;
+    private String document;
+    private Integer operatorId;
+    private PhoneDTO phone;
+    private String receipt;
+    private Long transactionId;
+    private boolean success;
 
-    public RechargeDTO withReceipt(String receipt) {
-        return new RechargeDTO(id(), value(), document(), operatorId(), phone(), receipt, transactionId(), success());
+    public BigDecimal getValue() {
+        return value;
     }
 
-    public RechargeDTO withTransactionId(Long transactionId) {
-        return new RechargeDTO(id(), value(), document(), operatorId(), phone(), receipt(), transactionId, success());
+    public void setValue(BigDecimal value) {
+        this.value = value;
     }
 
-    public RechargeDTO withSuccess(boolean success) {
-        return new RechargeDTO(id(), value(), document(), operatorId(), phone(), receipt(), transactionId(), success);
+    public String getDocument() {
+        return document;
+    }
+
+    public void setDocument(String document) {
+        this.document = document;
+    }
+
+    public PhoneDTO getPhone() {
+        return phone;
+    }
+
+    public void setPhone(PhoneDTO phone) {
+        this.phone = phone;
+    }
+
+    public String getReceipt() {
+        return receipt;
+    }
+
+    public void setReceipt(String receipt) {
+        this.receipt = receipt;
+    }
+
+    public boolean isSuccess() {
+        return success;
+    }
+
+    public void setSuccess(boolean success) {
+        this.success = success;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Integer getOperatorId() {
+        return operatorId;
+    }
+
+    public void setOperatorId(Integer operatorId) {
+        this.operatorId = operatorId;
+    }
+
+    public Long getTransactionId() {
+        return transactionId;
+    }
+
+    public void setTransactionId(Long transactionId) {
+        this.transactionId = transactionId;
     }
 
 }

@@ -21,8 +21,8 @@ public class CreateRecharge {
 
         RechargeDTO response = vendor.create(dto);
 
-        if (response.success()) {
-            bo = bo.handleSuccess(response.receipt(), response.transactionId());
+        if (response.isSuccess()) {
+            bo = bo.handleSuccess(response.getReceipt(), response.getTransactionId());
         } else {
             bo = bo.handleError();
         }

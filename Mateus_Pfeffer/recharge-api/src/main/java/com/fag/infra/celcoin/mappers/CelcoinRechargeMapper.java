@@ -9,17 +9,17 @@ import java.math.RoundingMode;
 public class CelcoinRechargeMapper {
 
     public static CelcoinRechargeDTO toVendorDTO(RechargeDTO appDTO) {
-        CelcoinRechargeDTO celcoinRechargeDTO = new CelcoinRechargeDTO();
+        CelcoinRechargeDTO vendorDTO = new CelcoinRechargeDTO();
+        CelcoinRechargeValueDTO topUpData = new CelcoinRechargeValueDTO();
 
-        CelcoinRechargeValueDTO topupData = new CelcoinRechargeValueDTO();
-        topupData.setValue(appDTO.value());
+        topUpData.setValue(appDTO.getValue());
 
-        celcoinRechargeDTO.setTopupData(topupData);
-        celcoinRechargeDTO.setPhone(CelcoinRechargePhoneMapper.toVendorDTO(appDTO.phone()));
-        celcoinRechargeDTO.setProviderId(appDTO.operatorId());
-        celcoinRechargeDTO.setCpfCnpj(appDTO.document());
+        vendorDTO.setCpfCnpj(appDTO.getDocument());
+        vendorDTO.setPhone(CelcoinRechargePhoneMapper.toVendorDTO(appDTO.getPhone()));
+        vendorDTO.setProviderId(appDTO.getOperatorId());
+        vendorDTO.setTopupData(topUpData);
 
-        return celcoinRechargeDTO;
+        return vendorDTO;
     }
 
 }
