@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+        }
+        
+        .calculator {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            width: 250px;
+            height: 450px;
+        }
+        
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        input {
+            width: 80%;
+        }
+
+        select {
+            width: 90%;
+        }
+
+        input, select {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bolder;
+        }
+        
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        #resultado-box {
+            margin-top: 20px;
+        }
+        
+        p {
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h1>Calculadora</h1>
+        <form action="/calculadora" method="post">
+            <label>Valor 1</label>
+            <input name="valor1" type="number" required step="any"/>
+            <label>Valor 2</label>
+            <input name="valor2" type="number" required step="any"/>
+            <label>Operação</label>
+            <select name="opcao">
+                <option>Soma</option>
+                <option>Subtração</option>
+                <option>Multiplicação</option>
+                <option>Divisão</option>
+            </select>
+            <button onclick="calculate">Calcular</button>
+        </form>
+        <div id="resultado-box">
+            <h2>Resultado:</h2> 
+            <p>{resultado.resultado ?: ""}</p>           
+        </div>
+    </div>
+</body>
+</html>

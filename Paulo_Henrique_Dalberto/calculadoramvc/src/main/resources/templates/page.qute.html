@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input, select {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Calculadora</h1>
+
+<form action="/calculadora" method="post"> 
+    <label for="valor1">Valor 1</label>
+    <input type="text" name="valor1" id="valor1" required pattern="[0-9]+([,\.][0-9]+)?" title="Digite um número válido"/>
+    <label for="valor2">Valor 2</label>
+    <input type="text" name="valor2" id="valor2" required pattern="[0-9]+([,\.][0-9]+)?" title="Digite um número válido"/>
+    <select name="opcao">
+        <option value="SOMA">Soma</option>
+        <option value="SUBTRAÇÃO">Subtração</option>
+        <option value="DIVISÃO">Divisão</option>
+        <option value="MULTIPLICAÇÃO">Multiplicação</option>
+    </select>
+    <button type="submit">Calcular</button>
+</form>
+
+{#if mensagemErro}
+    <p style="color: red;">{mensagemErro}</p>
+{/if}
+
+<p>Resultado: {resultado ?: "Nenhum resultado ainda"}</p>
+
+</body>
+</html>

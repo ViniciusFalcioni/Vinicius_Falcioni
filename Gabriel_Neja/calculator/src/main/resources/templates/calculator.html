@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang= "pt-br"> 
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+</head>
+<body>
+    
+    <form action="/calculator" method="get"> 
+          
+        <label for="operacao">OPERAÇÃO:</label>
+        <select name="operacao">
+            <option value="soma">Soma</option>
+            <option value="subtracao">Subtração</option>
+            <option value="multiplicacao">Multiplicação</option>
+            <option value="divisao">Divisao</option>
+        </select>
+        <label style="margin-left: 10px;" for="val1">VALOR 1:</label>
+        <input name="val1" type="text">
+        
+        <label style="margin-left: 10px;" for="val2">VALOR 2:</label>
+        <input name="val2" type="text">
+        
+        <div style="margin-top: 10px; display: flex; flex-direction: row; align-items: center;width: 100%;">
+            <button >Calcular</button>
+        </div>
+
+        <h1>Resultado: <b>{result}</b></h1>
+    </form>
+</body>
+</html>
+
+
+
+
