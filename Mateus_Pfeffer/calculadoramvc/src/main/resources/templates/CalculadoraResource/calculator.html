@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{name ?: "Qute"}</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form {
+            display: inline-block;
+        }
+
+        .input-calculate {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .result {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .btn-calcular {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-calcular:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form class="form" action="/calculator" method="GET" name="form">
+            <div class="input-calculate">
+                <div class="result">
+                    <h2>Calculadora <br />do<br /> <b>{name ?: "Qute"}</b></h2>
+                    <p>Resultado é <b>{result}</b></p>
+                </div>
+                <button class="btn-calcular" type="submit">
+                    Voltar
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora - Por Pedro Giusepe</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 { 
+            color: #333;
+        }
+
+        form {
+            background-color: #00c03a;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="text"] { 
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 19px;
+            border: 1px solid #000;
+            border-radius: 23px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        b {
+            color: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Calculadora Por Pedro Giusepe</h1>
+    <form action="/calculator" method="post">
+        <label for="num1">Número 1:</label>
+        <input type="text" name="num1" required pattern="[0-9]+(\.[0-9]+)?" title="Digite um número válido"><br><br> 
+
+        <label for="num2">Número 2:</label>
+        <input type="text" name="num2" required pattern="[0-9]+(\.[0-9]+)?" title="Digite um número válido"><br><br> 
+        <label for="operation">Operação:</label>
+        <select name="operation">
+            <option value="Soma">Soma</option>
+            <option value="Sub">Subtrair</option>
+            <option value="mult">Multiplicar</option>
+            <option value="Div">Dividir</option>
+        </select><br><br>
+
+        <input type="submit" value="Calcular">
+    </form>
+    <h1>Resultado: <b>{name ?: ""}</b></h1>
+    <br>
+</body>
+
+</html>

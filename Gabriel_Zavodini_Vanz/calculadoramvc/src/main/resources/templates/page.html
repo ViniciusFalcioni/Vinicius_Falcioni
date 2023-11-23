@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2e7ddf;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .calculator {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 350px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #555;
+        }
+
+        input[type="text"],
+        select {
+            width: 90%;
+            padding: 10px;
+            margin: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[readonly],
+        select[readonly] {
+            background-color: #eee;
+            cursor: not-allowed;
+        }
+
+        button {
+            background-color: #4695EB;
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #3579CB;
+        }
+
+        #resultado {
+            font-size: 20px;
+            color: #333;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <h1>Calculadora</h1>
+        <form action="/calculadora" method="post">
+            <label for="valor1">Valor 1</label>
+            <input type="text" name="valor1" id="valor1" required>
+            <br>
+            <label for="valor2">Valor 2</label>
+            <input type="text" name="valor2" id="valor2" required>
+            <br>
+            <label for="operacoes">Operação</label>
+            <select name="operacoes" id="operacoes">
+                <option value="Soma">Soma</option>
+                <option value="Sub">Subtração</option>
+                <option value="mult">Multiplicação</option>
+                <option value="Div">Divisão</option>
+            </select>
+            <br>
+            <br>
+            <button>Calcular</button>
+        </form>
+        <h1>Resultado: <b><span id="resultado">{name ?: ""}</span></b></h1>
+    </div>
+</body>
+
+</html>
