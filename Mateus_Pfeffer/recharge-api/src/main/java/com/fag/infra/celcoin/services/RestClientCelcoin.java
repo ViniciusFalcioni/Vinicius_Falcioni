@@ -1,4 +1,4 @@
-package com.fag.infra.celcoin.repository;
+package com.fag.infra.celcoin.services;
 
 import com.fag.infra.celcoin.dto.*;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -9,7 +9,7 @@ import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
 @ApplicationScoped
 @RegisterRestClient(baseUri = "https://sandbox.openfinance.celcoin.dev")
-public interface IRestClientCelcoin {
+public interface RestClientCelcoin {
 
     @POST
     @Path("/v5/token")

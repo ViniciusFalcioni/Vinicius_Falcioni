@@ -14,7 +14,7 @@ public class ListOperators {
     }
 
     public List<OperatorDTO> execute(Integer stateCode, Integer category) {
-        return null;
+        return vendor.listOperators(stateCode, category);
     }
 
 }

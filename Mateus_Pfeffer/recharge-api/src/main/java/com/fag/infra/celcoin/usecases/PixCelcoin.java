@@ -1,4 +1,4 @@
-package com.fag.infra.celcoin.repository;
+package com.fag.infra.celcoin.usecases;
 
 import com.fag.domain.dto.PixDTO;
 import com.fag.domain.repositories.IPixVendor;
@@ -6,6 +6,7 @@ import com.fag.infra.celcoin.dto.CelcoinPixDTO;
 import com.fag.infra.celcoin.dto.CelcoinPixResponseDTO;
 import com.fag.infra.celcoin.dto.CelcoinTokenDTO;
 import com.fag.infra.celcoin.mappers.CelcoinPixMapper;
+import com.fag.infra.celcoin.services.RestClientCelcoin;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.core.Form;
@@ -16,7 +17,7 @@ public class PixCelcoin implements IPixVendor {
 
     @Inject
     @RestClient
-    IRestClientCelcoin restClient;
+    RestClientCelcoin restClient;
 
     @Override
     public PixDTO create(PixDTO pix) {
@@ -24,8 +25,8 @@ public class PixCelcoin implements IPixVendor {
 
         CelcoinPixResponseDTO response = restClient.handlePix(getToken(), pixDTO);
 
-        return pix.withQrCode(response.qrCode())
-                .withTransactionId(response.transactionId());
+        return pix.withQrCode(response.getQrCode())
+                .withTransactionId(response.getTransactionId());
     }
 
     private String getToken() {
@@ -37,7 +38,7 @@ public class PixCelcoin implements IPixVendor {
 
         CelcoinTokenDTO tokenDTO = restClient.generateToken(form);
 
-        return "Bearer " + tokenDTO.accessToken();
+        return "Bearer " + tokenDTO.getAccessToken();
     }
 
 }

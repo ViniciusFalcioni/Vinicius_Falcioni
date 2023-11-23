@@ -1,8 +1,6 @@
-package com.fag.infra.celcoin.repository;
+package com.fag.infra.celcoin.usecases;
 
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class RechargeCelcoinTest {
 

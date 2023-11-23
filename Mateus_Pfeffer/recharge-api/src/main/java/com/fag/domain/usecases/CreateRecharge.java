@@ -19,11 +19,17 @@ public class CreateRecharge {
     public RechargeDTO execute(RechargeDTO dto) {
         RechargeBO bo = RechargeMapper.toBO(dto);
 
-        RechargeDTO rechargeResponse = vendor.create(dto);
+        RechargeDTO response = vendor.create(dto);
+
+        if (response.success()) {
+            bo = bo.handleSuccess(response.receipt(), response.transactionId());
+        } else {
+            bo = bo.handleError();
+        }
 
         dbRepository.persist(bo);
 
-        return rechargeResponse;
+        return response;
     }
 
 }

@@ -1,4 +1,4 @@
-package com.fag.infra.celcoin.repository;
+package com.fag.infra.celcoin.usecases;
 
 import com.fag.domain.dto.OperatorDTO;
 import com.fag.domain.dto.ProductDTO;
@@ -8,6 +8,7 @@ import com.fag.infra.celcoin.dto.*;
 import com.fag.infra.celcoin.mappers.CelcoinOperatorMapper;
 import com.fag.infra.celcoin.mappers.CelcoinProductMapper;
 import com.fag.infra.celcoin.mappers.CelcoinRechargeMapper;
+import com.fag.infra.celcoin.services.RestClientCelcoin;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.core.Form;
@@ -21,7 +22,7 @@ public class RechargeCelcoin implements IRechargeVendor {
 
     @Inject
     @RestClient
-    IRestClientCelcoin restClient;
+    RestClientCelcoin restClient;
 
     @Override
     public RechargeDTO create(RechargeDTO recharge) {
@@ -30,9 +31,9 @@ public class RechargeCelcoin implements IRechargeVendor {
 
             CelcoinRechargeResponseDTO response = restClient.handleRecharge(getToken(), rechargeDTO);
 
-            recharge = recharge.withReceipt(response.receipt().receiptData())
-                    .withTransactionId(response.transactionId())
-                    .withSuccess(response.success());
+            recharge = recharge.withReceipt(response.getReceipt().getReceiptData())
+                    .withTransactionId(response.getTransactionId())
+                    .withSuccess(response.getErrorCode().equals("000"));
         } catch (Exception e) {
             throw new RuntimeException("Erro comunicação provedor servico recarga.");
         }
@@ -58,7 +59,7 @@ public class RechargeCelcoin implements IRechargeVendor {
         try {
             CelcoinProductsDTO products = restClient.listProducts(getToken(), stateCode, operatorId);
 
-            return products.products().stream()
+            return products.getProducts().stream()
                     .map(CelcoinProductMapper::toAppDTO)
                     .collect(Collectors.toList());
         } catch (Exception e) {
@@ -75,7 +76,7 @@ public class RechargeCelcoin implements IRechargeVendor {
 
         CelcoinTokenDTO tokenDTO = restClient.generateToken(form);
 
-        return "Beader " + tokenDTO.accessToken();
+        return "Bearer " + tokenDTO.getAccessToken();
     }
 
 }

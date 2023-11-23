@@ -14,7 +14,7 @@ public class ListProducts {
     }
 
     public List<ProductDTO> execute(Integer stateCode, Integer operatorId) {
-        return null;
+        return vendor.listProducts(stateCode, operatorId);
     }
 
 }

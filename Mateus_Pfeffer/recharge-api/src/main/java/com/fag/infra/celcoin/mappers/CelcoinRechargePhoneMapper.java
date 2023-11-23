@@ -6,11 +6,17 @@ import com.fag.infra.celcoin.dto.CelcoinPhoneDTO;
 public class CelcoinRechargePhoneMapper {
 
     public static PhoneDTO toAppDTO(CelcoinPhoneDTO vendor) {
-        return new PhoneDTO(vendor.stateCode(), vendor.countryCode(), vendor.number());
+        return new PhoneDTO(vendor.getStateCode(), vendor.getCountryCode(), vendor.getNumber());
     }
 
     public static CelcoinPhoneDTO toVendorDTO(PhoneDTO appDTO) {
-        return new CelcoinPhoneDTO(appDTO.stateCode(), appDTO.countryCode(), appDTO.number());
+        CelcoinPhoneDTO phone = new CelcoinPhoneDTO();
+
+        phone.setStateCode(appDTO.stateCode());
+        phone.setCountryCode(appDTO.countryCode());
+        phone.setNumber(appDTO.number());
+
+        return phone;
     }
 
 }

@@ -10,7 +10,7 @@ public class RechargeMapper {
 
     public static RechargeBO toBO(RechargeDTO dto) {
         return new RechargeBO(
-                UUID.fromString(dto.id()),
+                dto.id() != null ? UUID.fromString(dto.id()) : UUID.randomUUID(),
                 dto.value(),
                 dto.document(),
                 dto.operatorId(),
@@ -24,7 +24,15 @@ public class RechargeMapper {
     public static RechargeDTO toDTO(RechargeBO entity) {
         PhoneDTO phone = PhoneMapper.toDTO(entity.phone());
 
-        return new RechargeDTO(entity.id().toString(), entity.value(), entity.document(), entity.providerId(), phone, entity.receipt(), entity.transactionId(), entity.success());
+        return new RechargeDTO(
+                entity.id().toString(),
+                entity.value(),
+                entity.document(),
+                entity.providerId(),
+                phone,
+                entity.receipt(),
+                entity.transactionId(),
+                entity.success());
     }
 
 }
