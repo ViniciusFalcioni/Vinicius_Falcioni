@@ -3,12 +3,12 @@ package com.fag.domain.usecases;
 import com.fag.domain.dto.PixDTO;
 import com.fag.domain.entities.PixBO;
 import com.fag.domain.mappers.PixMapper;
-import com.fag.domain.repositories.IPixDatabaseRepository;
+import com.fag.domain.repositories.IPixDataBaseRepository;
 import com.fag.domain.repositories.IPixVendor;
 
 public class CreatePix {
   private IPixVendor pixVendor;
-  private IPixDatabaseRepository databaseRepository;
+  private IPixDataBaseRepository databaseRepository;
 
   public PixDTO execute(PixDTO dto) {
     PixBO bo = PixMapper.toBO(dto);
@@ -20,7 +20,7 @@ public class CreatePix {
     return response;
   }
 
-  public CreatePix(IPixVendor pixVendor, IPixDatabaseRepository databaseRepository) {
+  public CreatePix(IPixVendor pixVendor, IPixDataBaseRepository databaseRepository) {
     this.pixVendor = pixVendor;
     this.databaseRepository = databaseRepository;
   }
