@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>CALCULATOR</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <link rel="stylesheet" type="text/css" href="calculator.css" />
+</head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #2b2b2b; /* Dark gray background */
+    color: #e6e6e6; /* Light gray text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    max-width: 400px;
+    background-color: #333; /* Dark container background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #e6e6e6; /* Light gray heading */
+}
+
+.itens {
+    margin: 10px;
+    text-align: center;
+}
+
+label {
+    color: #e6e6e6; /* Light gray label */
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 50px;
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: #4d4d4d; /* Dark button */
+    color: #e6e6e6; /* Light gray text */
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #666; /* Slightly lighter on hover */
+}
+
+#numeros {
+    border: none;
+    height: 25px;
+    border-radius: 3px;
+    padding: 5px 10px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #555; /* Dark gray input background */
+    color: #e6e6e6; /* Light gray text */
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+textarea:focus,
+input:focus,
+select:focus {
+    outline: 0;
+}
+
+
+
+</style>
+
+<body>
+    <section class="container">
+        <h1>Calculadora</h1>
+        <form action="/calculator/calculate" method="POST">
+            <div class="itens">
+                <label for="num1">Primeiro Número:</label>
+                <input type="number" id="num1" name="num1" required><br><br>
+            </div>
+            <div class="itens">
+                <label for="num2">Segundo Número:</label>
+                <input type="number" id="num2" name="num2" required><br><br>
+            </div>
+            <div class="itens">
+                <label for="operation">Operação:</label>
+                <select id="operation" name="operation" required>
+                    <option value="add">Adição</option>
+                    <option value="subtract">Subtração</option>
+                    <option value="multiply">Multiplicação</option>
+                    <option value="divide">Divisão</option>
+                </select><br><br>
+            </div>
+            <div class="itens">
+                <button type="submit" value="Calcular">Calcular</button>
+            </div>
+        </form>
+    </section>
+</body>
+
+</html>

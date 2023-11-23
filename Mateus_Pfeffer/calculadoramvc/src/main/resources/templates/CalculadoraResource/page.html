@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{name ?: "Qute"}</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            border-radius: 1.25rem;
+            /*background: var(--Texto-Invertido, #FFF);*/
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        }
+
+        .form {
+            display: inline-block;
+        }
+
+        .input-calculate {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .input-container {
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        .form-control {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+            margin-bottom: 10px;
+        }
+
+        .input-content {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+            margin-bottom: 10px;
+        }
+
+        .btn-calcular {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-calcular:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form class="form" action="/calculator" method="POST" name="form" enctype="application/x-www-form-urlencoded">
+            <div class="input-calculate">
+                <div class="input-container">
+                    <label for="value1">Insira o primeiro número</label>
+                    <input type="number" step="0.01" name="num1" class="form-control" required>
+                    <br />
+                    <label for="value2">Insira o segundo número</label>
+                    <input type="number" step="0.01" name="num2" class="form-control" placeholder="Segundo número" required>
+                    <br />
+                </div>
+                <div class="input-container">
+                    <select class="input-content" name="operation">
+                        <option disabled value="">Operação</option>
+                        {#for operation in operations}
+                            <option value="{operation}">{operation}</option>
+                        {/for}
+                    </select>
+                </div>
+                <button class="btn-calcular" type="submit">
+                    Calcular
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

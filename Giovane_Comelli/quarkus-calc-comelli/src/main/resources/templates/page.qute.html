@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calc!</title>
+    <style>
+        body {
+            background-color: #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        form {
+            background-color: #123;
+            height: 50vh;
+            width: 70vh;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            border-radius: 32px;
+        }
+
+        form > label {
+            color: #fff;
+        }
+
+        form > h1 {
+            color: #fff;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/main" method="post" name="forms">
+        <h1>Calculadora</h1>
+        <label>
+            <span>Primeiro Valor</span>
+            <br>
+            <input type="number" name="primeiroValor" id="primeiroValor" required />
+        </label>
+
+        <label>
+            <span>Segundo Valor</span>
+            <br>
+            <input type="number" name="segundoValor" id="segundoValor" required />
+        </label>
+
+        <label>
+            <span>Operação</span>
+            <select name="selectCalculadora" id="selectCalculadora">
+                Operação
+                {#for operation in operations}
+                <option value="{operation}">{operation}</option>
+                {/for}
+            </select>
+        </label>
+        <button class="btn-calculate" type="submit">Calcular</button>
+    </form>
+</body>
+
+</html>

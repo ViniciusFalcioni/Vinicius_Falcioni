@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <style>
+        /* Reset CSS */
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed,
+        figure, figcaption, footer, header, hgroup,
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure,
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+
+        body {
+            line-height: 1;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        blockquote, q {
+            quotes: none;
+        }
+
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: '';
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        /* Add your custom styles below this line */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            background: #333333;
+        }
+
+        .calculator-container {
+            display: flex;
+            flex-direction: column;
+            padding: 0.5rem;
+            border: solid 1px #595959;
+            border-radius: 0.5rem;
+            width: 22rem;
+            height: auto;
+            background-color: #202020;
+            box-shadow: 0px 7px 15px 15px #262626;
+        }
+
+        .header-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 1.75rem;
+            margin-bottom: 0.5rem;
+            color: #D9D9D9;
+            font-family: system-ui;
+            font-size: 0.8rem;
+        }
+
+        .historic-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            height: 2.375rem;
+            width: -webkit-fill-available;
+        }
+
+        .historic-container a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 2.375rem;
+            width: 2.375rem;
+        }
+
+        .historic-container a img {
+            height: 1.5rem;
+            width: 1.5rem;
+        }
+
+        .historic-container a:hover {
+            background-color: rgba(217, 217, 217, 0.5);
+            border-radius: 0.3rem;
+        }
+
+        .historic-container input {
+            height: 100%;
+            margin-bottom: 0.2rem;
+            border: none;
+            outline: none;
+            color: #A1A1A1;
+            background-color: #202020;
+            font-size: 1.3rem;
+            font-family: system-ui;
+            text-align: end;
+        }
+
+        .display-container {
+            height: 6rem;
+            width: -webkit-fill-available;
+        }
+
+        .display-container .display {
+            height: 100%;
+            width: -webkit-fill-available;
+            border: none;
+            outline: none;
+            background-color: #202020;
+            color: #D9D9D9;
+            font-size: 3rem;
+            font-weight: 600;
+            font-family: system-ui;
+            text-align: end;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 0.4rem;
+        }
+
+        .button-container:last-child {
+            margin-bottom: 0;
+        }
+
+        .btn-default {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            height: 3.5rem;
+            width: 4.5rem;
+            border: none;
+            border-radius: 0.3rem;
+            background-color: #323232;
+            color: #D9D9D9;
+            font-size: 1.2rem;
+        }
+
+        .btn-default::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            border-radius: 0.3rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.1s;
+        }
+
+        .btn-default:hover::before {
+            opacity: 1;
+        }
+
+        .btn-secondary {
+            background-color: #DB9EE5;
+            color: #323232
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator-container">
+        <div class="header-container">
+            Calculadora
+        </div>
+        <div class="historic-container">
+            <a href="/history">
+                <img src="/icons/icons8_historic_24.png" alt="Button Access History">
+            </a>
+            <input type="text" id="latestExpression" readonly>
+        </div>
+        <div class="display-container">
+            <input class="display" type="text" id="display" readonly>
+        </div>
+        <div class="button-container">
+            <button class="btn-default" onclick="appendToDisplay('%')">
+                <img src="/icons/icons8_percent_24.png" alt="Icon Clear Symbol">
+            </button>
+            <button class="btn-default" onclick="clearDisplay()">C</button>
+            <button class="btn-default" onclick="deleteLastSymbol()">
+                <img src="/icons/icons8_clear_symbol_24.png" alt="Icon Clear Symbol">
+            </button>
+            <button class="btn-default" onclick="appendToDisplay('/')">
+                <img src="/icons/icons8_divide_24.png" alt="Icon Clear Symbol">
+            </button>
+        </div>
+        <div class="button-container">
+            <button class="btn-default" onclick="appendToDisplay('7')">7</button>
+            <button class="btn-default" onclick="appendToDisplay('8')">8</button>
+            <button class="btn-default" onclick="appendToDisplay('9')">9</button>
+            <button class="btn-default" onclick="appendToDisplay('*')">
+                <img src="/icons/icons8_multiply_24.png" alt="Icon Clear Symbol">
+            </button>
+        </div>
+        <div class="button-container">
+            <button class="btn-default" onclick="appendToDisplay('4')">4</button>
+            <button class="btn-default" onclick="appendToDisplay('5')">5</button>
+            <button class="btn-default" onclick="appendToDisplay('6')">6</button>
+            <button class="btn-default" onclick="appendToDisplay('-')">
+                <img src="/icons/icons8_minus_24.png" alt="Icon Clear Symbol">
+            </button>
+        </div>
+        <div class="button-container">
+            <button class="btn-default" onclick="appendToDisplay('1')">1</button>
+            <button class="btn-default" onclick="appendToDisplay('2')">2</button>
+            <button class="btn-default" onclick="appendToDisplay('3')">3</button>
+            <button class="btn-default" onclick="appendToDisplay('+')">
+                <img src="/icons/icons8_plus_24.png" alt="Icon Clear Symbol">
+            </button>
+        </div>
+        <div class="button-container">
+            <button class="btn-default" onclick="appendToDisplay('.')">.</button>
+            <button class="btn-default" onclick="appendToDisplay('0')">0</button>
+            <button class="btn-default" onclick="exponentInvert()">
+                <img src="/icons/icons8_plus_slash_minus_24.png" alt="Icon Clear Symbol">
+            </button>
+            <button class="btn-default btn-secondary" onclick="sendExpression()">
+                <img src="/icons/icons8_equal_24.png" alt="Icon Clear Symbol">
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const display = document.getElementById('display');
+        const latestExpression = document.getElementById('latestExpression');
+        let lastSymbolAdded = '';
+        const operatorsRegex = /[+\-*/%]+/;
+
+        const appendToDisplay = (value) => {
+            if (operatorsRegex.test(value))
+                display.value = display.value.replace(/[-+*/%]+$/, '') + value;
+            else
+             display.value += value;
+        };
+        const clearDisplay = () => display.value = '';
+        const deleteLastSymbol = () => {
+            let value = display.value;
+            display.value = value.length > 0 ? value.slice(0, -1) : value;
+        };
+        const exponentInvert = () => display.value *= -1;
+        const sendExpression = () => {
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "/calculator");
+            xhr.setRequestHeader("Content-Type", "text/plain");
+            xhr.send(display.value);
+            xhr.onload = () => {
+                let result = JSON.parse(xhr.responseText).result;
+                let history = JSON.parse(xhr.responseText).latestExpression;
+                display.value = result;
+                latestExpression.value = history + "=";
+            };
+        };
+    </script>
+</body>
+</html>

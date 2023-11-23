@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Flávio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .calculator {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .display {
+            font-size: 36px;
+            color: #333;
+            background-color: #eee;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            text-align: right;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .button {
+            font-size: 24px;
+            padding: 15px;
+            text-align: center;
+            background-color: #4287f5;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #3369c3;
+        }
+    </style>
+</head>
+<body>
+<form action="/calcular" method="post" class="calculator">
+    <input name="expressao" type="text" id="display" class="display" value="{result}">
+    <div class="buttons">
+        <div class="button" onclick="addToDisplay('7')">7</div>
+        <div class="button" onclick="addToDisplay('8')">8</div>
+        <div class="button" onclick="addToDisplay('9')">9</div>
+        <div class="button" onclick="addToDisplay('/')">/</div>
+        <div class="button" onclick="addToDisplay('4')">4</div>
+        <div class="button" onclick="addToDisplay('5')">5</div>
+        <div class="button" onclick="addToDisplay('6')">6</div>
+        <div class="button" onclick="addToDisplay('*')">*</div>
+        <div class="button" onclick="addToDisplay('1')">1</div>
+        <div class="button" onclick="addToDisplay('2')">2</div>
+        <div class="button" onclick="addToDisplay('3')">3</div>
+        <div class="button" onclick="addToDisplay('-')">-</div>
+        <div class="button" onclick="addToDisplay('0')">0</div>
+        <div class="button" onclick="addToDisplay('.')">.</div>
+        <button class="button" type="submit">=</button>
+        <div class="button" onclick="addToDisplay('+')">+</div>
+    </div>
+    <div class="buttons">
+        <div class="button" onclick="clearDisplay()">C</div>
+    </div>
+</form>
+
+<script>
+    function addToDisplay(value) {
+        document.getElementById("display").value += value;
+    }
+
+    function clearDisplay() {
+        document.getElementById("display").value = "";
+    }
+
+</script>
+</body>
+</html>
