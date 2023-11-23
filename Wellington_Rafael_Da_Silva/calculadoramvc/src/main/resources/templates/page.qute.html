@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora Quarkus</title>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <form action="/calculadora" method="post">
+        <label for="primeiroValor">Primeiro Valor:</label>
+        <input type="number" id="primeiroValor" name="primeiroValor" required><br><br>
+
+        <label for="segundoValor">Segundo Valor:</label>
+        <input type="number" id="segundoValor" name="segundoValor" required><br><br>
+
+        <label for="operacao">Selecione a operacao:</label>
+        <select id="operacao" name="operacao">
+            <option value="adicao">Adicao</option>
+            <option value="subtracao">Subtracao</option>
+            <option value="multiplicacao">Multiplicacao</option>
+            <option value="divisao">Divisao</option>
+        </select><br><br>
+
+        <div id="result-box">
+            <h2>Resultado:</h2>
+            <p>{resultado.resultado ?: ""}</p>
+        </div>
+
+        <input type="submit" value="Calcular">
+    </form>
+</body>
+</html>
+

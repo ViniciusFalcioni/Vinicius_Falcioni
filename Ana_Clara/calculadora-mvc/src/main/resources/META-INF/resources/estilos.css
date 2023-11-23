@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url("kirby.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: -100px;
+}
+
+form, body, .result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+p {
+  margin:0;
+}
+
+h2 {
+  color:rgb(43, 147, 188);
+  margin: 0;
+}
+
+form {
+  background-color: rgb(255, 255, 255);
+  width: 286px;
+  border-radius: 10px;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+label {
+  color:rgb(45, 45, 45);
+  text-align: center;
+}
+
+input,select {
+  color:rgb(45, 45, 45);
+  font-family: 'Poppins', sans-serif;
+}
+
+input[type="name"], select {
+  text-align: center;
+  width: 12rem; /* Largura da caixa de texto e do menu suspenso */
+  padding: 12px 0px; /* Espaçamento interno */
+  border: 1px solid #929292; /* Bordas */
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+input[type="submit"] {
+  text-align: center;
+  border: 1px solid #929292;
+  border-radius: 10px;
+  
+}
+
+.result {
+  background-color: rgb(255, 255, 255);
+  width: 286px;
+  border-radius: 10px;
+  padding: 1rem;
+  gap: 1rem;
+}
