@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.fundo{
+    background-image: linear-gradient(45deg, black, crimson);
+    height: 100vh;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.Calculadora{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 15px;
+    padding: 50px;
+}
+#primeiroValor{
+    width: 300px;
+    height: 25px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border: none;
+    text-align: right;
+    font-size: 20px;
+    
+}
+
+#segundoValor{
+    width: 300px;
+    height: 25px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border: none;
+    text-align: right;
+    font-size: 20px;
+}
+
+#terceiroValor{
+    width: 300px;
+    height: 25px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border: none;
+    text-align: right; 
+    font-size: 20px;
+}
+#Operação{
+    width: 300px;
+    height: 25px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    font-size: 15px;
+}
+.NomeProjeto{
+    margin-bottom: 20px;
+}
+.botaoCalc{
+    width: 100px;
+    height: 25px;
+    margin-top: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    text-align: center;
+}
+
+.botaoCalc:hover{
+    background-color: rgb(85, 85, 85);
+}
+.alinhamento{
+    text-align: center;
+}
+.resultado{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 15px;
+    padding: 50px;
+}
+

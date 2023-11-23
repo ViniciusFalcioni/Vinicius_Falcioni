@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>CALCULATOR</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" type="text/css" href="calculator.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(100, 100, 100, 0.8); /* Cinza mais escuro para o fundo */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .itens {
+            margin: 10px;
+            text-align: center;
+        }
+
+        label {
+            color: #333;
+        }
+
+        input[type="number"] {
+            border: none;
+            border-radius: 3px;
+            padding: 5px;
+            width: 100%;
+            background-color: #fff; /* Branco para o fundo dos campos de entrada */
+        }
+
+        .radio-group {
+            text-align: center;
+            margin-top: 20px; /* Mais espaço acima dos botões de seleção */
+        }
+
+        .radio-group label {
+            margin-right: 5px; /* Espaçamento à direita reduzido para aproximar as etiquetas */
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .radio-group input[type="radio"] {
+            margin-left: 5px; /* Espaçamento à esquerda reduzido para aproximar os botões de seleção */
+        }
+
+        button {
+            border: none;
+            border-radius: 10px;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            cursor: pointer;
+            background-color: #2ECC71;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        button:hover {
+            background-color: #27AE60;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Calculadora</h1>
+        <form action="/calculator" method="POST">
+            <div class="itens">
+                <label for="numero1">Número 1:</label>
+                <input type="number" id="numero1" name="numero1" required><br><br>
+            </div>
+            <div class="itens">
+                <label for="numero2">Número 2:</label>
+                <input type="number" id="numero2" name="numero2" required><br><br>
+            </div>
+            <div class="radio-group">
+                <label for="add">+</label>
+                <input type="radio" name="option" id="add" value="add" checked>
+                <label for="mult">*</label>
+                <input type="radio" name="option" id="mult" value="mult">
+                <label for="div">/</label>
+                <input type="radio" name="option" id="div" value="div">
+                <label for="sub">-</label>
+                <input type="radio" name="option" id="sub" value="sub">
+            </div>
+            <div class="itens">
+                <button>Calcular</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

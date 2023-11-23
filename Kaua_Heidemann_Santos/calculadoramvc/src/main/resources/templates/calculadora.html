@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora Quarkus</title>
+    <style>
+    body {
+        margin:0;
+}
+ 
+    .bg {
+        animation:slide 3s ease-in-out infinite alternate;
+        background-image: linear-gradient(-60deg, rgb(15, 11, 230) 50%, rgb(245, 23, 7) 50%);
+        bottom:0;
+        left:-50%;
+        opacity:.5;
+        position:fixed;
+        right:-50%;
+        top:0;
+        z-index:-1;
+    }
+    
+    .bg2 {
+        animation-direction:alternate-reverse;
+        animation-duration:4s;
+    }
+    
+    .bg3 {
+        animation-duration:5s;
+    }
+    
+    .content {
+        background-color:rgba(255,255,255,.8);
+        border-radius:.25em;
+        box-shadow:0 0 .25em rgba(0,0,0,.25);
+        box-sizing:border-box;
+        left:50%;
+        padding:10vmin;
+        position:fixed;
+        text-align:center;
+        top:50%;
+        transform:translate(-50%, -50%);
+        align-items: center;
+    }
+    
+    h1 {
+        font-family:monospace;
+        text-align: center;
+    }
+ 
+    @keyframes slide {
+        0% {
+            transform:translateX(-25%);
+        }
+    
+        100% {
+            transform:translateX(25%);
+        }
+    }
+
+    #footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 2.5rem;
+        text-align: center;
+        color: #f0e8e8;      
+    }
+
+    .retanguloInput {
+        width: 380px;
+        height: 50px;
+        margin-left: 5px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    #btnCalcular {
+            margin-top: 25px;
+            width: 380px;
+            height: 50px;
+            margin-left: 9px;
+            border-radius: 10px;
+            background: rgb(114, 224, 71);
+            border-color: #f0e8e8;
+            font-size: 20px;
+        }
+
+    label {
+            margin-left: 10px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 20px;
+            display: flex;
+        }
+
+        #selecionaOperacao {
+            border-radius: 5px;
+            width: 150px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            align-self: center;
+            margin-left: 120px;
+        }
+
+    form {
+        display:grid;
+    }
+    </style>
+</head>
+<body>
+     <div class="bg"></div>
+     <div class="bg bg2"></div>
+     <div class="bg bg3"></div>
+     <div class="content">
+        <h1>Calculadora</h1>
+
+        <form action="calculadora/result" method="post">
+            <label>Informe o primeiro número</label>
+            <input name="valor1" class="retanguloInput">
+        
+             <label>Informe o segundo número</label>
+             <input name="valor2" class="retanguloInput">
+        
+            <select name="operacao" id="selecionaOperacao">
+                <option name="adicao">Adição</option>
+                <option name="subtracao">Subtração</option>
+                <option name="multiplicacao">Multiplicação</option>
+                <option name="divisao">Divisão</option>
+            </select>
+
+             <button type="submit" id="btnCalcular">Calcular</button>
+        </form>
+
+        <h1>Resultado é: {result}</h1>
+    </div>
+    </div>
+        <footer id="footer">Webpage feito com a ajuda de Quarkus RESTEasy & Qute</footer>
+    </div>
+
+</body>
+</html>
