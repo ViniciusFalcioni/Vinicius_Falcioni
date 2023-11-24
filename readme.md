@@ -74,7 +74,9 @@ BUSCAR POR Gerenciador de Credenciais no windows e REMOVER o acesso dado ao GIT
 
 ---
 
-[Notion](https://www.notion.so/Primeiro-Bimestre-013e0180341e4a73b3ba2d1768fca330?pvs=4)
+[Notion - Primeiro Bimestre](https://maze-leaf-ed4.notion.site/Primeiro-Bimestre-013e0180341e4a73b3ba2d1768fca330?pvs=4)
+
+[Notion - Segundo Bimestre](https://maze-leaf-ed4.notion.site/Segundo-Bimestre-5db57c6301db4170aa0f5e5ca0efe79c?pvs=4)
 
 ### 🍴Fork e abertura de pull request
 
