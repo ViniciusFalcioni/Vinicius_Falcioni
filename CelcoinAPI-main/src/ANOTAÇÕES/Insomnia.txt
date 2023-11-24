@@ -1,0 +1,15 @@
+POST : http://localhost:8080/v1/pix
+
+
+JSON: ________  ---> exemplo
+       \\  //
+        \\//
+         \/
+{
+  "key": "pagamentojogosdigitais@gaming.com.br",
+  "amount": 98.90,
+  "merchantName": "Pedro Angelo",
+	"postalCode": "87896545",
+	"city": "CascaCity",
+  "description": "Referente ao custo compra de jogos"
+}
