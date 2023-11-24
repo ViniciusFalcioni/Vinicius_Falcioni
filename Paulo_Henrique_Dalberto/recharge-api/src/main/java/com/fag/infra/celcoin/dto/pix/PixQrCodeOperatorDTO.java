@@ -1,6 +1,6 @@
-package com.fag.infra.celcoin.dto;
+package com.fag.infra.celcoin.dto.pix;
 
-public class CelcoinOperatorDTO {
+public class PixQrCodeOperatorDTO {
   private Integer category;
   private Integer rechargeType;
   private String name;

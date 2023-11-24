@@ -9,11 +9,11 @@ import com.fag.domain.dto.OperatorDTO;
 import com.fag.domain.dto.ProductDTO;
 import com.fag.domain.dto.RechargeDTO;
 import com.fag.domain.repositories.IRechargeVendor;
-import com.fag.infra.celcoin.dto.CelcoinOperatorsDTO;
-import com.fag.infra.celcoin.dto.CelcoinProductsDTO;
-import com.fag.infra.celcoin.dto.CelcoinRechargeDTO;
-import com.fag.infra.celcoin.dto.CelcoinRechargeResponseDTO;
-import com.fag.infra.celcoin.dto.CelcoinTokenDTO;
+import com.fag.infra.celcoin.dto.recharge.CelcoinOperatorsDTO;
+import com.fag.infra.celcoin.dto.recharge.CelcoinProductsDTO;
+import com.fag.infra.celcoin.dto.recharge.CelcoinRechargeDTO;
+import com.fag.infra.celcoin.dto.recharge.CelcoinRechargeResponseDTO;
+import com.fag.infra.celcoin.dto.recharge.CelcoinTokenDTO;
 import com.fag.infra.celcoin.mappers.CelcoinOperatorMapper;
 import com.fag.infra.celcoin.mappers.CelcoinProductMapper;
 import com.fag.infra.celcoin.mappers.CelcoinRechargeMapper;
@@ -87,4 +87,5 @@ public class RechargeCelcoin implements IRechargeVendor {
 
         return token;
     }
+
 }

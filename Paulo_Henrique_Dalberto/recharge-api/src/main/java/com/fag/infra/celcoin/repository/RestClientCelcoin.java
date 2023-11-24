@@ -2,11 +2,13 @@ package com.fag.infra.celcoin.repository;
 
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
-import com.fag.infra.celcoin.dto.CelcoinOperatorsDTO;
-import com.fag.infra.celcoin.dto.CelcoinProductsDTO;
-import com.fag.infra.celcoin.dto.CelcoinRechargeDTO;
-import com.fag.infra.celcoin.dto.CelcoinRechargeResponseDTO;
-import com.fag.infra.celcoin.dto.CelcoinTokenDTO;
+import com.fag.infra.celcoin.dto.recharge.CelcoinOperatorsDTO;
+import com.fag.infra.celcoin.dto.recharge.CelcoinPixRequestDTO;
+import com.fag.infra.celcoin.dto.recharge.CelcoinPixResponseDTO;
+import com.fag.infra.celcoin.dto.recharge.CelcoinProductsDTO;
+import com.fag.infra.celcoin.dto.recharge.CelcoinRechargeDTO;
+import com.fag.infra.celcoin.dto.recharge.CelcoinRechargeResponseDTO;
+import com.fag.infra.celcoin.dto.recharge.CelcoinTokenDTO;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.Consumes;
@@ -40,4 +42,11 @@ public interface RestClientCelcoin {
     @Path("/v5/transactions/topups")
     @Consumes(MediaType.APPLICATION_JSON)
     CelcoinRechargeResponseDTO handleRecharge(@HeaderParam("Authorization") String token, CelcoinRechargeDTO payload);
+
+    @POST
+    @Path("/pix/v5/qrcode/static")
+    @Consumes(MediaType.APPLICATION_JSON)
+    CelcoinPixResponseDTO   handlePix(@HeaderParam("Authorization") String token, CelcoinPixRequestDTO pix);
+
+    
 }

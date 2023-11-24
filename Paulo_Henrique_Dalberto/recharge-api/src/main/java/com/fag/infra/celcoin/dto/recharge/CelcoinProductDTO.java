@@ -1,4 +1,4 @@
-package com.fag.infra.celcoin.dto;
+package com.fag.infra.celcoin.dto.recharge;
 
 public class CelcoinProductDTO {
   private Integer code;

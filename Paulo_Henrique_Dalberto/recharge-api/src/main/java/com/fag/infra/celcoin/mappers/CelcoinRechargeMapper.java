@@ -1,8 +1,8 @@
 package com.fag.infra.celcoin.mappers;
 
 import com.fag.domain.dto.RechargeDTO;
-import com.fag.infra.celcoin.dto.CelcoinRechargeDTO;
-import com.fag.infra.celcoin.dto.CelcoinRechargeValueDTO;
+import com.fag.infra.celcoin.dto.recharge.CelcoinRechargeDTO;
+import com.fag.infra.celcoin.dto.recharge.CelcoinRechargeValueDTO;
 
 public class CelcoinRechargeMapper {
   public static CelcoinRechargeDTO toVendorDTO(RechargeDTO appDTO){

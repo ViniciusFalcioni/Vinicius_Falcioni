@@ -1,9 +1,9 @@
-package com.fag.infra.celcoin.dto;
+package com.fag.infra.celcoin.dto.pix;
 
-public class CelcoinRechargeResponseDTO {
+public class PixQrCodeRechargeResponseDTO {
   private Integer nsuNameProvider;
   private Integer authentication;
-  private CelcoinRechargeReceiptDTO receipt;
+  private PixQrCodeRechargeReceiptDTO receipt;
   private String settleDate;
   private String createDate;
   private Long transactionId;
@@ -28,11 +28,11 @@ public class CelcoinRechargeResponseDTO {
     this.authentication = authentication;
   }
 
-  public CelcoinRechargeReceiptDTO getReceipt() {
+  public PixQrCodeRechargeReceiptDTO getReceipt() {
     return receipt;
   }
 
-  public void setReceipt(CelcoinRechargeReceiptDTO receipt) {
+  public void setReceipt(PixQrCodeRechargeReceiptDTO receipt) {
     this.receipt = receipt;
   }
 
