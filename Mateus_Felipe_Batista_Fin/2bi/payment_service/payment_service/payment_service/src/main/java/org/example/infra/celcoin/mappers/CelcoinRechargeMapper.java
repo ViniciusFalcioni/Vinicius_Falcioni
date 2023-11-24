@@ -1,11 +1,11 @@
-package org.example.infra.celcoin.mappers;
+package main.java.org.example.infra.celcoin.mappers;
 
-import org.example.domain.dto.RechargeDTO;
-import org.example.domain.entities.RechargeBO;
-import org.example.infra.celcoin.dto.CelcoinRechargeDTO;
-import org.example.infra.celcoin.dto.CelcoinRechargeValueDTO;
 
-import java.math.BigDecimal;
+
+import main.java.org.example.domain.dto.RechargeDTO;
+import main.java.org.example.infra.celcoin.dto.CelcoinRechargeDTO;
+import main.java.org.example.infra.celcoin.dto.CelcoinRechargeValueDTO;
+
 import java.util.UUID;
 
 public class CelcoinRechargeMapper {

@@ -1,8 +1,8 @@
-package org.example.infra.celcoin.mappers;
+package main.java.org.example.infra.celcoin.mappers;
 
-import org.example.domain.dto.PhoneDTO;
-import org.example.domain.entities.PhoneBO;
-import org.example.infra.celcoin.dto.CelcoinPhoneDTO;
+
+import main.java.org.example.domain.dto.PhoneDTO;
+import main.java.org.example.infra.celcoin.dto.CelcoinPhoneDTO;
 
 public class CelcoinRechargePhoneMapper {
     public static PhoneDTO toAppDTO (CelcoinPhoneDTO vendorDTO) {

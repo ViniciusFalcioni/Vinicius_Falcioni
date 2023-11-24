@@ -1,4 +1,4 @@
-package org.example.domain.dto;
+package main.java.org.example.domain.dto;
 
 public class PhoneDTO {
     private Integer stateCode;

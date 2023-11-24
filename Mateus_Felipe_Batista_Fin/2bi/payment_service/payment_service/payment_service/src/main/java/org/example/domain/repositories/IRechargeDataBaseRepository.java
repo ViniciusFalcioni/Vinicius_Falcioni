@@ -1,6 +1,7 @@
-package org.example.domain.repositories;
+package main.java.org.example.domain.repositories;
 
-import org.example.domain.entities.RechargeBO;
+
+import main.java.org.example.domain.entities.RechargeBO;
 
 public interface IRechargeDataBaseRepository {
     RechargeBO persist (RechargeBO bo);

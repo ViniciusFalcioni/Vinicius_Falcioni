@@ -1,8 +1,8 @@
-package org.example.infra.celcoin.mappers;
+package main.java.org.example.infra.celcoin.mappers;
 
-import org.example.domain.dto.OperatorDTO;
-import org.example.infra.celcoin.dto.CelcoinOperatorDTO;
-import org.example.infra.celcoin.dto.CelcoinOperatorsDTO;
+
+import main.java.org.example.domain.dto.OperatorDTO;
+import main.java.org.example.infra.celcoin.dto.CelcoinOperatorDTO;
 
 public class CelcoinOperatorMapper {
     public static OperatorDTO toAppDTO (CelcoinOperatorDTO vendorDTO) {

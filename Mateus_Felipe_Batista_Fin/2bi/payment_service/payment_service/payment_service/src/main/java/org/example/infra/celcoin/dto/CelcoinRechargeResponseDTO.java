@@ -1,4 +1,4 @@
-package org.example.infra.celcoin.dto;
+package main.java.org.example.infra.celcoin.dto;
 
 public class CelcoinRechargeResponseDTO {
     private Integer nsuNameProvider;

@@ -1,4 +1,4 @@
-package org.example.infra.panache.mappers;
+package java.org.example.infra.panache.mappers;
 
 public class PanacheRechargeMapper {
 }

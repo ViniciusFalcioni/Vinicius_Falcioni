@@ -1,4 +1,4 @@
-package org.example.infra.panache;
+package java.org.example.infra.panache;
 
 public class PanacheDataBaseRepository {
 }

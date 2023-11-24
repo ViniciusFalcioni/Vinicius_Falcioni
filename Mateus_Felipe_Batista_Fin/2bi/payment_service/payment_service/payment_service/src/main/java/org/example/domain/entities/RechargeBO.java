@@ -1,4 +1,4 @@
-package org.example.domain.entities;
+package main.java.org.example.domain.entities;
 
 import java.math.BigDecimal;
 import java.util.UUID;

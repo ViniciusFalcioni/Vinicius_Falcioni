@@ -1,9 +1,11 @@
-package org.example.domain.mappers;
+package main.java.org.example.domain.mappers;
 
-import org.example.domain.dto.PhoneDTO;
-import org.example.domain.dto.RechargeDTO;
-import org.example.domain.entities.PhoneBO;
-import org.example.domain.entities.RechargeBO;
+
+
+import main.java.org.example.domain.dto.PhoneDTO;
+import main.java.org.example.domain.dto.RechargeDTO;
+import main.java.org.example.domain.entities.PhoneBO;
+import main.java.org.example.domain.entities.RechargeBO;
 
 import java.util.UUID;
 

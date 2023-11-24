@@ -1,4 +1,4 @@
-package org.example.service;
+package java.org.example.service;
 
 public class RechargeService {
 }

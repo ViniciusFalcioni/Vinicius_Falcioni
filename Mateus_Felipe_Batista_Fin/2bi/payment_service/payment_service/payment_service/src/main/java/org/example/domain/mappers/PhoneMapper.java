@@ -1,7 +1,8 @@
-package org.example.domain.mappers;
+package main.java.org.example.domain.mappers;
 
-import org.example.domain.dto.PhoneDTO;
-import org.example.domain.entities.PhoneBO;
+
+import main.java.org.example.domain.dto.PhoneDTO;
+import main.java.org.example.domain.entities.PhoneBO;
 
 public class PhoneMapper {
     static PhoneDTO toDTO(PhoneBO phoneBO){
