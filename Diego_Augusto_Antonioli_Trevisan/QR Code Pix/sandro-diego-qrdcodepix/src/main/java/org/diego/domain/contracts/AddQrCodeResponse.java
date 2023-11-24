@@ -1,5 +1,8 @@
 package org.diego.domain.contracts;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 public class AddQrCodeResponse {
     private String base64;
 
@@ -14,8 +17,25 @@ public class AddQrCodeResponse {
         return base64;
     }
 
+    public void setBase64(String base64) {
+        this.base64 = base64;
+    }
+
     public Double getAmount() {
         return amount;
     }
 
+    public void setAmount(Double amount) {
+        this.amount = amount;
+    }
+
+    @Override
+    public String toString() {
+        try {
+            return new ObjectMapper().writeValueAsString(this);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+            return "";
+        }
+    }
 }

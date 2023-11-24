@@ -8,6 +8,9 @@ import org.diego.domain.contracts.QrCodeProviderResponse;
 import org.diego.domain.entities.QrCode;
 import org.diego.domain.features.IAddQrCode;
 
+import jakarta.enterprise.context.ApplicationScoped;
+
+@ApplicationScoped
 public class DbAddQrCode implements IAddQrCode {
     private IQrCodeTransformer qrCodeTransformer;
 

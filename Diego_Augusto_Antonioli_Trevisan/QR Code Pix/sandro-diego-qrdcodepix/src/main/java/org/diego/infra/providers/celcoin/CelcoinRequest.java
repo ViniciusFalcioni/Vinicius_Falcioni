@@ -6,7 +6,7 @@ import org.diego.domain.entities.Merchant;
 
 public class CelcoinRequest {
      private String key;
-     private Double amount;
+     private String amount;
      private String transactionIdentification;
      private Merchant merchant;
      private List<String> tags;
@@ -16,7 +16,7 @@ public class CelcoinRequest {
      public CelcoinRequest(String key, Double amount, String transactionIdentification, Merchant merchant,
                List<String> tags, String additionalInformation, Boolean withdrawal) {
           this.key = key;
-          this.amount = amount;
+          this.amount = String.format("%.2f", amount).replace(",", ".");
           this.transactionIdentification = transactionIdentification;
           this.merchant = merchant;
           this.tags = tags;
@@ -28,7 +28,7 @@ public class CelcoinRequest {
           return key;
      }
 
-     public Double getAmount() {
+     public String getAmount() {
           return amount;
      }
 

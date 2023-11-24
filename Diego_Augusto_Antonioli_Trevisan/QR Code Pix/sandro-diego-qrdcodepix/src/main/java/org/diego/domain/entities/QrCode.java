@@ -1,5 +1,6 @@
 package org.diego.domain.entities;
 
+
 public class QrCode {
     private Merchant merchant;
 

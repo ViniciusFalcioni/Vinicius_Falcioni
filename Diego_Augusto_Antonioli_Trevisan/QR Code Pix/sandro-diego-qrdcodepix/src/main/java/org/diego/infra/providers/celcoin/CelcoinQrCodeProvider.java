@@ -8,8 +8,10 @@ import org.diego.domain.entities.QrCode;
 import org.diego.infra.providers.celcoin.token.CelcoinTokenRequest;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
+@ApplicationScoped
 public class CelcoinQrCodeProvider implements IQrCodeProvider {
 
     @Inject
@@ -20,6 +22,7 @@ public class CelcoinQrCodeProvider implements IQrCodeProvider {
     public QrCodeProviderResponse provide(QrCode qrCode) {
         CelcoinRequest dto = new CelcoinRequest(qrCode.getKey(), qrCode.getAmount(), "testqrcodestaticcelcoin",
                 qrCode.getMerchant(), List.of(""), "Teste Geração QR Code", false);
+
         String token = celcoin.getCelcoinToken(new CelcoinTokenRequest()).getAccessToken();
 
         var response = celcoin.generateQrCode(dto, token);

@@ -2,19 +2,18 @@ package org.diego.infra.repositories.panache.entities;
 
 import java.util.UUID;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "AKT_PIX_CODE")
 public class PanachePixCode extends PanacheEntityBase {
 
     @Id
-    private UUID id;
+    private UUID id = UUID.randomUUID();
 
     @Column(name = "TRANSACTION_ID")
     private Integer transactionId;
