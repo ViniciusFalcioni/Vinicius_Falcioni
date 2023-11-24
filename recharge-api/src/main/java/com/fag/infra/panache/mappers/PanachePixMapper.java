@@ -21,4 +21,5 @@ public class PanachePixMapper {
     return entity;
   }
 
+
 }

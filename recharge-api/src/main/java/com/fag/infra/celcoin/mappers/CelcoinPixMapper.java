@@ -4,12 +4,11 @@ import com.fag.domain.dto.PixDTO;
 import com.fag.infra.celcoin.dto.CelcoinPixDTO;
 
 public class CelcoinPixMapper {
-    
+
     public static PixDTO toAppDTO(CelcoinPixDTO vendorDTO) {
         PixDTO dto = new PixDTO();
-
-        dto.setAmount(vendorDTO.getAmount());
         dto.setKey(vendorDTO.getKey());
+        dto.setAmount(vendorDTO.getAmount());
         dto.setMerchant(CelcoinMerchantMapper.toAppDTO(vendorDTO.getMerchant()));
 
         return dto;
@@ -24,5 +23,5 @@ public class CelcoinPixMapper {
 
         return dto;
     }
-    
+
 }

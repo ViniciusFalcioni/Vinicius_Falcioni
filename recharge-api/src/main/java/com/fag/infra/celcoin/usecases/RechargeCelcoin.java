@@ -26,7 +26,7 @@ import jakarta.ws.rs.core.Form;
 @ApplicationScoped
 public class RechargeCelcoin implements IRechargeVendorRepository {
 
-    @Inject
+  @Inject
   @RestClient
   RestClientCelcoin restClient;
 
@@ -68,7 +68,7 @@ public class RechargeCelcoin implements IRechargeVendorRepository {
       CelcoinProductsDTO products = restClient.listProducts(getToken(), stateCode, operatorId);
 
       return products.getProducts().stream()
-          .map(product -> CelcoinProductMapper.toAppDto(product))
+          .map(product -> CelcoinProductMapper.toAppDTO(product))
           .collect(Collectors.toList());
     } catch (Exception e) {
       throw new RuntimeException("Erro comunicação provedor servico recarga.");

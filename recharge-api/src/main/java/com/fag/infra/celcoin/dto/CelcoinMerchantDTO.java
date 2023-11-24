@@ -1,17 +1,14 @@
 package com.fag.infra.celcoin.dto;
 
 public class CelcoinMerchantDTO {
-    
+
     private String postalCode;
-
     private String city;
-
-    private String merchantCategoryCode;
-
+    private Integer merchantCategoryCode;
     private String name;
 
     public String getPostalCode() {
-        return postalCode;
+        return this.postalCode;
     }
 
     public void setPostalCode(String postalCode) {
@@ -19,27 +16,27 @@ public class CelcoinMerchantDTO {
     }
 
     public String getCity() {
-        return city;
+        return this.city;
     }
 
     public void setCity(String city) {
         this.city = city;
     }
 
-    public String getMerchantCategoryCode() {
-        return merchantCategoryCode;
+    public Integer getMerchantCategoryCode() {
+        return this.merchantCategoryCode;
     }
 
-    public void setMerchantCategoryCode(String merchantCategoryCode) {
+    public void setMerchantCategoryCode(Integer merchantCategoryCode) {
         this.merchantCategoryCode = merchantCategoryCode;
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
         this.name = name;
     }
-    
+
 }

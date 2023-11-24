@@ -1,64 +1,59 @@
 package com.fag.domain.dto;
 
 public class PixDTO {
-
-    private String id;
-
-    private Double amount;
-
-    private String qrCode;
     
+    private String id;
     private String key;
-
+    private Double amount;
+    private String qrCode;
     private MerchantDTO merchant;
-
     private Long transactionId;
-
+  
     public String getId() {
-        return id;
+      return this.id;
     }
-
+  
     public void setId(String id) {
-        this.id = id;
+      this.id = id;
     }
-
+  
     public String getKey() {
-        return key;
+      return this.key;
     }
-
+  
     public void setKey(String key) {
-        this.key = key;
+      this.key = key;
     }
-
-    public MerchantDTO getMerchant() {
-        return merchant;
-    }
-
-    public void setMerchant(MerchantDTO merchant) {
-        this.merchant = merchant;
-    }
-
+  
     public Double getAmount() {
-        return amount;
+      return this.amount;
     }
-
-    public String getQrCode() {
-        return qrCode;
-    }
-
-    public Long getTransactionId() {
-        return transactionId;
-    }
-
+  
     public void setAmount(Double amount) {
-        this.amount = amount;
+      this.amount = amount;
     }
-
+  
+    public String getQrCode() {
+      return this.qrCode;
+    }
+  
     public void setQrCode(String qrCode) {
-        this.qrCode = qrCode;
+      this.qrCode = qrCode;
     }
-
+  
+    public MerchantDTO getMerchant() {
+      return this.merchant;
+    }
+  
+    public void setMerchant(MerchantDTO merchant) {
+      this.merchant = merchant;
+    }
+  
+    public Long getTransactionId() {
+      return this.transactionId;
+    }
+  
     public void setTransactionId(Long transactionId) {
-        this.transactionId = transactionId;
+      this.transactionId = transactionId;
     }
 }

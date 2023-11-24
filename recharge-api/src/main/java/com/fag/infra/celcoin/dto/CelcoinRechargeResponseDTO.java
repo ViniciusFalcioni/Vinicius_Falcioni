@@ -1,29 +1,20 @@
 package com.fag.infra.celcoin.dto;
 
 public class CelcoinRechargeResponseDTO {
-    
+
     private Integer nsuNameProvider;
-
     private Integer authentication;
-
     private CelcoinRechargeReceiptDTO receipt;
-
     private String settleDate;
-
     private String createDate;
-
     private Long transactionId;
-
-    private String urlReceipt;
-
+    private String urlreceipt;
     private String errorCode;
-
     private String message;
-
-    private String status;
+    private Integer status;
 
     public Integer getNsuNameProvider() {
-        return nsuNameProvider;
+        return this.nsuNameProvider;
     }
 
     public void setNsuNameProvider(Integer nsuNameProvider) {
@@ -31,7 +22,7 @@ public class CelcoinRechargeResponseDTO {
     }
 
     public Integer getAuthentication() {
-        return authentication;
+        return this.authentication;
     }
 
     public void setAuthentication(Integer authentication) {
@@ -39,7 +30,7 @@ public class CelcoinRechargeResponseDTO {
     }
 
     public CelcoinRechargeReceiptDTO getReceipt() {
-        return receipt;
+        return this.receipt;
     }
 
     public void setReceipt(CelcoinRechargeReceiptDTO receipt) {
@@ -47,7 +38,7 @@ public class CelcoinRechargeResponseDTO {
     }
 
     public String getSettleDate() {
-        return settleDate;
+        return this.settleDate;
     }
 
     public void setSettleDate(String settleDate) {
@@ -55,7 +46,7 @@ public class CelcoinRechargeResponseDTO {
     }
 
     public String getCreateDate() {
-        return createDate;
+        return this.createDate;
     }
 
     public void setCreateDate(String createDate) {
@@ -63,23 +54,23 @@ public class CelcoinRechargeResponseDTO {
     }
 
     public Long getTransactionId() {
-        return transactionId;
+        return this.transactionId;
     }
 
     public void setTransactionId(Long transactionId) {
         this.transactionId = transactionId;
     }
 
-    public String getUrlReceipt() {
-        return urlReceipt;
+    public String getUrlreceipt() {
+        return this.urlreceipt;
     }
 
-    public void setUrlReceipt(String urlReceipt) {
-        this.urlReceipt = urlReceipt;
+    public void setUrlreceipt(String urlreceipt) {
+        this.urlreceipt = urlreceipt;
     }
 
     public String getErrorCode() {
-        return errorCode;
+        return this.errorCode;
     }
 
     public void setErrorCode(String errorCode) {
@@ -87,19 +78,19 @@ public class CelcoinRechargeResponseDTO {
     }
 
     public String getMessage() {
-        return message;
+        return this.message;
     }
 
     public void setMessage(String message) {
         this.message = message;
     }
 
-    public String getStatus() {
-        return status;
+    public Integer getStatus() {
+        return this.status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
-    
+
 }

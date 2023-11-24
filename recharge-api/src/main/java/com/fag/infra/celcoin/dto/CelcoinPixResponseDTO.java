@@ -3,14 +3,13 @@ package com.fag.infra.celcoin.dto;
 import jakarta.json.bind.annotation.JsonbProperty;
 
 public class CelcoinPixResponseDTO {
-    
-    private Long transactionId;
 
+    private Long transactionId;
     @JsonbProperty(value = "emvqrcps")
     private String qrCode;
 
     public Long getTransactionId() {
-        return transactionId;
+        return this.transactionId;
     }
 
     public void setTransactionId(Long transactionId) {
@@ -18,7 +17,7 @@ public class CelcoinPixResponseDTO {
     }
 
     public String getQrCode() {
-        return qrCode;
+        return this.qrCode;
     }
 
     public void setQrCode(String qrCode) {

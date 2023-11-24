@@ -1,11 +1,16 @@
 package com.fag.infra.celcoin.dto;
 
+import jakarta.json.bind.annotation.JsonbProperty;
+
 public class CelcoinTokenDTO {
-    
+
+    @JsonbProperty("access_token")
     private String accessToken;
 
+    @JsonbProperty("expires_in")
     private Integer expiresIn;
 
+    @JsonbProperty("token_type")
     private String tokenType;
 
     public String getAccessToken() {
@@ -17,7 +22,7 @@ public class CelcoinTokenDTO {
     }
 
     public Integer getExpiresIn() {
-        return expiresIn;
+        return this.expiresIn;
     }
 
     public void setExpiresIn(Integer expiresIn) {
@@ -25,11 +30,11 @@ public class CelcoinTokenDTO {
     }
 
     public String getTokenType() {
-        return tokenType;
+        return this.tokenType;
     }
 
     public void setTokenType(String tokenType) {
         this.tokenType = tokenType;
     }
-    
+
 }

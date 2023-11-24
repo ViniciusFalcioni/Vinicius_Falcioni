@@ -1,15 +1,13 @@
 package com.fag.infra.celcoin.dto;
 
-public class CelcoinPhoneDTO{
+public class CelcoinPhoneDTO {
 
     private Integer stateCode;
-
     private Integer countryCode;
-
     private String number;
 
     public Integer getStateCode() {
-        return stateCode;
+        return this.stateCode;
     }
 
     public void setStateCode(Integer stateCode) {
@@ -17,7 +15,7 @@ public class CelcoinPhoneDTO{
     }
 
     public Integer getCountryCode() {
-        return countryCode;
+        return this.countryCode;
     }
 
     public void setCountryCode(Integer countryCode) {
@@ -25,11 +23,11 @@ public class CelcoinPhoneDTO{
     }
 
     public String getNumber() {
-        return number;
+        return this.number;
     }
 
     public void setNumber(String number) {
         this.number = number;
     }
-    
+
 }

@@ -3,18 +3,16 @@ package com.fag.infra.celcoin.dto;
 import jakarta.json.bind.annotation.JsonbProperty;
 
 public class CelcoinPixDTO {
-    
+
     private String key;
-
     private Double amount;
-
     private CelcoinMerchantDTO merchant;
 
     @JsonbProperty(value = "transactionIdentification")
     private String transactionId;
 
     public String getKey() {
-        return key;
+        return this.key;
     }
 
     public void setKey(String key) {
@@ -22,7 +20,7 @@ public class CelcoinPixDTO {
     }
 
     public Double getAmount() {
-        return amount;
+        return this.amount;
     }
 
     public void setAmount(Double amount) {
@@ -30,7 +28,7 @@ public class CelcoinPixDTO {
     }
 
     public CelcoinMerchantDTO getMerchant() {
-        return merchant;
+        return this.merchant;
     }
 
     public void setMerchant(CelcoinMerchantDTO merchant) {
@@ -38,10 +36,11 @@ public class CelcoinPixDTO {
     }
 
     public String getTransactionId() {
-        return transactionId;
+        return this.transactionId;
     }
 
     public void setTransactionId(String transactionId) {
         this.transactionId = transactionId;
     }
+
 }

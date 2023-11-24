@@ -1,17 +1,14 @@
 package com.fag.domain.dto;
 
 public class MerchantDTO {
-    
+
     private String postalCode;
-
     private String city;
-
-    private String categoryCode;
-
+    private Integer categoryCode;
     private String name;
 
     public String getPostalCode() {
-        return postalCode;
+        return this.postalCode;
     }
 
     public void setPostalCode(String postalCode) {
@@ -19,27 +16,27 @@ public class MerchantDTO {
     }
 
     public String getCity() {
-        return city;
+        return this.city;
     }
 
     public void setCity(String city) {
         this.city = city;
     }
 
+    public Integer getCategoryCode() {
+        return this.categoryCode;
+    }
+
+    public void setCategoryCode(Integer categoryCode) {
+        this.categoryCode = categoryCode;
+    }
+
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public String getCategoryCode() {
-        return categoryCode;
-    }
-
-    public void setCategoryCode(String categoryCode) {
-        this.categoryCode = categoryCode;
-    }
-    
 }

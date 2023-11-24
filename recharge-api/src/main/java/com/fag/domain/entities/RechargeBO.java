@@ -7,65 +7,120 @@ public class RechargeBO {
     private UUID id;
     private Double value;
     private String document;
-    private Integer operatorId;
+    private Integer providerId;
     private PhoneBO phone;
     private String receipt;
-    private long transactionId;
+    private Long transactionId;
     private boolean success;
-    
-    public UUID getId() {
-        return id;
+  
+    public RechargeBO(UUID id, Double value, String document, Integer providerId, PhoneBO phone,
+        String receipt, Long transactionId, boolean success) {
+      this.id = id != null ? id : UUID.randomUUID();
+      this.value = value;
+      this.document = document;
+      this.providerId = providerId;
+      this.phone = phone;
+      this.receipt = receipt;
+      this.transactionId = transactionId;
+      this.success = success;
+  
+      validate();
     }
-
-    public Double getValue() {
-        return value;
-    }
-
-    public String getDocument() {
-        return document;
-    }
-
-    public Integer getOperatorId() {
-        return operatorId;
-    }
-
-    public PhoneBO getPhone() {
-        return phone;
-    }
-
-    public String getReceipt() {
-        return receipt;
-    }
-
-    public long getTransactionId() {
-        return transactionId;
-    }
-
-    public boolean isSuccess() {
-        return success;
-    }
-
-    public RechargeBO(UUID id, Double value, String document, Integer operatorId, PhoneBO phone, String receipt,
-            long transactionId, boolean success) {
-        this.id = id;
-        this.value = value;
-        this.document = document;
-        this.operatorId = operatorId;
-        this.phone = phone;
-        this.receipt = receipt;
-        this.transactionId = transactionId;
-        this.success = success;
-    }
-
+  
     public void handleSuccess(String receipt, Long transactionId) {
-        this.receipt= receipt;
-        this.transactionId = transactionId;
-        this.success = true;
+      this.receipt = receipt;
+      this.transactionId = transactionId;
+      this.success = true;
     }
-
+  
     public void handleError() {
-        this.success = false;
+      this.success = false;
     }
+  
+    private void validate() {
+  
+      if (this.value == null) {
+        throw new RuntimeException("Campo obrigatório - Value");
+      }
+  
+      if (this.document == null || this.document.isEmpty()) {
+        throw new RuntimeException("Campo obrigatório - Document");
+      }
+  
+      if (this.phone == null) {
+        throw new RuntimeException("Campo obrigatório - Phone");
+      }
+  
+    }
+  
+    public UUID getId() {
+      return this.id;
+    }
+  
+    public void setId(UUID id) {
+      this.id = id;
+    }
+  
+    public Double getValue() {
+      return this.value;
+    }
+  
+    public void setValue(Double value) {
+      this.value = value;
+    }
+  
+    public String getDocument() {
+      return this.document;
+    }
+  
+    public void setDocument(String document) {
+      this.document = document;
+    }
+  
+    public Integer getProviderId() {
+      return this.providerId;
+    }
+  
+    public void setProviderId(Integer providerId) {
+      this.providerId = providerId;
+    }
+  
+    public PhoneBO getPhone() {
+      return this.phone;
+    }
+  
+    public void setPhone(PhoneBO phone) {
+      this.phone = phone;
+    }
+  
+    public String getReceipt() {
+      return this.receipt;
+    }
+  
+    public void setReceipt(String receipt) {
+      this.receipt = receipt;
+    }
+  
+    public Long getTransactionId() {
+      return this.transactionId;
+    }
+  
+    public void setTransactionId(Long transactionId) {
+      this.transactionId = transactionId;
+    }
+  
+    public boolean isSuccess() {
+      return this.success;
+    }
+  
+    public boolean getSuccess() {
+      return this.success;
+    }
+  
+    public void setSuccess(boolean success) {
+      this.success = success;
+    }
+  
 
     
 }

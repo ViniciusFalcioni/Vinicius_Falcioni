@@ -11,7 +11,7 @@ public class CreatePixQRCode {
     private IPixVendor vendor;
     private IPixDataBaseRepository repository;
 
-    public CreatePixQRCode(IPixVendor vendor, IPixDataBaseRepository repository){
+    public CreatePixQRCode(IPixVendor vendor, IPixDataBaseRepository repository) {
         this.vendor = vendor;
         this.repository = repository;
     }
@@ -25,5 +25,4 @@ public class CreatePixQRCode {
 
         return response;
     }
-    
 }

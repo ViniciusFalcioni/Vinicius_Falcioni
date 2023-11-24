@@ -16,16 +16,14 @@ import com.fag.domain.usecases.ListProducts;
 import com.fag.infra.celcoin.usecases.RechargeCelcoin;
 import com.fag.infra.panache.repository.PanacheDataBaseRepository;
 
-
 @ApplicationScoped
 public class RechargeService {
-    
+
     @Inject
     RechargeCelcoin celcoin;
 
     @Inject
     PanacheDataBaseRepository panacheRepo;
-
 
     public Response listOperators(Integer stateCode, Integer category) {
         ListOperators listOperators = new ListOperators(celcoin);
@@ -51,4 +49,5 @@ public class RechargeService {
 
         return Response.ok(createdRecharge).build();
     }
+
 }

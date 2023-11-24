@@ -3,33 +3,46 @@ package com.fag.domain.entities;
 public class MerchantBO {
     
     private String postalCode;
+  private String city;
+  private Integer categoryCode;
+  private String name;
 
-    private String city;
+  public MerchantBO(String postalCode, String city, Integer categoryCode, String name) {
+    this.postalCode = postalCode;
+    this.city = city;
+    this.categoryCode = categoryCode;
+    this.name = name;
+  }
 
-    private String categoryCode;
+  public String getPostalCode() {
+    return this.postalCode;
+  }
 
-    private String name;
+  public void setPostalCode(String postalCode) {
+    this.postalCode = postalCode;
+  }
 
-    public String getPostalCode() {
-        return postalCode;
-    }
+  public String getCity() {
+    return this.city;
+  }
 
-    public String getCity() {
-        return city;
-    }
+  public void setCity(String city) {
+    this.city = city;
+  }
 
-    public String getCategoryCode() {
-        return categoryCode;
-    }
+  public Integer getCategoryCode() {
+    return this.categoryCode;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public void setCategoryCode(Integer categoryCode) {
+    this.categoryCode = categoryCode;
+  }
 
-    public MerchantBO(String postalCode, String city, String merchantCategoryCode, String name) {
-        this.postalCode = postalCode;
-        this.city = city;
-        this.categoryCode = merchantCategoryCode;
-        this.name = name;
-    }
+  public String getName() {
+    return this.name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
 }
