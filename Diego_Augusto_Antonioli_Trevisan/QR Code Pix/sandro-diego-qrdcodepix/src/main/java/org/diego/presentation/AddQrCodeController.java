@@ -1,14 +1,15 @@
 package org.diego.presentation;
 
 import org.diego.data.services.DbAddQrCode;
-import org.diego.domain.entities.QrCode;
+import org.diego.domain.contracts.AddQrCodeResponse;
 
-import jakarta.enterprise.inject.Produces;
 import jakarta.inject.Inject;
-import jakarta.ws.rs.POST;
-import jakarta.ws.rs.Path;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.HeaderParam;
 import jakarta.ws.rs.core.MediaType;
-import jakarta.ws.rs.core.Response;
+
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
 
 @Path("/api")
 public class AddQrCodeController {
@@ -16,9 +17,10 @@ public class AddQrCodeController {
     @Inject
     DbAddQrCode service;
 
-    @POST
+    @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response handle(QrCode qrCode) {
-        return service.execute(qrCode);
+    public AddQrCodeResponse handle(@HeaderParam("key") String key, @HeaderParam("amount") Double amount) {
+    
+        return new AddQrCodeResponse(key, amount);
     }
 }
