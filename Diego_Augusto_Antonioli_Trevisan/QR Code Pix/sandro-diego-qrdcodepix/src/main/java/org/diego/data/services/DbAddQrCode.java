@@ -4,6 +4,7 @@ import org.diego.domain.contracts.AddQrCodeResponse;
 import org.diego.domain.contracts.IAddQrCodeRepo;
 import org.diego.domain.contracts.IQrCodeProvider;
 import org.diego.domain.contracts.IQrCodeTransformer;
+import org.diego.domain.contracts.QrCodeProviderResponse;
 import org.diego.domain.entities.QrCode;
 import org.diego.domain.features.IAddQrCode;
 
@@ -23,9 +24,9 @@ public class DbAddQrCode implements IAddQrCode {
 
     @Override
     public AddQrCodeResponse execute(QrCode qrCode) {
-        String qrCodeProvided = this.qrCodeProvider.provide(qrCode);
-        this.addQrCodeRepo.add(qrCode);
-        String base64QrCode = this.qrCodeTransformer.transform(qrCodeProvided);
+        QrCodeProviderResponse qrCodeProvided = this.qrCodeProvider.provide(qrCode);
+        this.addQrCodeRepo.add(qrCode, qrCodeProvided.getTransactionId(), qrCodeProvided.getResponse());
+        String base64QrCode = this.qrCodeTransformer.transform(qrCodeProvided.getResponse());
         return new AddQrCodeResponse(base64QrCode, qrCode.getAmount());
     }
 

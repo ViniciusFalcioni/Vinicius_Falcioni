@@ -6,9 +6,11 @@ import org.diego.domain.contracts.AddQrCodeResponse;
 import org.diego.domain.contracts.IAddQrCodeRepo;
 import org.diego.domain.contracts.IQrCodeProvider;
 import org.diego.domain.contracts.IQrCodeTransformer;
+import org.diego.domain.contracts.QrCodeProviderResponse;
 import org.diego.domain.entities.Merchant;
 import org.diego.domain.entities.QrCode;
 import org.diego.domain.features.IAddQrCode;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import io.quarkus.test.junit.QuarkusTest;
@@ -26,10 +28,10 @@ public class DbAddQrCodeTest {
     private IAddQrCode sut = new DbAddQrCode(qrCodeTransformer, qrCodeProvider, addQrCodeRepo);
 
     private static String qrCodeTransformerResponse = "valid-one";
-    private static String qrCodeProviderResponse = "valid-one";
 
     @Test
-    void theUserProvidedValidParams_thenAddQrCodeResponseShouldBeReturned() {
+    @DisplayName("Should return AddQrCodeResponse")
+    void AddQrCodeResponse() {
         Merchant fakeMerchant = new Merchant();
         QrCode fakeData = new QrCode(fakeMerchant, 2.0, "valid-one", "valid-base64");
         AddQrCodeResponse response = sut.execute(fakeData);
@@ -53,8 +55,8 @@ public class DbAddQrCodeTest {
     public static class QrCodeProviderMock implements IQrCodeProvider {
 
         @Override
-        public String provide(QrCode qrCode) {
-            return qrCodeProviderResponse;
+        public QrCodeProviderResponse provide(QrCode qrCode) {
+            return new QrCodeProviderResponse(null, null);
         }
 
     }
@@ -63,7 +65,7 @@ public class DbAddQrCodeTest {
     public static class AddQrCodeRepoMock implements IAddQrCodeRepo {
 
         @Override
-        public void add(QrCode qrCode) {
+        public void add(QrCode qrCode, Integer transactionId, String emv) {
         }
 
     }
