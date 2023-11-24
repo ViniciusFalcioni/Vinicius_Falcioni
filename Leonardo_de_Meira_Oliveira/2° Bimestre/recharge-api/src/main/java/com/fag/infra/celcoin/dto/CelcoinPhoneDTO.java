@@ -22,5 +22,5 @@ public class CelcoinPhoneDTO {
     }
     public void setNumber(String number) {
         this.number = number;
-    } 
+    }    
 }

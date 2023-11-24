@@ -1,10 +1,13 @@
 package com.fag.domain.usecases;
 
 import com.fag.domain.dto.RechargeDTO;
+import com.fag.domain.entities.RechargeBO;
+import com.fag.domain.mappers.RechargeMapper;
 import com.fag.domain.repositories.IRechargeDataBaseRepository;
 import com.fag.domain.repositories.IRechargeVendorRepository;
 
 public class CreateRecharge {
+
     private IRechargeVendorRepository vendor;
     private IRechargeDataBaseRepository dbRepository;
 
@@ -13,8 +16,20 @@ public class CreateRecharge {
         this.dbRepository = dbRepository;
     }
 
-    public RechargeDTO execute(RechargeDTO recharge) {
-        RechargeDTO result = vendor.create(recharge);
-        return result;
+    public RechargeDTO execute(RechargeDTO dto) {
+        RechargeBO bo = RechargeMapper.toBO(dto);
+
+        RechargeDTO response = vendor.create(dto);
+
+        if (response.isSuccess()) {
+            bo = bo.handleSuccess(response.getReceipt(), response.getTransactionId());
+        } else {
+            bo = bo.handleError();
+        }
+
+        dbRepository.persist(bo);
+
+        return response;
     }
+
 }

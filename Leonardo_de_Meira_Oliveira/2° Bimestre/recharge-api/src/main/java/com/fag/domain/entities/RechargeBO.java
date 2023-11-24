@@ -56,4 +56,11 @@ public class RechargeBO {
         return success;
     }
 
+    public RechargeBO handleSuccess(String receipt, Long transactionId) {
+        return new RechargeBO(getId(), getValue(), getDocument(), getProviderId(), getPhone(), receipt, transactionId, true);
+    }
+
+    public RechargeBO handleError() {
+        return new RechargeBO(getId(), getValue(), getDocument(), getProviderId(), getPhone(), getReceipt(), getTransactionId(), false);
+    }
 }
