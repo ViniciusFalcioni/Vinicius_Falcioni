@@ -10,6 +10,8 @@ import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.Form;
 import jakarta.ws.rs.core.MediaType;
 import main.java.com.fag.infra.celcoin.dto.CelcoinOperatorsDTO;
+import main.java.com.fag.infra.celcoin.dto.CelcoinPixDTO;
+import main.java.com.fag.infra.celcoin.dto.CelcoinPixResponseDTO;
 import main.java.com.fag.infra.celcoin.dto.CelcoinProductsDTO;
 import main.java.com.fag.infra.celcoin.dto.CelcoinRechargeDTO;
 import main.java.com.fag.infra.celcoin.dto.CelcoinRechargeResponseDTO;
@@ -39,4 +41,9 @@ public interface RestClientCelcoin {
     @Path("/v5/transactions/topups")
     @Consumes(MediaType.APPLICATION_JSON)
     CelcoinRechargeResponseDTO handleRecharge(@HeaderParam("Authorization") String token, CelcoinRechargeDTO payload);
+
+    @POST
+    @Path("/pix/v1/brcode/static")
+    @Consumes(MediaType.APPLICATION_JSON)
+    CelcoinPixResponseDTO handlePix(@HeaderParam("Authorization") String token, CelcoinPixDTO pix);
 }

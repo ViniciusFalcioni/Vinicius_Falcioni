@@ -9,7 +9,6 @@ public class PhoneBO {
     private String number;
 
     public PhoneBO(Integer stateCode, Integer countryCode, String number) {
-        this.id = id;
         this.stateCode = stateCode;
         this.countryCode = countryCode;
         this.number = number;
