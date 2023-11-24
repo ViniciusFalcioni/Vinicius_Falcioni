@@ -4,13 +4,12 @@ import java.util.List;
 
 import main.java.com.fag.domain.dto.OperatorDTO;
 import main.java.com.fag.domain.repositories.IRechargeVendorRepository;
-import main.java.com.fag.infra.celcoin.repository.RechargeCelcoin;
 
 public class ListOperators {
     private final IRechargeVendorRepository vendor;
 
-    public ListOperators(RechargeCelcoin celcoin) {
-        this.vendor = (IRechargeVendorRepository) celcoin;
+    public ListOperators(IRechargeVendorRepository vendor) {
+        this.vendor = vendor;
     }
 
     public List<OperatorDTO> execute(Integer stateCode, Integer category) {
