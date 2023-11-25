@@ -1,15 +1,16 @@
 package com.fag.domain.dto;
 
-import java.math.BigDecimal;
+import lombok.Getter;
+import lombok.Setter;
 
-public record PixDTO(String id, String key, BigDecimal amount, String qrCode, MerchantDTO merchant, Long transactionId) {
+@Getter
+@Setter
 
-    public PixDTO QrCode(String qrCode) {
-        return new PixDTO(id(), key(), amount(), qrCode, merchant(), transactionId());
-    }
-
-    public PixDTO TransactionId(Long transactionId) {
-        return new PixDTO(id(), key(), amount(), qrCode(), merchant(), transactionId);
-    }
-
+public class PixDTO {
+    private String id;
+    private String key;
+    private Double amount;
+    private String qrCode;
+    private MerchantDTO merchant;
+    private Long transactionId;
 }

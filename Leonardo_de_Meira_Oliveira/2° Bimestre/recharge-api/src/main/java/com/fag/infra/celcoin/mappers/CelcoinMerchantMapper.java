@@ -6,21 +6,24 @@ import com.fag.infra.celcoin.dto.CelcoinMerchantDTO;
 public class CelcoinMerchantMapper {
 
     public static MerchantDTO toAppDTO(CelcoinMerchantDTO vendor) {
-        return new MerchantDTO(
-                vendor.name(),
-                vendor.postalCode(),
-                vendor.city(),
-                vendor.merchantCategoryCode()
-        );
+        MerchantDTO dto = new MerchantDTO();
+
+        dto.setPostalCode(vendor.getPostalCode());
+        dto.setName(vendor.getName());
+        dto.setCategory(vendor.getMerchantCategoryCode());
+        dto.setCity(vendor.getCity());
+
+        return dto;
     }
 
     public static CelcoinMerchantDTO toVendorDTO(MerchantDTO appDTO) {
-        return new CelcoinMerchantDTO(
-                appDTO.name(),
-                appDTO.postalCode(),
-                appDTO.city(),
-                appDTO.category()
-        );
-    }
+        CelcoinMerchantDTO dto = new CelcoinMerchantDTO();
+        
+        dto.setName(appDTO.getName());
+        dto.setCity(appDTO.getCity());
+        dto.setMerchantCategoryCode(appDTO.getCategory());
+        dto.setPostalCode(appDTO.getPostalCode());
 
+        return dto;
+    }
 }

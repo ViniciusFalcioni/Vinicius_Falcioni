@@ -6,7 +6,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-import java.math.BigDecimal;
 import java.util.UUID;
 
 @Entity
@@ -26,7 +25,7 @@ public class PanachePixCode extends PanacheEntityBase {
     private String key;
 
     @Column(name = "AMOUNT")
-    private BigDecimal amount;
+    private double amount;
 
     public UUID getId() {
         return id;
@@ -60,11 +59,11 @@ public class PanachePixCode extends PanacheEntityBase {
         this.key = key;
     }
 
-    public BigDecimal getAmount() {
+    public double getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(double amount) {
         this.amount = amount;
     }
 

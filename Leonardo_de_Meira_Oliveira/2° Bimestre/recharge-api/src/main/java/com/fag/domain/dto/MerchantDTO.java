@@ -1,4 +1,14 @@
 package com.fag.domain.dto;
 
-public record MerchantDTO(String name, String postalCode, String city, Integer category) {
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+
+public class MerchantDTO {
+    String name;
+    String postalCode;
+    String city;
+    Integer category;
 }

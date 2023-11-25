@@ -3,30 +3,25 @@ package com.fag.infra.celcoin.mappers;
 import com.fag.domain.dto.PixDTO;
 import com.fag.infra.celcoin.dto.CelcoinPixDTO;
 
-import java.math.RoundingMode;
-
 public class CelcoinPixMapper {
 
     public static PixDTO toAppDTO(CelcoinPixDTO vendor) {
-        return new PixDTO(
-                null,
-                vendor.getKey(),
-                vendor.getAmount(),
-                null,
-                CelcoinMerchantMapper.toAppDTO(vendor.getMerchant()),
-                Long.valueOf(vendor.getTransactionId())
-        );
+        PixDTO dto = new PixDTO();
+
+        dto.setKey(vendor.getKey());
+        dto.setAmount(vendor.getAmount());
+        dto.setMerchant(CelcoinMerchantMapper.toAppDTO(vendor.getMerchant()));
+        
+        return dto;
     }
 
     public static CelcoinPixDTO toVendorDTO(PixDTO appDTO) {
         CelcoinPixDTO dto = new CelcoinPixDTO();
 
-        dto.setKey(appDTO.key());
+        dto.setKey(appDTO.getKey());
 
-        // É necessário informar 2 casas decimais, caso contrário é retornada
-        // uma exception a partir da API da Celcoin
-        dto.setAmount(appDTO.amount().setScale(2, RoundingMode.HALF_UP));
-        dto.setMerchant(CelcoinMerchantMapper.toVendorDTO(appDTO.merchant()));
+        dto.setAmount(appDTO.getAmount());
+        dto.setMerchant(CelcoinMerchantMapper.toVendorDTO(appDTO.getMerchant()));
 
         return dto;
     }

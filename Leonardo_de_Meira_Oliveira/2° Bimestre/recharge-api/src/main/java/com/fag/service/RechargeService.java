@@ -9,7 +9,6 @@ import com.fag.domain.usecases.ListProducts;
 import com.fag.infra.celcoin.repository.RechargeCelcoin;
 import com.fag.infra.panache.repository.PanacheDataBaseRepository;
 import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.core.Response;
 import java.util.List;

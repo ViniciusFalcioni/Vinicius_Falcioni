@@ -18,11 +18,11 @@ public class PanachePixMapper {
     public static PanachePixCode toEntity(PixBO bo) {
         PanachePixCode entity = new PanachePixCode();
 
-        entity.setId(bo.id());
-        entity.setKey(bo.key());
-        entity.setTransactionId(bo.transactionId());
-        entity.setEmvqrcps(bo.qrCode());
-        entity.setAmount(bo.amount());
+        entity.setId(bo.getId());
+        entity.setKey(bo.getKey());
+        entity.setTransactionId(bo.getTransactionId());
+        entity.setEmvqrcps(bo.getQrCode());
+        entity.setAmount(bo.getAmount());
 
         return entity;
     }

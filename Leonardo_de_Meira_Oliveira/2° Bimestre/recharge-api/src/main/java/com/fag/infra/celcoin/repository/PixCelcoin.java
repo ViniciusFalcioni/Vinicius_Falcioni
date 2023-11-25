@@ -25,8 +25,8 @@ public class PixCelcoin implements IPixVendor {
 
         CelcoinPixResponseDTO response = restClient.handlePix(getToken(), pixDTO);
 
-        pix.QrCode(response.getQrCode());
-        pix.TransactionId(response.getTransactionId());
+        pix.setQrCode(response.getQrCode());
+        pix.setTransactionId(response.getTransactionId());
 
         return pix;
     }

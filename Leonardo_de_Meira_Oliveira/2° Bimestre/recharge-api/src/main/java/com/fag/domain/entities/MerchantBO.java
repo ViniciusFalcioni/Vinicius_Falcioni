@@ -1,4 +1,14 @@
 package com.fag.domain.entities;
 
-public record MerchantBO(String name, String postalCode, String city, Integer category) {
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
+
+public class MerchantBO {
+    String name;
+    String postalCode;
+    String city;
+    Integer category;
 }

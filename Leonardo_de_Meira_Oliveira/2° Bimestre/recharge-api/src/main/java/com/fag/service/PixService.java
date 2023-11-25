@@ -2,7 +2,7 @@ package com.fag.service;
 
 import com.fag.domain.dto.PixDTO;
 import com.fag.domain.repositories.IPixDataBaseRepository;
-import com.fag.domain.usecases.CreatePixQRCode;
+import com.fag.domain.usecases.CreatePix;
 import com.fag.infra.celcoin.repository.PixCelcoin;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
@@ -20,7 +20,7 @@ public class PixService {
 
     @Transactional
     public Response handlePix(PixDTO dto) {
-        CreatePixQRCode createPixQRCode = new CreatePixQRCode(celcoin, repository);
+        CreatePix createPixQRCode = new CreatePix(celcoin, repository);
 
         PixDTO newPix = createPixQRCode.execute(dto);
 
