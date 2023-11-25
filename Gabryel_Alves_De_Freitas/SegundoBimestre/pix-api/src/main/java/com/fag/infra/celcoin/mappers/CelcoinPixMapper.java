@@ -3,7 +3,6 @@ package com.fag.infra.celcoin.mappers;
 import com.fag.domain.dto.PixDTO;
 import com.fag.infra.celcoin.dto.CelcoinPixDTO;
 
-
 public class CelcoinPixMapper {
 
   public static PixDTO toAppDTO(CelcoinPixDTO vendorDTO) {

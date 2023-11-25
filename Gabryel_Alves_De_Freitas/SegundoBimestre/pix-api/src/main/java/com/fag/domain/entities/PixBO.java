@@ -1,6 +1,7 @@
 package com.fag.domain.entities;
 
 import java.util.UUID;
+import java.math.BigDecimal;
 
 import lombok.Getter;
 
@@ -8,11 +9,11 @@ import lombok.Getter;
 public class PixBO {
   private UUID id;
   private String key;
-  private double amount;
+  private BigDecimal amount;
   private String qrCode;
   private Long transactionId;
 
-  public PixBO(UUID id, String key, Double amount, String qrCode, Long transactionId) {
+  public PixBO(UUID id, String key, BigDecimal amount, String qrCode, Long transactionId) {
     this.id = id != null ? id : UUID.randomUUID();
     this.key = key;
     this.amount = amount;

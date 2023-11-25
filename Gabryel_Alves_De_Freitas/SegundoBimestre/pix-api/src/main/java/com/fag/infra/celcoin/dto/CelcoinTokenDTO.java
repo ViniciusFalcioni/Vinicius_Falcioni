@@ -20,5 +20,4 @@ public class CelcoinTokenDTO {
   public String getAccessToken() {
     return accessToken;
   }
-
 }
