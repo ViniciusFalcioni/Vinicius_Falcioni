@@ -3,6 +3,7 @@ package org.example.infra.celcoin.repository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.core.Form;
+
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.example.domain.dto.PixDTO;
 import org.example.domain.repositories.IPixVendor;

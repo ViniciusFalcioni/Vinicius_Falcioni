@@ -25,6 +25,6 @@ public class PixMapper {
 
     public static PixBO toBO(PixDTO pixDTO) {
         MerchantBO merchantBO = MerchantMapper.toBO(pixDTO.getMerchant());
-        return new PixBO(UUID.fromString(pixDTO.getId()), pixDTO.getKey(),pixDTO.getAmount(), pixDTO.getQrCode(), pixDTO.getTransactionId(), merchantBO);
+        return new PixBO(pixDTO.getId() != null ? UUID.fromString(pixDTO.getId()) : UUID.randomUUID(), pixDTO.getKey(),pixDTO.getAmount(), pixDTO.getQrCode(), pixDTO.getTransactionId(), merchantBO);
     }
 }

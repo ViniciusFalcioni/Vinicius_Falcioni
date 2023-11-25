@@ -31,5 +31,5 @@ public interface RestClientCelcoin {
     @POST
     @Path("/pix/v1/brcode/static")
     @Consumes(MediaType.APPLICATION_JSON)
-    CelcoinPixResponseDTO handlePix(String token, CelcoinPixDTO pixDTO);
+    CelcoinPixResponseDTO handlePix(@HeaderParam("Authorization") String token, CelcoinPixDTO pixDTO);
 }
