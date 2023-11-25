@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url("https://wallpaperset.com/w/full/e/a/e/6403.jpg");
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 900px;
+    border-radius: 10px;
+}
+
+main {
+    background-color: rgba(177, 177, 177, 0.6);
+    max-width: 600px;
+    padding: 40px;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    box-shadow: 0px 0px 32px #202020;
+    height: auto;
+    border-radius: 15px;
+}
+
+form {
+    box-sizing: border-box;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    font-size: 20px;
+    text-align: center;
+  }
+
+input {
+    padding: 3px 10px;
+    font-size: 15px;
+    width: 200px;
+  }
+
+select {
+    width: 65%;
+    text-align: center;
+}
+
+button {
+    border: none;
+    padding: 7px 15px;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+  }
+
+  label {
+    width: 80%;
+    font-size: 20px;
+    margin: 5px 0px;
+}
+
+
+    
+
+

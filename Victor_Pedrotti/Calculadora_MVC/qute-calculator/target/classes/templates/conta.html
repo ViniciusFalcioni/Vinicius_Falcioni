@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="body-background">
+    <main class="container">
+        <form class="content" action="/" method="POST" name="todoForm">
+        <div class="fundo">
+            <div class="Calculadora">
+            <h1 class="NomeProjeto">Projeto Calculadora</h1>
+            <table>
+                <tr>
+                    <td>
+                        <label>
+                            <span>Primeiro Valor</span>
+                            <br>
+                            <input type="number" step="any" placeholder="0.00" name="primeiroValor" id="primeiroValor" required/>
+                        </label>
+                    </td>
+                </tr>
+                <tr>    
+                    <td>
+                        <label>
+                            <span>Segundo Valor</span>
+                            <br>
+                            <input type="number" step="any" placeholder="0.00" name="segundoValor" id="segundoValor" required/>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <span>Operação</span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="selectCalculadora" id="Operação">
+                            Operação
+                            {#for op in arithmeticOperations}
+                            <option value="{op.getKey()}">{op.getValue()}</option>
+                            {/for}
+                            </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="alinhamento">
+                        <button class="botaoCalc" type="submit">Calcular</button>
+                        </div>
+                    </td>
+                </tr> 
+            </table>
+            </div>
+        </div>    
+        </form>
+    </main>
+
+</body>
+
+</html>

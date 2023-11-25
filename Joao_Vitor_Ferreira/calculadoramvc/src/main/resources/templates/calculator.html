@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="calculator.css">
+    <style>
+        body {
+            background-color: #f8f8f8;
+            font-family: 'Helvetica Neue', sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 400px;
+            width: 90%;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .item {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            color: #666;
+            font-size: 14px;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        input,
+        select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #007aff;
+            color: #fff;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Calculator</h1>
+        <form action="/calculator/calculate" method="POST">
+
+            <div class="item">
+                <label for="num1">Número 1:</label>
+                <input type="number" id="num1" name="num1" required>
+            </div>
+
+            <div class="item">
+                <label for="num2">Número 2:</label>
+                <input type="number" id="num2" name="num2" required>
+            </div>
+
+            <div class="item">
+                <label for="operation">Operação:</label>
+                <select id="operation" name="operation" required>
+                    <option value="add">Adição</option>
+                    <option value="subtract">Subtração</option>
+                    <option value="multiply">Multiplicação</option>
+                    <option value="divide">Divisão</option>
+                </select>
+            </div>
+
+            <button type="submit">Calcular</button>
+
+        </form>
+    </div>
+
+</body>
+
+</html>

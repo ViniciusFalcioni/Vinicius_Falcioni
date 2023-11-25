@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Calculadora</title>
+  </head>
+  <body>
+    <div class="principal">
+      <div class="formulario">
+        <h1>
+          <img src="./img/calculadora.png" style="width: 40px" /> Calculadora
+        </h1>
+        <form action="/resultado" method="get">
+          <label for="valor1">Digite o primeiro número:</label>
+          <input type="number" name="valor1" />
+          <label for="valor2">Digite o segundo número:</label>
+          <input type="number" name="valor2" />
+          <label for="operadores"
+            >Escolha a operação que deseja realizar:</label
+          >
+          <select id="operadores" name="operacao">
+            <option value="soma">Soma</option>
+            <option value="subtracao">Subtração</option>
+            <option value="multiplicacao">Multiplicação</option>
+            <option value="divisao">Divisão</option>
+          </select>
+          <button class="calcular">Calcular</button>
+        </form>
+      </div>
+    </div>
+
+    <p class="footer">Create your web page using Quarkus RESTEasy & Qute 🔥</p>
+  </body>
+</html>
