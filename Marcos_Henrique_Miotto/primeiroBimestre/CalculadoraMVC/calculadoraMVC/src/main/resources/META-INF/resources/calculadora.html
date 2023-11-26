@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #2196F3;
+        }
+        
+        .calculator {
+            border: 2px solid #ccc;
+            padding: 20px;
+            text-align: center;
+            background-color: #64B5F6; 
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h2>Calculadora</h2>
+        <form id="calculatorForm">
+            <input type="number" id="firstNumber" placeholder="Primeiro número" required step="any">
+            <select id="operation">
+                <option value="soma">Soma</option>
+                <option value="subtracao">Subtração</option>
+                <option value="multiplicacao">Multiplicação</option>
+                <option value="divisao">Divisão</option>
+            </select>
+            <input type="number" id="secondNumber" placeholder="Segundo número" required step="any">
+            <button type="submit">Calcular</button>
+        </form>
+        <p id="result"></p>
+        <p id="error" style="color: red;"></p>
+    </div>
+
+    <script>
+        document.getElementById("calculatorForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const firstNumber = parseFloat(document.getElementById("firstNumber").value);
+            const secondNumber = parseFloat(document.getElementById("secondNumber").value);
+            const operation = document.getElementById("operation").value;
+            const resultElement = document.getElementById("result");
+            const errorElement = document.getElementById("error");
+
+            if (isNaN(firstNumber) || isNaN(secondNumber)) {
+                errorElement.textContent = "Por favor, preencha todos os campos corretamente.";
+                resultElement.textContent = "";
+                return;
+            }
+
+            if (operation === "divisao" && secondNumber === 0) {
+                errorElement.textContent = "Divisão por zero não é permitida.";
+                resultElement.textContent = "";
+                return;
+            }
+
+            errorElement.textContent = "";
+
+            const formData = {
+                firstNumber: firstNumber,
+                secondNumber: secondNumber,
+                operation: operation
+            };
+
+            fetch("/calculadora/calculate", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.text())
+            .then(data => {
+                resultElement.innerHTML = data;
+            })
+            .catch(error => {
+                errorElement.textContent = "Erro ao realizar o cálculo.";
+                resultElement.textContent = "";
+            });
+        });
+    </script>
+</body>
+</html>
