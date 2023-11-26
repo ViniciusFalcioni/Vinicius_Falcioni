@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+form {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    height: fit-content;
+    width: fit-content;
+}
+
+.primeiralinha{
+    display: flex;
+    flex-direction: flex;
+    align-items: center;
+    width: fit-content;
+}
+
+h1, span, select {
+    color: #333;
+}
+
+input, select {
+    padding: 10px;
+    margin: 5px;
+    width: fit-content;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+
+select {
+    font-size: medium;
+    font-weight: bold;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 20px 5px 5px 5px;
+    background-color: #008000;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #32CD32;
+}
+
+div {
+    margin-right: 20px;
+}
+
+.resultado > span{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.resultado > .valorresultado{
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    margin-top: 20px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.primeiralinha > div > span {
+    text-align: center;
+    font-size: small;
+    font-weight: bold;
+}
+
+.valor, .operacao, .resultado{
+    display: flex;
+    flex-direction: column;
+}
