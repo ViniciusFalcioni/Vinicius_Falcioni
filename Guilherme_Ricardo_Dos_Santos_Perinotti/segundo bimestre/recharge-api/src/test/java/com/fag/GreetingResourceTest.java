@@ -1,4 +1,4 @@
-package br.com.fag;
+package com.fag;
 
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
