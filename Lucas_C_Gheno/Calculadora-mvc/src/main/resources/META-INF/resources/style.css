@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.body-background {
+    background-image: url("https://wallpaperset.com/w/full/9/8/d/873.jpg");
+}
+
+main {
+    background-color: rgba(227, 227, 227, 0.97);
+    max-width: 600px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: auto;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Poppins';
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+h2 {
+    font-size: 23px;
+    text-align: center;
+    color: #2c2c2c;
+    margin: 10px 50px;
+}
+
+label {
+    width: 80%;
+    font-weight: 300;
+    font-size: 20px;
+    margin: 5px 0px;
+}
+
+input {
+    width: 100%;
+    padding: 5px 10px;
+}
+
+select {
+    width: 100%;
+}
+
+button {
+    width: 80%;
+    color: #212121;
+    background-color: #08a10b;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:active {
+    background-color: #11ab08;
+}
+
+button, select, input {
+    height: 40px;
+    font-size: 20px;
+}
+
+select, input {
+    margin: 10px 0px;
+    box-shadow: 0 0 0 0;
+    outline: none;
+    background: transparent;
+    border: 1.5px solid black;
+}
+
+input:focus {
+    border: 2px solid #08a10b;
+}
+
+.btn-calculate {
+    transition: 0.3s all ease-in-out;
+    border-radius: 5px;
+}
+
+.btn-calculate:hover {
+    transform: scale(1.1);
+}
+
+.label-title {
+    font-weight: bold;
+}

@@ -2,55 +2,60 @@ package br.com.fag.domain.entities;
 
 import java.util.UUID;
 
-import br.com.fag.domain.dto.PhoneDTO;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class RechargeBO {
+
   private UUID id;
   private Double value;
   private String document;
   private Integer providerId;
-  private PhoneDTO phone;
+  private PhoneBO phone;
+  private String receipt;
+  private Long transactionId;
+  private boolean success;
 
-  public RechargeBO() {
-  }
-
-  public UUID getId() {
-    return this.id;
-  }
-
-  public void setId(UUID id) {
-    this.id = id;
-  }
-
-  public Double getValue() {
-    return this.value;
-  }
-
-  public void setValue(Double value) {
+  public RechargeBO(UUID id, Double value, String document, Integer providerId, PhoneBO phone,
+      String receipt, Long transactionId, boolean success) {
+    this.id = id != null ? id : UUID.randomUUID();
     this.value = value;
-  }
-
-  public String getDocument() {
-    return this.document;
-  }
-
-  public void setDocument(String document) {
     this.document = document;
-  }
-
-  public Integer getProviderId() {
-    return this.providerId;
-  }
-
-  public void setProviderId(Integer providerId) {
     this.providerId = providerId;
-  }
-
-  public PhoneDTO getPhone() {
-    return this.phone;
-  }
-
-  public void setPhone(PhoneDTO phone) {
     this.phone = phone;
+    this.receipt = receipt;
+    this.transactionId = transactionId;
+    this.success = success;
+
+    validate();
   }
+
+  public void handleSuccess(String receipt, Long transactionId) {
+    this.receipt = receipt;
+    this.transactionId = transactionId;
+    this.success = true;
+  }
+
+  public void handleError() {
+    this.success = false;
+  }
+
+  private void validate() {
+
+    if (this.value == null) {
+      throw new RuntimeException("Campo obrigatório - Value");
+    }
+
+    if (this.document == null || this.document.isEmpty()) {
+      throw new RuntimeException("Campo obrigatório - Document");
+    }
+
+    if (this.phone == null) {
+      throw new RuntimeException("Campo obrigatório - Phone");
+    }
+
+  }
+
 }
