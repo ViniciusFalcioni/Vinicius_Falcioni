@@ -1,9 +1,9 @@
-package com.aktie.infra.mercadopago.repository;
+package com.aktie.infra.mercadoPago.repository;
 
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
-import com.aktie.infra.mercadopago.dto.MpPixDTO;
-import com.aktie.infra.mercadopago.dto.MpPixResponse;
+import com.aktie.infra.mercadoPago.dto.MpPixDTO;
+import com.aktie.infra.mercadoPago.dto.MpPixResponse;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.Consumes;

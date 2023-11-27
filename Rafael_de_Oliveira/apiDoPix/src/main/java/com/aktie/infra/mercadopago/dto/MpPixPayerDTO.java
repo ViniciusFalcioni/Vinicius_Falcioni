@@ -1,4 +1,4 @@
-package com.aktie.infra.mercadopago.dto;
+package com.aktie.infra.mercadoPago.dto;
 
 public class MpPixPayerDTO {
     

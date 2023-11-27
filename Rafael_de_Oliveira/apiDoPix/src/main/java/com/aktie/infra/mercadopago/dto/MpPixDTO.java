@@ -1,4 +1,4 @@
-package com.aktie.infra.mercadopago.dto;
+package com.aktie.infra.mercadoPago.dto;
 
 import java.math.BigDecimal;
 
