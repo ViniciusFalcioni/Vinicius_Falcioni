@@ -1,11 +1,11 @@
 package com.github.faening.infra.celcoin.dto;
 
 public class CelcoinCreateStaticQrCodeResponseDTO {
-    private Long transactionId;
+    private String transactionId;
     private String emvqrcps;
     private String transactionIdentification;
 
-    public CelcoinCreateStaticQrCodeResponseDTO(Long transactionId, String emvqrcps, String transactionIdentification) {
+    public CelcoinCreateStaticQrCodeResponseDTO(String transactionId, String emvqrcps, String transactionIdentification) {
         this.transactionId = transactionId;
         this.emvqrcps = emvqrcps;
         this.transactionIdentification = transactionIdentification;
@@ -13,11 +13,11 @@ public class CelcoinCreateStaticQrCodeResponseDTO {
 
     public CelcoinCreateStaticQrCodeResponseDTO() {}
 
-    public Long getTransactionId() {
+    public String getTransactionId() {
         return transactionId;
     }
 
-    public void setTransactionId(Long transactionId) {
+    public void setTransactionId(String transactionId) {
         this.transactionId = transactionId;
     }
 

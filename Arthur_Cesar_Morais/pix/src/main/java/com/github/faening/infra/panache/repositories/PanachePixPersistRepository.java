@@ -15,6 +15,7 @@ public class PanachePixPersistRepository implements IPixPersistRepository {
         // Mapeia o PixQrCodeBO para PanachePixQrCodeModel
         PanachePixQrCodeModel panachePixQrCodeModel = PanachePixQrCodeMapper.toModel(pixQrCodeBO);
 
+
         // Salva o objeto PanachePixQrCodeModel no banco de dados
         panachePixQrCodeModel.persistAndFlush();
 

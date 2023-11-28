@@ -3,25 +3,28 @@ package com.github.faening.infra.celcoin.dto;
 import jakarta.json.bind.annotation.JsonbProperty;
 
 public class CelcoinCreateStaticQrCodeRequestDTO {
+    @JsonbProperty("merchant")
+    private CelcoinMerchantDTO merchant;
     private String key;
     private Double amount;
     private String transactionIdentification;
-    @JsonbProperty("merchant")
-    private CelcoinMerchantDTO celcoinMerchantDTO;
 
-    public CelcoinCreateStaticQrCodeRequestDTO(
-        String key,
-        Double amount,
-        String transactionIdentification,
-        CelcoinMerchantDTO celcoinMerchantDTO
-    ) {
+    public CelcoinCreateStaticQrCodeRequestDTO(CelcoinMerchantDTO merchant, String key, Double amount, String transactionIdentification) {
+        this.merchant = merchant;
         this.key = key;
         this.amount = amount;
         this.transactionIdentification = transactionIdentification;
-        this.celcoinMerchantDTO = celcoinMerchantDTO;
     }
 
-    public CelcoinCreateStaticQrCodeRequestDTO() {}
+    public CelcoinCreateStaticQrCodeRequestDTO() { }
+
+    public CelcoinMerchantDTO getMerchant() {
+        return merchant;
+    }
+
+    public void setMerchant(CelcoinMerchantDTO merchant) {
+        this.merchant = merchant;
+    }
 
     public String getKey() {
         return key;
@@ -46,12 +49,5 @@ public class CelcoinCreateStaticQrCodeRequestDTO {
     public void setTransactionIdentification(String transactionIdentification) {
         this.transactionIdentification = transactionIdentification;
     }
-
-    public CelcoinMerchantDTO getCelcoinMerchantDTO() {
-        return celcoinMerchantDTO;
-    }
-
-    public void setCelcoinMerchantDTO(CelcoinMerchantDTO celcoinMerchantDTO) {
-        this.celcoinMerchantDTO = celcoinMerchantDTO;
-    }
 }
+

@@ -13,50 +13,30 @@ import java.util.UUID;
 public class PanachePixQrCodeModel extends PanacheEntityBase {
     @Id
     private UUID id;
-    @Column
-    private String key;
-    @Column
-    private Double amount;
-    @Column
-    private String transactionIdentification;
-    @Column
-    private String postalCode;
-    @Column
-    private String city;
-    @Column
     private String merchantCategoryCode;
-    @Column
+    private String postalCode;
+    private String city;
     private String name;
-    @Column
-    private String emvqrcps;
-    @Column
+    private String key;
+    private Double amount;
+    private String transactionIdentification;
     private String transactionId;
+    private String emvqrcps;
 
-    public PanachePixQrCodeModel(
-            UUID id,
-            String key,
-            Double amount,
-            String transactionIdentification,
-            String postalCode,
-            String city,
-            String merchantCategoryCode,
-            String name,
-            String emvqrcps,
-            String transactionId
-    ) {
+    public PanachePixQrCodeModel(UUID id, String merchantCategoryCode, String postalCode, String city, String name, String key, Double amount, String transactionIdentification, String transactionId, String emvqrcps) {
         this.id = id;
+        this.merchantCategoryCode = merchantCategoryCode;
+        this.postalCode = postalCode;
+        this.city = city;
+        this.name = name;
         this.key = key;
         this.amount = amount;
         this.transactionIdentification = transactionIdentification;
-        this.postalCode = postalCode;
-        this.city = city;
-        this.merchantCategoryCode = merchantCategoryCode;
-        this.name = name;
-        this.emvqrcps = emvqrcps;
         this.transactionId = transactionId;
+        this.emvqrcps = emvqrcps;
     }
 
-    public PanachePixQrCodeModel() { }
+    public PanachePixQrCodeModel() {}
 
     public UUID getId() {
         return id;
@@ -64,6 +44,38 @@ public class PanachePixQrCodeModel extends PanacheEntityBase {
 
     public void setId(UUID id) {
         this.id = id;
+    }
+
+    public String getMerchantCategoryCode() {
+        return merchantCategoryCode;
+    }
+
+    public void setMerchantCategoryCode(String merchantCategoryCode) {
+        this.merchantCategoryCode = merchantCategoryCode;
+    }
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getKey() {
@@ -90,36 +102,12 @@ public class PanachePixQrCodeModel extends PanacheEntityBase {
         this.transactionIdentification = transactionIdentification;
     }
 
-    public String getPostalCode() {
-        return postalCode;
+    public String getTransactionId() {
+        return transactionId;
     }
 
-    public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getMerchantCategoryCode() {
-        return merchantCategoryCode;
-    }
-
-    public void setMerchantCategoryCode(String merchantCategoryCode) {
-        this.merchantCategoryCode = merchantCategoryCode;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setTransactionId(String transactionId) {
+        this.transactionId = transactionId;
     }
 
     public String getEmvqrcps() {
@@ -128,13 +116,5 @@ public class PanachePixQrCodeModel extends PanacheEntityBase {
 
     public void setEmvqrcps(String emvqrcps) {
         this.emvqrcps = emvqrcps;
-    }
-
-    public String getTransactionId() {
-        return transactionId;
-    }
-
-    public void setTransactionId(String transactionId) {
-        this.transactionId = transactionId;
     }
 }

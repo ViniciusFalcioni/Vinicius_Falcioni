@@ -40,6 +40,30 @@ public class PixQrCodeBO extends PanacheEntityBase {
         this.transactionId = transactionId;
     }
 
+    public PixQrCodeBO(
+            String key,
+            Double amount,
+            String transactionIdentification,
+            String postalCode,
+            String city,
+            String merchantCategoryCode,
+            String name,
+            String emvqrcps,
+            String transactionId
+    ) {
+        this.key = key;
+        this.amount = amount;
+        this.transactionIdentification = transactionIdentification;
+        this.postalCode = postalCode;
+        this.city = city;
+        this.merchantCategoryCode = merchantCategoryCode;
+        this.name = name;
+        this.emvqrcps = emvqrcps;
+        this.transactionId = transactionId;
+    }
+
+    public PixQrCodeBO() { }
+
     public UUID getId() {
         return id;
     }

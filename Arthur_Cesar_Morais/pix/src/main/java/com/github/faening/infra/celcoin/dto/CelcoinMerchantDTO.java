@@ -13,7 +13,7 @@ public class CelcoinMerchantDTO {
         this.name = name;
     }
 
-    public CelcoinMerchantDTO() {}
+    public CelcoinMerchantDTO() { }
 
     public String getPostalCode() {
         return postalCode;

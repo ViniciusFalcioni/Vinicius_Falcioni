@@ -21,19 +21,19 @@ public class CelcoinPixRepository implements IPixRepository {
     public PixQrCodeDTO create(PixQrCodeDTO pixQrCodeDTO) {
         // Solicita o token de acesso
         CelcoinTokenResponseDTO tokenResponseDTO = getToken();
+        String stringToken = "Bearer " + tokenResponseDTO.getAccessToken();
 
         // Cria um CelcoinCreateStaticQrCodeRequestDTO a partir do pixQrCodeRequestDTO
         CelcoinCreateStaticQrCodeRequestDTO staticQrCodeRequestDTO = CelcoinPixQrCodeMapper.toStaticQrCodeRequestDTO(pixQrCodeDTO);
 
         // Cria o QR Code estático
         CelcoinCreateStaticQrCodeResponseDTO staticQrCodeResponseDTO = celcoinRestClient.createStaticQrCode(
-            "Bearer ".concat(tokenResponseDTO.getTokenType()),
+            stringToken,
             staticQrCodeRequestDTO);
 
-        // Atualiza os dados do QR code antes de retornar
-        // Falta atualizar o id
+        // Adiciona as informações do QR Code no PixQrCodeDTO
+        pixQrCodeDTO.setTransactionId(staticQrCodeResponseDTO.getTransactionId());
         pixQrCodeDTO.setEmvqrcps(staticQrCodeResponseDTO.getEmvqrcps());
-        pixQrCodeDTO.setTransactionId(staticQrCodeRequestDTO.getTransactionIdentification());
 
         return pixQrCodeDTO;
     }

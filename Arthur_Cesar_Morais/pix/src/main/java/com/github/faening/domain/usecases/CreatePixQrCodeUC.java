@@ -10,8 +10,8 @@ import jakarta.inject.Inject;
 
 @ApplicationScoped
 public class CreatePixQrCodeUC {
-    private IPixRepository pixRepository;
-    private IPixPersistRepository persistRepository;
+    private final IPixRepository pixRepository;
+    private final IPixPersistRepository persistRepository;
 
     public CreatePixQrCodeUC(IPixRepository pixRepository, IPixPersistRepository persistRepository) {
         this.pixRepository = pixRepository;

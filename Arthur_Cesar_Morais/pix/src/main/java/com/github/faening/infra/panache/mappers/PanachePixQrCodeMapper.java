@@ -3,17 +3,19 @@ package com.github.faening.infra.panache.mappers;
 import com.github.faening.domain.entities.PixQrCodeBO;
 import com.github.faening.infra.panache.model.PanachePixQrCodeModel;
 
+import java.util.UUID;
+
 public class PanachePixQrCodeMapper {
     public static PanachePixQrCodeModel toModel(PixQrCodeBO pixQrCodeBO) {
         return new PanachePixQrCodeModel(
-            pixQrCodeBO.getId(),
+            UUID.randomUUID(),
+            pixQrCodeBO.getMerchantCategoryCode(),
+            pixQrCodeBO.getPostalCode(),
+            pixQrCodeBO.getCity(),
+            pixQrCodeBO.getName(),
             pixQrCodeBO.getKey(),
             pixQrCodeBO.getAmount(),
             pixQrCodeBO.getTransactionIdentification(),
-            pixQrCodeBO.getPostalCode(),
-            pixQrCodeBO.getCity(),
-            pixQrCodeBO.getMerchantCategoryCode(),
-            pixQrCodeBO.getName(),
             pixQrCodeBO.getEmvqrcps(),
             pixQrCodeBO.getTransactionId()
         );
