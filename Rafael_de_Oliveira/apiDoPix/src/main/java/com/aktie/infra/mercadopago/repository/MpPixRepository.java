@@ -1,4 +1,4 @@
-package com.aktie.infra.mercadopago.repository;
+package com.aktie.infra.mercadoPago.repository;
 
 import java.util.UUID;
 
@@ -7,9 +7,9 @@ import org.eclipse.microprofile.rest.client.inject.RestClient;
 
 import com.aktie.domain.dto.PixDTO;
 import com.aktie.domain.repositories.IPixRepository;
-import com.aktie.infra.mercadopago.dto.MpPixDTO;
-import com.aktie.infra.mercadopago.dto.MpPixPayerDTO;
-import com.aktie.infra.mercadopago.dto.MpPixResponse;
+import com.aktie.infra.mercadoPago.dto.MpPixDTO;
+import com.aktie.infra.mercadoPago.dto.MpPixPayerDTO;
+import com.aktie.infra.mercadoPago.dto.MpPixResponse;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
