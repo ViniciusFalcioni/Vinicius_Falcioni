@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "ae02fab3-56d5-4962-99f7-bc91e30da00d",
+		"name": "PIX",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7391085"
+	},
+	"item": [
+		{
+			"name": "Homologação",
+			"item": [
+				{
+					"name": "/ token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "client_id",
+									"value": "41b44ab9a56440.teste.celcoinapi.v5",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "e9d15cde33024c1494de7480e69b7a18c09d7cd25a8446839b3be82a56a044a3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://sandbox.openfinance.celcoin.dev/v5/token",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"openfinance",
+								"celcoin",
+								"dev"
+							],
+							"path": [
+								"v5",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/ pix",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRfaWQiOiI0MWI0NGFiOWE1NjQ0MC50ZXN0ZS5jZWxjb2luYXBpLnY1IiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZSI6InRlc3RlIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy91c2VyZGF0YSI6IjcyMjc5ZGVlYTFkZjRmYTI4YmU0IiwiZXhwIjoxNzAxMTg4OTAwLCJpc3MiOiJDZWxjb2luQVBJIiwiYXVkIjoiQ2VsY29pbkFQSSJ9.C8x7-BHb3PzPveJSdzejNvsThbpqWrZ4zBO0uBTb9AE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"merchant\": {\r\n    \"merchantCategoryCode\": \"5651\",\r\n    \"postalCode\": \"01201005\",\r\n    \"city\": \"Barueri\",\r\n    \"name\": \"Celcoin\"\r\n  },\r\n  \"key\": \"testepix@celcoin.com.br\",\r\n  \"amount\": 10.55,\r\n  \"transactionIdentification\": \"testqrcodestaticcelcoin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://sandbox.openfinance.celcoin.dev/pix/v1/brcode/static",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"openfinance",
+								"celcoin",
+								"dev"
+							],
+							"path": [
+								"pix",
+								"v1",
+								"brcode",
+								"static"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Desenvolvimento",
+			"item": [
+				{
+					"name": "/ token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/ pix",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"merchantCategoryCode\": \"5651\",\r\n  \"postalCode\": \"01201005\",\r\n  \"city\": \"Barueri\",\r\n  \"name\": \"Celcoin\",\r\n  \"key\": \"testepix@celcoin.com.br\",\r\n  \"amount\": 10.55,\r\n  \"transactionIdentification\": \"testqrcodestaticcelcoin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/pix",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"pix"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
