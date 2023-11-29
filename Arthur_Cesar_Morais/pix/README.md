@@ -1,75 +1,56 @@
-# pix
+# REST QR Code PIX API
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+Este projeto foi desenvolvido usando Quarkus e Java 17 e oferece uma integração eficiente com os serviços da Celcoin (https://www.celcoin.com.br/) possibilitando a geração simplificada de QR Codes para transações PIX. 
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+Este projeto proporciona uma solução ágil e flexível para implementação de funcionalidades relacionadas ao PIX, utilizando a estrutura poderosa do Quarkus para construir uma API robusta e de alto desempenho.
 
-## Running the application in dev mode
+A documentação detalhada, disponibilizada através do Swagger, facilita a compreensão e utilização dos endpoints, garantindo uma experiência amigável para desenvolvedores que desejam explorar e integrar os recursos do PIX fornecidos pela Celcoin.
 
-You can run your application in dev mode that enables live coding using:
-```shell script
-./mvnw compile quarkus:dev
+## Configurar o ambiente de desenvolvimento
+
+Para que o serviço de persistência funcione corretamente, você precisa personalizar as credenciais de acesso ao banco de dados do PostgreSQL. Para fazer isso, acesse o arquivo **application.properties** e ajuste as seguintes propriedades:
+
+```properties
+quarkus.datasource.username=${user.name}
+quarkus.datasource.password=${user.password}
+quarkus.datasource.jdbc.url=jdbc:postgresql://localhost:5432/${database.name}
 ```
 
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/.
+## Executar projeto
 
-## Packaging and running the application
-
-The application can be packaged using:
+Depois de baixar o projeto em seu computador, instalar as dependências e configurar o ambiente de desenvolvimento, basta executar o seguinte comando no terminal:
 ```shell script
-./mvnw package
-```
-It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
-
-The application is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.
-
-If you want to build an _über-jar_, execute the following command:
-```shell script
-./mvnw package -Dquarkus.package.type=uber-jar
+./mvnw quarkus:dev
 ```
 
-The application, packaged as an _über-jar_, is now runnable using `java -jar target/*-runner.jar`.
+## Requisições com Postman
 
-## Creating a native executable
+Você pode testar as requisições através do Postman. Para começar, basta baixar o arquivo **PIX.postman_collection.json** disponível na pasta **postman**, localizada na raiz do projeto. 
 
-You can create a native executable using: 
-```shell script
-./mvnw package -Dnative
+Este arquivo contém uma coleção predefinida com requisições relacionadas ao PIX. Ao importar este arquivo no aplicativo do Postman, você terá acesso imediato a um conjunto de requisições configuradas, simplificando o processo de teste e validação da API.
+
+Ainda, você pode simplesmente enviar uma requisição **POST** para o endereço: **http://localhost:8080/v1/pix**, contendo a seguinte estrutura JSON:
+
+```json
+{
+  "merchantCategoryCode": "5651",
+  "postalCode": "01201005",
+  "city": "Barueri",
+  "name": "Celcoin",
+  "key": "testepix@celcoin.com.br",
+  "amount": 10.55,
+  "transactionIdentification": "testqrcodestaticcelcoin"
+}
+
 ```
 
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using: 
-```shell script
-./mvnw package -Dnative -Dquarkus.native.container-build=true
-```
+O resultado será semelhante à imagem abaixo:
 
-You can then execute your native executable with: `./target/pix-1.0.0-SNAPSHOT-runner`
+![Descrição da Imagem](./assets/images/postman_01.png)
 
-If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.
+## Requisições e documentação com Swagger
 
-## Related Guides
+O Swagger foi incorporado à aplicação para fornecer uma documentação detalhada e interativa dos endpoints. No Swagger, você encontrará um teste de requisição pronto para uso na rota principal responsável por gerar o QR Code do PIX. Essa funcionalidade agiliza o processo de teste e validação.
 
-- REST Client Classic ([guide](https://quarkus.io/guides/rest-client)): Call REST services
-- RESTEasy Classic JSON-B ([guide](https://quarkus.io/guides/rest-json)): JSON-B serialization support for RESTEasy Classic
-- RESTEasy Classic ([guide](https://quarkus.io/guides/resteasy)): REST endpoint framework implementing Jakarta REST and more
-- RESTEasy Classic Qute ([guide](https://quarkus.io/guides/qute)): Qute Templating integration for RESTEasy
+Para acessar o swagger, abra seu navegador favorito e vá para: **http://localhost:8080/swagger-ui/**
 
-## Provided Code
-
-### REST Client
-
-Invoke different services through REST with JSON
-
-[Related guide section...](https://quarkus.io/guides/rest-client)
-
-### RESTEasy JAX-RS
-
-Easily start your RESTful Web Services
-
-[Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
-
-### RESTEasy Qute
-
-Create your web page using Quarkus RESTEasy & Qute
-
-[Related guide section...](https://quarkus.io/guides/qute#type-safe-templates)
