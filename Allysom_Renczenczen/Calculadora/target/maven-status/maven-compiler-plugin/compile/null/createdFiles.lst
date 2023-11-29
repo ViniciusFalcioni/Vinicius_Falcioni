@@ -1,0 +1,6 @@
+br/fag/services/Somar.class
+br/fag/services/Substracao.class
+br/fag/model/Resultado.class
+br/fag/controllers/CalculatorResource.class
+br/fag/services/Multiplicacao.class
+br/fag/services/Divisao.class
