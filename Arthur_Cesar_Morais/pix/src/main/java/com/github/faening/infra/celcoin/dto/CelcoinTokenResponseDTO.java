@@ -1,7 +1,9 @@
 package com.github.faening.infra.celcoin.dto;
 
 import jakarta.json.bind.annotation.JsonbProperty;
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
+@Schema(hidden = true)
 public class CelcoinTokenResponseDTO {
     @JsonbProperty("access_token")
     private String accessToken;

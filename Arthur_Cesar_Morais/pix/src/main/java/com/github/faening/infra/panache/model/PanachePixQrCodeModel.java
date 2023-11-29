@@ -21,6 +21,7 @@ public class PanachePixQrCodeModel extends PanacheEntityBase {
     private Double amount;
     private String transactionIdentification;
     private String transactionId;
+    @Column(length = 1000)
     private String emvqrcps;
 
     public PanachePixQrCodeModel(UUID id, String merchantCategoryCode, String postalCode, String city, String name, String key, Double amount, String transactionIdentification, String transactionId, String emvqrcps) {

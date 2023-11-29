@@ -1,7 +1,5 @@
 package com.github.faening.domain.dto;
 
-import jakarta.json.bind.annotation.JsonbProperty;
-
 public class PixQrCodeDTO {
     private String id;
     private String merchantCategoryCode;

@@ -1,5 +1,8 @@
 package com.github.faening.infra.celcoin.dto;
 
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
+
+@Schema(hidden = true)
 public class CelcoinMerchantDTO {
     private String postalCode;
     private String city;
