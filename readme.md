@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+guit## 🏗Projeto de Arquitetura de Software
+=======
 ## 🏗Projeto de Arquitetura de Software
+>>>>>>> 6cfb534efe943cc88881b658dd43e3324164673f
 
 ### Destaques do Repo✨
 
